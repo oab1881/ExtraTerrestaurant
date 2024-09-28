@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ABC
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7d5172ac941589244be4f4e3526216f7, type: 2}
   m_sharedMaterial: {fileID: 6844502683583794927, guid: 7d5172ac941589244be4f4e3526216f7, type: 2}
@@ -353,5 +353,5 @@ Transform:
   - {fileID: 5695669999779874419}
   - {fileID: 6609735580866320138}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
