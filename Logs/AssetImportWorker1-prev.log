@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.4f1 (35713cd46cd7) revision 3502396'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16103 MB
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16088 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\Unity 2022.3.4f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/school/extra terrestaurant/ExtraTerrestaurant
+C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-51939
-Successfully changed project path to: C:/school/extra terrestaurant/ExtraTerrestaurant
-C:/school/extra terrestaurant/ExtraTerrestaurant
+55364
+Successfully changed project path to: C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant
+C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,64 +49,71 @@ C:/school/extra terrestaurant/ExtraTerrestaurant
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [21300] Host "[IP] 129.21.156.28 [Port] 0 [Flags] 2 [Guid] 2928725822 [EditorId] 2928725822 [Version] 1048832 [Id] WindowsEditor(7,machine) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [35864] Host "[IP] 10.181.92.103 [Port] 0 [Flags] 2 [Guid] 188939973 [EditorId] 188939973 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DQR5CE9F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [21300] Host "[IP] 129.21.156.28 [Port] 0 [Flags] 2 [Guid] 2928725822 [EditorId] 2928725822 [Version] 1048832 [Id] WindowsEditor(7,machine) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [35864] Host "[IP] 10.181.92.103 [Port] 0 [Flags] 2 [Guid] 188939973 [EditorId] 188939973 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DQR5CE9F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 1.22 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.36 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/school/extra terrestaurant/ExtraTerrestaurant/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3050 Ti Laptop GPU (ID=0x25a0)
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2560)
     Vendor:   NVIDIA
-    VRAM:     3965 MB
-    Driver:   32.0.15.5612
+    VRAM:     5996 MB
+    Driver:   31.0.15.5123
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008077 seconds.
-- Loaded All Assemblies, in  0.516 seconds
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.008927 seconds.
+- Loaded All Assemblies, in  0.342 seconds
 Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 302 ms
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.407 seconds
-Domain Reload Profiling: 920ms
-	BeginReloadAssembly (128ms)
+- Finished resetting the current domain, in  0.630 seconds
+Domain Reload Profiling: 971ms
+	BeginReloadAssembly (110ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (57ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (83ms)
-	LoadAllAssembliesAndSetupDomain (225ms)
-		LoadAssemblies (124ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (132ms)
+		LoadAssemblies (110ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (217ms)
-			TypeCache.Refresh (216ms)
-				TypeCache.ScanAssembly (198ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (408ms)
+		AnalyzeDomain (125ms)
+			TypeCache.Refresh (122ms)
+				TypeCache.ScanAssembly (112ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (631ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (314ms)
+		SetupLoadedEditorAssemblies (564ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (14ms)
-			SetLoadedEditorAssemblies (12ms)
+			InitializePlatformSupportModulesInManaged (427ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (201ms)
-			ProcessInitializeOnLoadMethodAttributes (84ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (88ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -114,84 +121,69 @@ Domain Reload Profiling: 920ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.691 seconds
-Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+- Loaded All Assemblies, in  0.403 seconds
+Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
 Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.475 seconds
-Domain Reload Profiling: 1162ms
-	BeginReloadAssembly (182ms)
+- Finished resetting the current domain, in  0.314 seconds
+Domain Reload Profiling: 716ms
+	BeginReloadAssembly (99ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (31ms)
-	RebuildCommonClasses (48ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (377ms)
-		LoadAssemblies (242ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (236ms)
+		LoadAssemblies (146ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (218ms)
-			TypeCache.Refresh (209ms)
-				TypeCache.ScanAssembly (196ms)
-			ScanForSourceGeneratedMonoScriptInfo (5ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (475ms)
+		AnalyzeDomain (137ms)
+			TypeCache.Refresh (131ms)
+				TypeCache.ScanAssembly (123ms)
+			ScanForSourceGeneratedMonoScriptInfo (3ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (314ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (290ms)
+		SetupLoadedEditorAssemblies (192ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (57ms)
-			ProcessInitializeOnLoadAttributes (182ms)
-			ProcessInitializeOnLoadMethodAttributes (29ms)
-			AfterProcessingInitializeOnLoad (8ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (103ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Failed to load shader (instanceID 414, GUID 9c442dc870b456e48b615cd8add0e9ef)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Failed to load shader (instanceID 420, GUID dd89cf5b9246416f84610a006f916af7)
+Failed to load shader (instanceID 416, GUID 14eb328de4b8eb245bb7cea29e4ac00b)
+Failed to load shader (instanceID 404, GUID 68e6db2ebdc24f95958faec2be5558d6)
+Failed to load shader (instanceID 400, GUID bc1ede39bf3643ee8e493720e4259791)
+Failed to load shader (instanceID 398, GUID fe393ace9b354375a9cb14cdbbc28be4)
+Failed to load shader (instanceID 410, GUID cf81c85f95fe47e1a27f6ae460cf182c)
+Failed to load shader (instanceID 424, GUID 9c442dc870b456e48b615cd8add0e9ef)
+Failed to load shader (instanceID 412, GUID 48bb5f55d8670e349b6e614913f9d910)
+Failed to load shader (instanceID 406, GUID 85187c2149c549c5b33f0cdb02836b17)
+Failed to load shader (instanceID 418, GUID 128e987d567d4e2c824d754223b3f3b0)
+Failed to load shader (instanceID 402, GUID f7ada0af4f174f0694ca6a487b8f543d)
+Failed to load shader (instanceID 408, GUID a02a7d8c237544f1962732b55a9aebf1)
+Failed to load shader (instanceID 422, GUID c8d12adcee749c344b8117cf7c7eb912)
+Failed to load shader (instanceID 414, GUID 1e3b057af24249748ff873be7fafee47)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 54 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 3 unused Assets / (48.9 KB). Loaded Objects now: 531.
-Memory consumption went from 53.0 MB to 53.0 MB.
-Total: 3.466200 ms (FindLiveObjects: 0.054700 ms CreateObjectMapping: 0.006800 ms MarkObjects: 3.305700 ms  DeleteObjects: 0.098100 ms)
+Unloading 9 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3 unused Assets / (46.3 KB). Loaded Objects now: 489.
+Memory consumption went from 53.9 MB to 53.8 MB.
+Total: 2.403200 ms (FindLiveObjects: 0.048900 ms CreateObjectMapping: 0.006800 ms MarkObjects: 2.280700 ms  DeleteObjects: 0.065700 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 607111.371115 seconds.
-  path: Assets/terrestaurant.ttf
-  artifactKey: Guid(cb220e5814022a94fbefe1bb483a3e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/terrestaurant.ttf using Guid(cb220e5814022a94fbefe1bb483a3e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eedc7eead0221d851d5ae6f848ede104') in 0.157387 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 4
-========================================================================
-Received Prepare
-Failed to load shader (instanceID 414, GUID 9c442dc870b456e48b615cd8add0e9ef)
-Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1 unused Assets / (0.8 KB). Loaded Objects now: 577.
-Memory consumption went from 53.3 MB to 53.3 MB.
-Total: 3.494600 ms (FindLiveObjects: 0.054500 ms CreateObjectMapping: 0.006200 ms MarkObjects: 3.417100 ms  DeleteObjects: 0.015800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -204,137 +196,11 @@ AssetImportParameters requested are different than current active one (requested
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 161.407397 seconds.
-  path: Packages/com.unity.ugui/LICENSE.md
-  artifactKey: Guid(4d3d51749e989f747b2674e0b4d9b3d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/LICENSE.md using Guid(4d3d51749e989f747b2674e0b4d9b3d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a2668950e3935a5c78c73d8b78c747e') in 0.001809 seconds
+  Time since last request: 1529031.664741 seconds.
+  path: Assets/Scenes/DragNDropScene.unity
+  artifactKey: Guid(759094e941cfc9b4090482a74a1bd3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DragNDropScene.unity using Guid(759094e941cfc9b4090482a74a1bd3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e29d1b453eb616a8cd6accdc2eb9e8c') in 0.004066 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Packages/com.unity.ugui/package.json
-  artifactKey: Guid(319b8889f363f5947acf209c17a94149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/package.json using Guid(319b8889f363f5947acf209c17a94149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d51f700e97af91693ecd180754e8e1e') in 0.000703 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 6.352553 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/ButtonEditor.cs
-  artifactKey: Guid(472a6f18dd2f97c41af72271d22db869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/ButtonEditor.cs using Guid(472a6f18dd2f97c41af72271d22db869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c268f641510d7f3a3a10876c6c8e0b5a') in 0.001037 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000347 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/DropdownEditor.cs
-  artifactKey: Guid(05f582d4fbc8e0c40afccb76bbbe0935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/DropdownEditor.cs using Guid(05f582d4fbc8e0c40afccb76bbbe0935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64b5c4d83029998965a5d04376b1cbe6') in 0.000676 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.011337 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/GraphicEditor.cs
-  artifactKey: Guid(c890977a36bfdc849872b9337ab89098) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/GraphicEditor.cs using Guid(c890977a36bfdc849872b9337ab89098) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91cef8bc0739592e5f4e4ec9c81adc90') in 0.001001 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.009428 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/InterceptedEventsPreview.cs
-  artifactKey: Guid(127023922adddf744b59fa7b0b0c3030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/InterceptedEventsPreview.cs using Guid(127023922adddf744b59fa7b0b0c3030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5a25f4a8c692625c590ddf97251610e') in 0.001002 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000097 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/LayoutPropertiesPreview.cs
-  artifactKey: Guid(794f3951c48395848920fdb593a2ae38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/LayoutPropertiesPreview.cs using Guid(794f3951c48395848920fdb593a2ae38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaafb6e7a1bd057839740711f000bc7d') in 0.000759 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.010320 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/MenuOptions.cs
-  artifactKey: Guid(f867743975592a743a3581ff042bcc25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/MenuOptions.cs using Guid(f867743975592a743a3581ff042bcc25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25a5821871fb25d2b32c3e609514dfa6') in 0.001135 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000107 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/ScrollbarEditor.cs
-  artifactKey: Guid(f700f31b2e40d7f4bb69753fdbbbc2b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/ScrollbarEditor.cs using Guid(f700f31b2e40d7f4bb69753fdbbbc2b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2c7824c5f691b42358b83a7781e2410') in 0.000847 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.010384 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/SelfControllerEditor.cs
-  artifactKey: Guid(dcf00682bef4d264d84a5c92c8f5a40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/SelfControllerEditor.cs using Guid(dcf00682bef4d264d84a5c92c8f5a40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16c3862223ac72e3f75a0415a67124f8') in 0.000957 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000126 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/SpriteDrawUtility.cs
-  artifactKey: Guid(260b531edc40677429c0198d6961e448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/SpriteDrawUtility.cs using Guid(260b531edc40677429c0198d6961e448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed26e88286490eb819ad13556e4f6edd') in 0.000709 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000133 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/TextEditor.cs
-  artifactKey: Guid(1336690ece4db2740b4ba38873e00dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/TextEditor.cs using Guid(1336690ece4db2740b4ba38873e00dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b66a37e469f71be9425cc32f45f4459') in 0.000554 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000090 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/LayoutElementEditor.cs
-  artifactKey: Guid(7693972390a4ed841a986c0c452c1058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/LayoutElementEditor.cs using Guid(7693972390a4ed841a986c0c452c1058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00dcd042b7ee7d08eae97dd6e8d2acf3') in 0.000782 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/PrefabLayoutRebuilder.cs
-  artifactKey: Guid(a62706dc421fc9b4fa368a8050a930f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/PrefabLayoutRebuilder.cs using Guid(a62706dc421fc9b4fa368a8050a930f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a0abfbc57e4a3d691aaa9f957ae8d2') in 0.000833 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/SliderEditor.cs
-  artifactKey: Guid(bc98484caab3b6d4facbcff38be93380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/SliderEditor.cs using Guid(bc98484caab3b6d4facbcff38be93380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0ff8f9fbbb1d892757729f42ed17838') in 0.001050 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Packages/com.unity.ugui/Editor/UI/ImageEditor.cs
-  artifactKey: Guid(b759d61544e231c41bc88530b1d94ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Editor/UI/ImageEditor.cs using Guid(b759d61544e231c41bc88530b1d94ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4be5b54e2f5a575eb1fdffd0c3a0adb8') in 0.000562 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
