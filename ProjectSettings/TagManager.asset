@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 1321627513
+    locked: 0
+  - name: buckets
+    uniqueID: 4061593385
+    locked: 0
+  - name: storage
+    uniqueID: 2027212055
+    locked: 0
+  - name: cookware
+    uniqueID: 2115328847
+    locked: 0
+  - name: plates
+    uniqueID: 2772879583
+    locked: 0
+  - name: active
+    uniqueID: 992712277
+    locked: 0
