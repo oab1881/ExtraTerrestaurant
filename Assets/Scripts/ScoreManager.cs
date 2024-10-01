@@ -45,8 +45,24 @@ public class ScoreManager : MonoBehaviour
 
         Returns an int representing the score the player earned on the order
     */
-    private int CompareFood(List<List<string>> customer_order, List<List<string>> player_food)
+    private int CompareFood(List<string> customer_order, List<string> player_food)
     {
-        return 0;
+        int score = 0;
+
+        List<string> food_components = player_food;
+
+        foreach(string c_ingredient in customer_order)
+        {
+            for (int j = 0; j < food_components.Count; j++)
+            {
+                if (ingredients[c_ingredient].Contains(food_components[j]))
+                {
+                    score += 25;
+                    food_components.RemoveAt(j);
+                    break;
+                }
+            }
+        }
+        return score;
     }
 }
