@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.4f1 (35713cd46cd7) revision 3502396'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16088 MB
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16103 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\Unity 2022.3.4f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant
+C:/school/extra terrestaurant/ExtraTerrestaurant
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-55471
-Successfully changed project path to: C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant
-C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant
+56716
+Successfully changed project path to: C:/school/extra terrestaurant/ExtraTerrestaurant
+C:/school/extra terrestaurant/ExtraTerrestaurant
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,71 +49,64 @@ C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [49528] Host "[IP] 10.181.92.103 [Port] 0 [Flags] 2 [Guid] 2496336097 [EditorId] 2496336097 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DQR5CE9F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [2172] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 2679435486 [EditorId] 2679435486 [Version] 1048832 [Id] WindowsEditor(7,machine) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [49528] Host "[IP] 10.181.92.103 [Port] 0 [Flags] 2 [Guid] 2496336097 [EditorId] 2496336097 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DQR5CE9F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [2172] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 2679435486 [EditorId] 2679435486 [Version] 1048832 [Id] WindowsEditor(7,machine) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/jakew/OneDrive/Desktop/Repositories/ExtraTerrestaurant/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/school/extra terrestaurant/ExtraTerrestaurant/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2560)
+    Renderer: NVIDIA GeForce RTX 3050 Ti Laptop GPU (ID=0x25a0)
     Vendor:   NVIDIA
-    VRAM:     5996 MB
-    Driver:   31.0.15.5123
+    VRAM:     3965 MB
+    Driver:   32.0.15.5612
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56028
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008140 seconds.
-- Loaded All Assemblies, in  0.272 seconds
+Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity 2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.009012 seconds.
+- Loaded All Assemblies, in  0.518 seconds
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 273 ms
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.554 seconds
-Domain Reload Profiling: 825ms
-	BeginReloadAssembly (66ms)
+- Finished resetting the current domain, in  0.416 seconds
+Domain Reload Profiling: 933ms
+	BeginReloadAssembly (135ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (120ms)
-		LoadAssemblies (65ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (86ms)
+	LoadAllAssembliesAndSetupDomain (223ms)
+		LoadAssemblies (129ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (115ms)
-			TypeCache.Refresh (114ms)
-				TypeCache.ScanAssembly (105ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (216ms)
+			TypeCache.Refresh (214ms)
+				TypeCache.ScanAssembly (195ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (554ms)
+	FinalizeReload (417ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (502ms)
+		SetupLoadedEditorAssemblies (328ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (382ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (13ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (74ms)
-			ProcessInitializeOnLoadMethodAttributes (41ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (214ms)
+			ProcessInitializeOnLoadMethodAttributes (83ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -121,54 +114,51 @@ Domain Reload Profiling: 825ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.393 seconds
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+- Loaded All Assemblies, in  0.702 seconds
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.309 seconds
-Domain Reload Profiling: 701ms
-	BeginReloadAssembly (109ms)
+- Finished resetting the current domain, in  0.516 seconds
+Domain Reload Profiling: 1216ms
+	BeginReloadAssembly (191ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (19ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (35ms)
-	LoadAllAssembliesAndSetupDomain (213ms)
-		LoadAssemblies (146ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (380ms)
+		LoadAssemblies (240ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (118ms)
-			TypeCache.Refresh (112ms)
-				TypeCache.ScanAssembly (104ms)
-			ScanForSourceGeneratedMonoScriptInfo (3ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (310ms)
+		AnalyzeDomain (229ms)
+			TypeCache.Refresh (220ms)
+				TypeCache.ScanAssembly (207ms)
+			ScanForSourceGeneratedMonoScriptInfo (5ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (517ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (183ms)
+		SetupLoadedEditorAssemblies (311ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (27ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (35ms)
-			ProcessInitializeOnLoadAttributes (97ms)
-			ProcessInitializeOnLoadMethodAttributes (16ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			BeforeProcessingInitializeOnLoad (57ms)
+			ProcessInitializeOnLoadAttributes (190ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
+			AfterProcessingInitializeOnLoad (10ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.93 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 708 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9 unused Assets / (49.6 KB). Loaded Objects now: 1185.
-Memory consumption went from 70.3 MB to 70.2 MB.
-Total: 1.993700 ms (FindLiveObjects: 0.060000 ms CreateObjectMapping: 0.014000 ms MarkObjects: 1.847500 ms  DeleteObjects: 0.071100 ms)
+Unloading 707 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (49.5 KB). Loaded Objects now: 1182.
+Memory consumption went from 64.9 MB to 64.9 MB.
+Total: 3.637100 ms (FindLiveObjects: 0.122100 ms CreateObjectMapping: 0.025300 ms MarkObjects: 3.385800 ms  DeleteObjects: 0.102300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
@@ -181,236 +171,166 @@ AssetImportParameters requested are different than current active one (requested
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1529195.865131 seconds.
-  path: Assets/Images/kitchen_assets/buckets.png
-  artifactKey: Guid(c98610bb1ac3bd44fab5de5ed934a3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/buckets.png using Guid(c98610bb1ac3bd44fab5de5ed934a3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3de2798a890b7e88223addca07a1dad1') in 0.090310 seconds
+  Time since last request: 718216.414135 seconds.
+  path: Assets/terrestaurant.ttf
+  artifactKey: Guid(cb220e5814022a94fbefe1bb483a3e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terrestaurant.ttf using Guid(cb220e5814022a94fbefe1bb483a3e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eedc7eead0221d851d5ae6f848ede104') in 0.168393 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (0.8 KB). Loaded Objects now: 1228.
+Memory consumption went from 54.9 MB to 54.9 MB.
+Total: 3.534300 ms (FindLiveObjects: 0.140600 ms CreateObjectMapping: 0.039400 ms MarkObjects: 3.331600 ms  DeleteObjects: 0.021500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 66.408616 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-2.png
+  artifactKey: Guid(507a1d0ffd5e0d34198fe5fb6f3cf3ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-2.png using Guid(507a1d0ffd5e0d34198fe5fb6f3cf3ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '942ca8c8c76155a790a7bff1fa8cbdaa') in 0.040266 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Images/kitchen_assets/sheet_bucket.png
-  artifactKey: Guid(975c48517291c5e4399a206b8c3658aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/sheet_bucket.png using Guid(975c48517291c5e4399a206b8c3658aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816e1fd77d59de49fc99802b9b04ee87') in 0.013474 seconds
+  Time since last request: 0.003129 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-3.png
+  artifactKey: Guid(29c2a8b55191cf44da4b9a7bb2dc8cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-3.png using Guid(29c2a8b55191cf44da4b9a7bb2dc8cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14290caf719afd054c4a8dc64e8e3e3f') in 0.025152 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Images/kitchen_assets/tentacle_bucket.png
-  artifactKey: Guid(d7d99ecf5219a4144a9c4d4cb208dfb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/tentacle_bucket.png using Guid(d7d99ecf5219a4144a9c4d4cb208dfb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd732e58e599daf467826173090330dd3') in 0.012971 seconds
+  Time since last request: 0.000022 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-10.png
+  artifactKey: Guid(d8d2c4374412a2a41a9a90127fa676cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-10.png using Guid(d8d2c4374412a2a41a9a90127fa676cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9c2a1de2f8c6f7be5a029c55bc5d264') in 0.032136 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Images/kitchen_assets/goop_lines.png
-  artifactKey: Guid(68ef72b09457f064c92e587ada8d5ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/goop_lines.png using Guid(68ef72b09457f064c92e587ada8d5ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4273cead109124af6bd461945e20f400') in 0.013044 seconds
+  Time since last request: 0.000030 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-32.png
+  artifactKey: Guid(ed516d7461f9f304490a0d1b9863eb99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-32.png using Guid(ed516d7461f9f304490a0d1b9863eb99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f15ef047a46d35967cb8c6c73a0150') in 0.027699 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Images/TestAlien.png
-  artifactKey: Guid(23538b472cec7e54d9f0f315fc86269e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/TestAlien.png using Guid(23538b472cec7e54d9f0f315fc86269e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66ef85927635b1390ccaecd6fab3c9ee') in 0.032868 seconds
+  Time since last request: 0.000024 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-29.png
+  artifactKey: Guid(34aaae7f274ee4f4d9f8903d9154b96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-29.png using Guid(34aaae7f274ee4f4d9f8903d9154b96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10bcb68846bec15e1899cb07ea7ba8f6') in 0.024720 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000095 seconds.
-  path: Assets/Images/StickyNote.png
-  artifactKey: Guid(eb1e84480391ce5479d0045995e16151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/StickyNote.png using Guid(eb1e84480391ce5479d0045995e16151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e853c5d1a690b62cead7bad943a3d5c') in 0.014819 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Images/kitchen_assets/leaf_pickup.png
-  artifactKey: Guid(03941a7cfdcdc8949bcd4a22a278b9aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/leaf_pickup.png using Guid(03941a7cfdcdc8949bcd4a22a278b9aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fbca34a820f58acebaccd0539705350') in 0.018773 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Images/kitchen_assets/fridge_baseColor.png
-  artifactKey: Guid(3fa62769877981b46ba83db61bcee3d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/fridge_baseColor.png using Guid(3fa62769877981b46ba83db61bcee3d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '325b626710a0469bd640f55dc460c6a7') in 0.019346 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Images/kitchen_assets/crystal_bucket.png
-  artifactKey: Guid(19302fe1aa6bd0141aaf55cab3e091d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/crystal_bucket.png using Guid(19302fe1aa6bd0141aaf55cab3e091d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3afa49abc5b17555872977ace90e5a4') in 0.018697 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Assets/Images/kitchen_assets/leaf_bucket.png
-  artifactKey: Guid(d0ae67f0d11d48e48b2b3be9736b6eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/leaf_bucket.png using Guid(d0ae67f0d11d48e48b2b3be9736b6eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f7f52ad6dbd5aad2829e31b037e9ce') in 0.023041 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Images/kitchen_assets/fridgeInside_lines.png
-  artifactKey: Guid(b24d5b277e8044f4b867c611df3b9961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/fridgeInside_lines.png using Guid(b24d5b277e8044f4b867c611df3b9961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d9cd55465f4678f2b4a9c6bf97836b5') in 0.021522 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Images/kitchen_assets/sheet_pickup.png
-  artifactKey: Guid(7846d00cc5c0d7945a04ef447e54274d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/sheet_pickup.png using Guid(7846d00cc5c0d7945a04ef447e54274d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50faada8fdbaf77083e9d24cbfca91c9') in 0.018782 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Images/kitchen_assets/oven_color.png
-  artifactKey: Guid(89b6fbef20645d14aabf70ad807d024d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/oven_color.png using Guid(89b6fbef20645d14aabf70ad807d024d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64a51e2bb7401179a181a12acef55aec') in 0.014763 seconds
+  Time since last request: 0.000029 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-26.png
+  artifactKey: Guid(0c6bf6e4d00f64a42a1d73e046d9909d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-26.png using Guid(0c6bf6e4d00f64a42a1d73e046d9909d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f67de7405247978e032aab392cec7969') in 0.028896 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000039 seconds.
-  path: Assets/Images/kitchen_assets/plateDispenser.png
-  artifactKey: Guid(453539bab60b08d458978c7e93cfa329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/plateDispenser.png using Guid(453539bab60b08d458978c7e93cfa329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c85b194d25d213cae4146c634c0639f') in 0.014183 seconds
+  path: Assets/Images/kitchen_assets/Kitchen-15.png
+  artifactKey: Guid(3d9d3696aea36d2449a31d99c8e0826c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-15.png using Guid(3d9d3696aea36d2449a31d99c8e0826c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5464894298fff3dc60e2875fcf082655') in 0.035417 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Images/kitchen_assets/mortar.png
-  artifactKey: Guid(1bac7c6690bcb15408286c48fb636d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/mortar.png using Guid(1bac7c6690bcb15408286c48fb636d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5350d359ed2b7554c1ef29e3e6b2dac8') in 0.011856 seconds
+  Time since last request: 0.000132 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-27.png
+  artifactKey: Guid(4dbffa21daebd2446a01a5704b1e5b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-27.png using Guid(4dbffa21daebd2446a01a5704b1e5b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1b4eeefaeed1b65c037b4f9e4836e14') in 0.029823 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Images/kitchen_assets/goop_color.png
-  artifactKey: Guid(911eb7882932e514489eeedb563fffd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/goop_color.png using Guid(911eb7882932e514489eeedb563fffd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3267ffd9a606ebea7eaa5145a3d0786') in 0.021957 seconds
+  Time since last request: 0.000019 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-23.png
+  artifactKey: Guid(78aa20c1306ebc54b847ba9aa7be0c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-23.png using Guid(78aa20c1306ebc54b847ba9aa7be0c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94cfda0484feaf2778b45b29918b471a') in 0.029420 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Images/kitchen_assets/crystal_pickup.png
-  artifactKey: Guid(0c939ab9d5bddaf4ea065dcd55fdb695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/crystal_pickup.png using Guid(0c939ab9d5bddaf4ea065dcd55fdb695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00254400d9bcb84a0215b5657a37afa3') in 0.026846 seconds
+  Time since last request: 0.000019 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-20.png
+  artifactKey: Guid(f692a3398bf035141bc7023d56e2dc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-20.png using Guid(f692a3398bf035141bc7023d56e2dc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5ccc599abdc5589c8937469b86598f9') in 0.025431 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Images/kitchen_assets/egg_bucket.png
-  artifactKey: Guid(0598b1c6775b75c4387da16a2688b1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/kitchen_assets/egg_bucket.png using Guid(0598b1c6775b75c4387da16a2688b1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52c9f0e800df6c20e13c4290f2926613') in 0.017539 seconds
+  Time since last request: 0.000021 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-25.png
+  artifactKey: Guid(4a8363e10aa799646852a2cbc7e0f223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-25.png using Guid(4a8363e10aa799646852a2cbc7e0f223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90f668a1e3b830af4fd552d905d84b60') in 0.025872 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1 unused Assets / (3.0 KB). Loaded Objects now: 1194.
-Memory consumption went from 55.3 MB to 55.3 MB.
-Total: 4.083400 ms (FindLiveObjects: 0.137900 ms CreateObjectMapping: 0.023100 ms MarkObjects: 3.889800 ms  DeleteObjects: 0.031100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-16.png
+  artifactKey: Guid(f62ae4160251f924ea20e1a080cef184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-16.png using Guid(f62ae4160251f924ea20e1a080cef184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aa65050a508d176f557e2830df04283') in 0.025716 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.437 seconds
-Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.441 seconds
-Domain Reload Profiling: 876ms
-	BeginReloadAssembly (142ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (30ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (223ms)
-		LoadAssemblies (172ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (119ms)
-			TypeCache.Refresh (115ms)
-				TypeCache.ScanAssembly (109ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (441ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (210ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (33ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (34ms)
-			ProcessInitializeOnLoadAttributes (111ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 689 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5 unused Assets / (23.8 KB). Loaded Objects now: 1196.
-Memory consumption went from 65.9 MB to 65.9 MB.
-Total: 1.825900 ms (FindLiveObjects: 0.062700 ms CreateObjectMapping: 0.015100 ms MarkObjects: 1.723400 ms  DeleteObjects: 0.023700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-12.png
+  artifactKey: Guid(80a033ec88b04ee43bfdd321bf42940e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-12.png using Guid(80a033ec88b04ee43bfdd321bf42940e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b10cb1a12104d555078a9ed808be1ea') in 0.032202 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-9.png
+  artifactKey: Guid(ae09bfc127fd60b4a9407148f4ac2054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-9.png using Guid(ae09bfc127fd60b4a9407148f4ac2054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09efb716b67756bbb60669e4e4241b64') in 0.026913 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-28.png
+  artifactKey: Guid(5fb9904e4539fca42b2d45af1ef838c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-28.png using Guid(5fb9904e4539fca42b2d45af1ef838c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15726f7a0f4f3768e1ca9f2aa176f22e') in 0.030017 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Images/kitchen_assets/Kitchen-5.png
+  artifactKey: Guid(876146818e70a3348804f4e13453ce6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/kitchen_assets/Kitchen-5.png using Guid(876146818e70a3348804f4e13453ce6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39aab1df5cfcc1674835592da402b020') in 0.026091 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
 AssetImportWorker is now disconnected from the server
