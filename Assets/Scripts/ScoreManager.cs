@@ -8,15 +8,19 @@ public class ScoreManager : MonoBehaviour
     private float timer;
     private Dictionary<string, List<string>> ingredients;
 
+    private enum preparation_methods
+    {
+    }
+
     private void Start()
     {
         // Create the Dictionary of ingredients
         // Hardcoded ingredient values
-        List<string> tentacle = new List<string>() { "A",};
-        List<string> leaf = new List<string>() { "B",};
-        List<string> mineral = new List<string>() { "C",};
-        List<string> gooball = new List<string>() { "D",};
-        List<string> sheet = new List<string>() { "E",};
+        List<string> tentacle = new List<string>() { "A", };
+        List<string> leaf = new List<string>() { "B", };
+        List<string> mineral = new List<string>() { "C", };
+        List<string> gooball = new List<string>() { "D", };
+        List<string> sheet = new List<string>() { "E", };
 
         // Add ingredient values to ingredients dictionary
         ingredients.Add("tentacle", tentacle);
@@ -26,10 +30,23 @@ public class ScoreManager : MonoBehaviour
         ingredients.Add("sheet", sheet);
 
     }
+
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
 
+    }
+
+    /*
+        Compares the food the player makes to the food the customer orders
+        Takes customer's order and the player's prepared food and compares them to see if the 
+        ingredients used matched the ones that the customer asked for, and if they were prepared the correct way
+
+        Returns an int representing the score the player earned on the order
+    */
+    private int CompareFood(List<List<string>> customer_order, List<List<string>> player_food)
+    {
+        return 0;
     }
 }
