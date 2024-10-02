@@ -1,7 +1,8 @@
 /*
  ==== Created by Jake Wardell 10/01/24 ====
 
-Does collision between the food objects and the plates in the game!
+Does collision between the food objects and the plates in the game! Also
+between mouse and plate!
 
 Changelog:
     -Created script : 10/01/24
@@ -48,10 +49,43 @@ public class PlateCollisions : MonoBehaviour
                 //For testing the tentacle food item
                 if (collidingObject.name == "tentacle_food(Clone)")
                 {
-                    //Send data to the plateData script and list!
+                    //Adds to list with corresponding food value obtained from Score
+                    //Manager
+                    plateData.AddIngriedint("tentacle");
+                }
+                
+
+                else if(collidingObject.name == "leaf_food(Clone)")
+                {
+                    //Adds to list with corresponding food value obtained from Score
+                    //Manager
+                    plateData.AddIngriedint("leaf");
+                }
+                
+                else if (collidingObject.name == "cyrstal_food(Clone)")
+                {
+                    //Adds to list with corresponding food value obtained from Score
+                    //Manager
+                    plateData.AddIngriedint("mineral");
+                }
+                
+                else if (collidingObject.name == "egg_food(Clone)")
+                {
+                    //Adds to list with corresponding food value obtained from Score
+                    //Manager
+                    plateData.AddIngriedint("gooball");
+                }
+                
+                else if (collidingObject.name == "sheet_food(Clone)")
+                {
+                    //Adds to list with corresponding food value obtained from Score
+                    //Manager
+                    plateData.AddIngriedint("sheet");
                 }
 
                 //At the end we set collidingObject to null to end the plate collision
+                //Also deactivates collisions
+                collidingObject.GetComponent<Collider2D>().enabled = false;
                 collidingObject = null;
             }
         }
@@ -68,6 +102,13 @@ public class PlateCollisions : MonoBehaviour
     {
         //If the collision leaves plate boxCollider set it to null
         collidingObject = null;
+    }
+
+    
+    //This will be for moving the plate to the other screen when order is complete
+    private void OnMouseDown()
+    {
+        
     }
 }
 
