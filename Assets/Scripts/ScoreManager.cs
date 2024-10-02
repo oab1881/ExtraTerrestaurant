@@ -18,15 +18,15 @@ public class ScoreManager : MonoBehaviour
         // Hardcoded ingredient values
         List<string> tentacle = new List<string>() { "A", };
         List<string> leaf = new List<string>() { "B", };
-        List<string> mineral = new List<string>() { "C", };
-        List<string> gooball = new List<string>() { "D", };
+        List<string> crystal = new List<string>() { "C", };
+        List<string> egg = new List<string>() { "D", };
         List<string> sheet = new List<string>() { "E", };
 
         // Add ingredient values to ingredients dictionary
         ingredients.Add("tentacle", tentacle);
         ingredients.Add("leaf", leaf);
-        ingredients.Add("mineral", mineral);
-        ingredients.Add("gooball", gooball);
+        ingredients.Add("crystal", crystal);
+        ingredients.Add("egg", egg);
         ingredients.Add("sheet", sheet);
 
     }

@@ -12,16 +12,16 @@ using UnityEngine;
 
 public class PlateData : MonoBehaviour
 {
-    //List to store ingriedients
-    List<string> ingriedients = new List<string>();
+    //List to store ingredients
+    List<string> ingredients = new List<string>();
 
     /// <summary>
-    /// Public function to add ingriedients to the plate
+    /// Public function to add ingredients to the plate
     /// </summary>
     /// <param name="name">Name of food item to add</param>
-    public void AddIngriedint(string name)
+    public void AddIngredient(string name)
     {
-        ingriedients.Add(name);
+        ingredients.Add(name);
     }
     
 }

@@ -51,7 +51,7 @@ public class PlateCollisions : MonoBehaviour
                 {
                     //Adds to list with corresponding food value obtained from Score
                     //Manager
-                    plateData.AddIngriedint("tentacle");
+                    plateData.AddIngredient("tentacle");
                 }
                 
 
@@ -59,28 +59,28 @@ public class PlateCollisions : MonoBehaviour
                 {
                     //Adds to list with corresponding food value obtained from Score
                     //Manager
-                    plateData.AddIngriedint("leaf");
+                    plateData.AddIngredient("leaf");
                 }
                 
                 else if (collidingObject.name == "cyrstal_food(Clone)")
                 {
                     //Adds to list with corresponding food value obtained from Score
                     //Manager
-                    plateData.AddIngriedint("mineral");
+                    plateData.AddIngredient("crystal");
                 }
                 
                 else if (collidingObject.name == "egg_food(Clone)")
                 {
                     //Adds to list with corresponding food value obtained from Score
                     //Manager
-                    plateData.AddIngriedint("gooball");
+                    plateData.AddIngredient("egg");
                 }
                 
                 else if (collidingObject.name == "sheet_food(Clone)")
                 {
                     //Adds to list with corresponding food value obtained from Score
                     //Manager
-                    plateData.AddIngriedint("sheet");
+                    plateData.AddIngredient("sheet");
                 }
 
                 //At the end we set collidingObject to null to end the plate collision
