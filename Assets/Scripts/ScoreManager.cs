@@ -49,16 +49,16 @@ public class ScoreManager : MonoBehaviour
     {
         int score = 0;
 
-        List<string> food_components = player_food;
+        List<string> order_components = customer_order;
 
-        foreach(string c_ingredient in customer_order)
+        foreach(string used_ingredient in player_food)
         {
-            for (int j = 0; j < food_components.Count; j++)
+            for (int j = 0; j < order_components.Count; j++)
             {
-                if (ingredients[c_ingredient].Contains(food_components[j]))
+                if (ingredients[used_ingredient].Contains(order_components[j]))
                 {
                     score += 25;
-                    food_components.RemoveAt(j);
+                    order_components.RemoveAt(j);
                     break;
                 }
             }
