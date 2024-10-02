@@ -558,6 +558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItem: {fileID: 6079846946831491505, guid: d7d59a94255c49642a90ce4532b752c6, type: 3}
+  boxColl: {fileID: 453715617}
+  spawnPos: {x: 0, y: 0}
 --- !u!61 &453715617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -759,7 +761,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027212055
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: ed516d7461f9f304490a0d1b9863eb99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -815,6 +817,7 @@ Transform:
   - {fileID: 196471920}
   - {fileID: 1400469012}
   - {fileID: 1840899733}
+  - {fileID: 2030051335}
   - {fileID: 2042885426}
   - {fileID: 1519022026}
   - {fileID: 355747778}
@@ -1032,6 +1035,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItem: {fileID: 6026397797376136479, guid: 51315d8c1b45b2945877e0fbcb10cfa7, type: 3}
+  boxColl: {fileID: 957016818}
+  spawnPos: {x: 0, y: 0}
 --- !u!61 &957016818
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1260,6 +1265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItem: {fileID: 8291992907242694315, guid: 0649aa9ffb0eb0347b48a02a0bdfa680, type: 3}
+  boxColl: {fileID: 1049864797}
+  spawnPos: {x: 0, y: 0}
 --- !u!61 &1049864797
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1740,6 +1747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItem: {fileID: 580618499572302972, guid: 488da1aec394d974f9e99c2ae95a09e8, type: 3}
+  boxColl: {fileID: 1454356611}
+  spawnPos: {x: 0, y: 0}
 --- !u!61 &1454356611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1857,7 +1866,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027212055
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e68279591b807064cba2b4710f13696d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
   m_FlipX: 0
@@ -2648,6 +2657,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItem: {fileID: 4281459659418726516, guid: e456772ba748b35418e7f80722951b68, type: 3}
+  boxColl: {fileID: 1975054988}
+  spawnPos: {x: 0, y: 0}
 --- !u!61 &1975054988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2693,6 +2704,90 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7259426, y: 2.8415618}
   m_EdgeRadius: 0
+--- !u!1 &2030051334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030051335}
+  - component: {fileID: 2030051336}
+  m_Layer: 0
+  m_Name: Kitchen-21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2030051335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030051334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 583039613}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2030051336
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030051334}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1522087713
+  m_SortingLayer: 5
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 304655720adcc8545b2eda3e54bf41fc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2042885425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,11 +2982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450234833989148191, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.215
       objectReference: {fileID: 0}
     - target: {fileID: 4450234833989148191, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 1.207
       objectReference: {fileID: 0}
     - target: {fileID: 4450234833989148191, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2928,6 +3023,22 @@ PrefabInstance:
     - target: {fileID: 7562888795353850008, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
       propertyPath: m_Name
       value: single plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235843741946119367, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235843741946119367, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235843741946119367, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235843741946119367, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8235843741946119367, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
       propertyPath: m_SortingLayer

@@ -6,6 +6,7 @@ between mouse and plate!
 
 Changelog:
     -Created script : 10/01/24
+    -changed item placement to new plate center : 10/02 : jack
 */
 
 using System.Collections;
@@ -40,7 +41,8 @@ public class PlateCollisions : MonoBehaviour
                 collidingObject.transform.SetParent(transform, false);
                 collidingObject.GetComponent<DragAndDrop>().CanDragAndDrop = false;
                 collidingObject.transform.localScale = collidingObject.transform.localScale / 2;
-                collidingObject.transform.localPosition = new Vector3(2, 2, 0);
+                //collidingObject.transform.localPosition = new Vector3(2, 2, 0);
+                collidingObject.transform.localPosition = Vector3.zero;
 
                 // ==== Then for each food item we can test it's name ====
                 //And send it's data to the list of food items on the plate

@@ -7,6 +7,7 @@ They need a boxCollider2d and this script for functionality to work
 Changelog:
     -Created script : 09/30/24
     -Made mouse follow a function for supplementing when food is created : 10/01/24
+    -newly spawned items are now dragged by default without needing an extra click : 10/02 : jack
 */
 
 using System.Collections;
@@ -18,26 +19,36 @@ using UnityEngine.UIElements;
 public class DragAndDrop : MonoBehaviour
 {
     //Useing this to get the original point on start of click and drag
+    [SerializeField]
     Vector3 initalMouse = Vector3.zero;
     bool canDragandDrop = true;
+    // item being dragged?    -OnMouseDrag alternative, doesn't require object be clicked first
+    bool dragging = true;
 
     public bool CanDragAndDrop
     {
         set { canDragandDrop = value; }
     }
 
-
-    private void OnMouseDrag()
+    /*private void OnMouseDrag()
     {
         followMouse();
+    }*/
+
+    private void OnMouseDown()
+    {
+        dragging = true;
+        //Debug.Log("mouse down");
     }
 
-    private void OnMouseUp()
+    /*private void OnMouseUp()
     {
         //After mouse is up resets this to 0
         initalMouse = Vector3.zero;
-    }
-    
+        dragging = false;
+        //Debug.Log("mouse up");
+    }*/
+
 
     //Crashes the game when used
     /*private void Awake()
@@ -50,6 +61,20 @@ public class DragAndDrop : MonoBehaviour
         initalMouse = Vector3.zero;
     }
     */
+
+    private void Update()
+    {
+        if (dragging)
+        {
+            followMouse();
+        }
+        // OnMouseUp alternative for dragging solution
+        if (Input.GetMouseButtonUp(0))
+        {
+            dragging = false;
+            initalMouse = Vector3.zero;
+        }
+    }
 
     private void followMouse()
     {
