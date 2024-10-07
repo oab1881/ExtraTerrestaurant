@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6046765506471978090}
   - component: {fileID: 5756428243654078875}
   - component: {fileID: -6235215649513243321}
+  - component: {fileID: 3323012342824336015}
   m_Layer: 0
   m_Name: tentacle_food
   m_TagString: Untagged
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4281459659418726516}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -187,3 +188,94 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &3323012342824336015
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281459659418726516}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.35, y: 1.66}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.175, y: -0.089999996}
+      - {x: 1.175, y: 0.06}
+      - {x: 1.025, y: 0.22999999}
+      - {x: 0.825, y: 0.35999998}
+      - {x: 0.715, y: 0.42}
+      - {x: 0.585, y: 0.42999998}
+      - {x: 0.42499998, y: 0.37}
+      - {x: 0.33499998, y: 0.39}
+      - {x: 0.275, y: 0.38}
+      - {x: 0.24499999, y: 0.37}
+      - {x: 0.13499999, y: 0.29}
+      - {x: -0.035, y: 0.22}
+      - {x: -0.114999995, y: 0.14}
+      - {x: -0.42499998, y: 0.089999996}
+      - {x: -0.575, y: 0.28}
+      - {x: -0.525, y: 0.35}
+      - {x: -0.435, y: 0.52}
+      - {x: -0.415, y: 0.69}
+      - {x: -0.45499998, y: 0.78999996}
+      - {x: -0.525, y: 0.83}
+      - {x: -0.565, y: 0.83}
+      - {x: -0.59499997, y: 0.78999996}
+      - {x: -0.635, y: 0.64}
+      - {x: -0.73499995, y: 0.56}
+      - {x: -0.98499995, y: 0.31}
+      - {x: -1.045, y: 0.21}
+      - {x: -1.115, y: 0.06}
+      - {x: -1.175, y: -0.08}
+      - {x: -1.175, y: -0.32}
+      - {x: -1.155, y: -0.42999998}
+      - {x: -1.035, y: -0.62}
+      - {x: -0.945, y: -0.69}
+      - {x: -0.79499996, y: -0.77}
+      - {x: -0.615, y: -0.81}
+      - {x: -0.515, y: -0.81}
+      - {x: -0.375, y: -0.78}
+      - {x: -0.155, y: -0.71999997}
+      - {x: -0.044999998, y: -0.66999996}
+      - {x: 0.16499999, y: -0.68}
+      - {x: 0.285, y: -0.72999996}
+      - {x: 0.385, y: -0.83}
+      - {x: 0.53499997, y: -0.83}
+      - {x: 0.635, y: -0.81}
+      - {x: 0.79499996, y: -0.71}
+      - {x: 1.0749999, y: -0.41}
+      - {x: 1.155, y: -0.22999999}
+  m_UseDelaunayMesh: 0
