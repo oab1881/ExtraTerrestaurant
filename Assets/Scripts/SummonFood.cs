@@ -29,6 +29,6 @@ public class SummonFood : MonoBehaviour
         spawnPos.z = 0;
 
 
-        Instantiate(foodItem, spawnPos, gameObject.transform.rotation);
+        Instantiate(foodItem, spawnPos, gameObject.transform.rotation);//.GetComponent<DragAndDrop>().originBucket = gameObject;
     }
 }

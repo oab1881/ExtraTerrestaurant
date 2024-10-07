@@ -9,6 +9,9 @@ Changelog:
     -Made mouse follow a function for supplementing when food is created : 10/01/24
     -newly spawned items are now dragged by default without needing an extra click : 10/02 : jack
     -when items are not being dragged, gravity is applied using a 2D rigidbody : 10/06 : jack
+    -items that fall off screen are deleted : 10/06 : jack
+    -now inherits hover; added one-at-a-time collisions, CollToAction methods : 10/07 : jack
+    -removed old commented code: 10/07 : jack
 */
 
 using System.Collections;
@@ -16,59 +19,48 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
-
-public class DragAndDrop : MonoBehaviour
+//          should DragAndDrop inherit Hover???????????????????????
+public class DragAndDrop : Hover
 {
     //Useing this to get the original point on start of click and drag
     [SerializeField]
     Vector3 initalMouse = Vector3.zero;
     Rigidbody2D rigidbod;
+    Collider2D coll;
+    //public GameObject originBucket; // for trashing items in original buckets (doesn't work)
     //[SerializeField]
     //GameObject deadZone;
     bool canDragandDrop = true;
     // item being dragged?    -OnMouseDrag alternative, doesn't require object be clicked first
     public bool dragging = true;
-    
+
+    /// stores first applicable object collided with
+    ///  applicable: storage, ?
+    /// ensures item only interacts with one colliding object at a time
+    ///  other than physically
+    [SerializeField]
+    private GameObject firstCollidingObject = null;
+    private GameObject nextCollidingObject = null;
+
     public bool CanDragAndDrop
     {
         set { canDragandDrop = value; }
     }
 
-    /*private void OnMouseDrag()
-    {
-        followMouse();
-    }*/
+    // do nothing on mouse hover
+    //protected override void OnMouseEnter() {}
+    //protected override void OnMouseExit() {}
 
     private void OnMouseDown()
     {
         dragging = true;
-        //Debug.Log("mouse down");
     }
 
-    /*private void OnMouseUp()
+    new void Start()
     {
-        //After mouse is up resets this to 0
-        initalMouse = Vector3.zero;
-        dragging = false;
-        //Debug.Log("mouse up");
-    }*/
-
-    //Crashes the game when used
-    /*private void Awake()
-    {
-        while (Input.GetMouseButtonDown(0))
-        {
-            followMouse();
-        }
-
-        initalMouse = Vector3.zero;
-    }
-    */
-
-    private void Start()
-    {
+        base.Start();
         rigidbod = gameObject.GetComponent<Rigidbody2D>();
-        //defaultSprite = gameObject.GetComponent<Sprite>();
+        coll = gameObject.GetComponent<Collider2D>();
     }
     private void Update()
     {
@@ -77,7 +69,8 @@ public class DragAndDrop : MonoBehaviour
             followMouse();
             rigidbod.velocity = Vector2.zero;
             rigidbod.angularVelocity = 0f;
-            rigidbod.simulated = false;
+            rigidbod.gravityScale = 0;
+            gameObject.layer = 7; // held layer
         }
         // OnMouseUp alternative for dragging solution
         if (Input.GetMouseButtonUp(0))
@@ -85,6 +78,11 @@ public class DragAndDrop : MonoBehaviour
             dragging = false;
             initalMouse = Vector3.zero;
             rigidbod.simulated = true;
+            rigidbod.gravityScale = 1;
+            gameObject.layer = 0; // default layer
+            EndCollToAction();
+            firstCollidingObject = null;
+            nextCollidingObject = null;
         }
         if (transform.position.y < -8)
         {
@@ -112,17 +110,72 @@ public class DragAndDrop : MonoBehaviour
             initalMouse = newPos;
         }
     }
-    // destroys objects that fall below screen
+
+    // handles collision action
+    private void CollToAction()
+    {
+        // highlights [storage] on collide
+        if (firstCollidingObject.tag == "storage")
+        //            || firstCollidingObject == originBucket) // for trashing items in original buckets (doesn't work)
+        {
+            firstCollidingObject.GetComponent<Hover>().HighlightSprite(true);
+        }
+    }
+    // handles end of first collision action
+    //  may be refactored into above method??
+    private void EndCollToAction()
+    {
+        // catches missing objects      can be made redundant, see Update --> MouseUp
+        // unhighlights [storage] after collide
+        if (firstCollidingObject && firstCollidingObject.tag == "storage")
+        {
+            firstCollidingObject.GetComponent<Hover>().HighlightSprite(false);
+        }
+        /* // for trashing items in original buckets (doesn't work)
+        else if (firstCollidingObject == originBucket)
+        {
+            firstCollidingObject.GetComponent<Hover>().HighlightSprite(false);
+            Destroy(gameObject);
+        }*/
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("coll");
-        if (other.gameObject.tag == "dead_zone")
+        if (dragging && other.gameObject.tag != "food bucket")
         {
-            //Debug.Log("dead");
-            Destroy(gameObject);
+            // no current collision: store collision object, call action method
+            if (firstCollidingObject == null)
+            {
+                firstCollidingObject = other.gameObject;
+                CollToAction();
+            }
+            // queue next collision
+            else if (nextCollidingObject == null)
+            {
+                nextCollidingObject = other.gameObject;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        //  exit current collision
+        if (other.gameObject == firstCollidingObject)
+        {
+            EndCollToAction();
+            firstCollidingObject = null;
+            // next collision moves up
+            if (nextCollidingObject != null)
+            {
+                firstCollidingObject = nextCollidingObject;
+                nextCollidingObject = null;
+                CollToAction();
+            }
+        }
+        // exit next collision
+        else if (other.gameObject == nextCollidingObject)
+        {
+            nextCollidingObject = null;
         }
     }
 }
-
-
-

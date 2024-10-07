@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5998635098908830834}
   - component: {fileID: 5128741936716209196}
   - component: {fileID: 6575779008971730262}
-  - component: {fileID: 855505049759898551}
   - component: {fileID: -6942545737338809984}
   - component: {fileID: -8732979027581893396}
   - component: {fileID: 8888346746106426489}
@@ -101,21 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c41fee416e00542914f09b0415e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: f34bab22c27546c4fbebaa69fff4b6e1, type: 3}
   initalMouse: {x: 0, y: 0, z: 0}
   dragging: 1
---- !u!114 &855505049759898551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580618499572302972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: f34bab22c27546c4fbebaa69fff4b6e1, type: 3}
 --- !u!50 &-6942545737338809984
 Rigidbody2D:
   serializedVersion: 4

@@ -1,28 +1,47 @@
+///         == created by jack carter 10/07 ==
+/// abstract, inherited by: DragAndDrop, Bucket, Storage
+/// contains default and highlighted sprite versions
+/// HighlightSprite: swaps highlighted sprite
+/// virtual MouseEnter/Exit call HiSp()
+/// assumes collider
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hover : MonoBehaviour
+public abstract class Hover : MonoBehaviour
 {
-    Sprite defaultSprite;
+    protected Sprite defaultSprite;
     [SerializeField]
-    Sprite hoveredSprite;
-
+    protected Sprite hoveredSprite;
+    protected SpriteRenderer sprRend;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
-        defaultSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        sprRend = gameObject.GetComponent<SpriteRenderer>();
+        //defaultSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        defaultSprite = sprRend.sprite;
     }
 
-    private void OnMouseEnter()
+    // swaps sprite: default <-> highlighted
+    //   bool param for highlight or not
+    public virtual void HighlightSprite(bool highlight)
     {
-        // sprite to hovered sprite
-        gameObject.GetComponent<SpriteRenderer>().sprite = hoveredSprite;
+        // sprite to highlighted sprite
+        if (highlight)
+            gameObject.GetComponent<SpriteRenderer>().sprite = hoveredSprite;
+        else
+            gameObject.GetComponent<SpriteRenderer>().sprite = defaultSprite;
     }
-    private void OnMouseExit()
+
+    protected virtual void OnMouseEnter()
+    {
+        HighlightSprite(true);
+    }
+    protected virtual void OnMouseExit()
     {
         // sprite to unhovered sprite
-        gameObject.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        HighlightSprite(false);
     }
 }

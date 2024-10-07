@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - dead_zone
+  - food bucket
+  - storage
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Surface
+  - Held
   - 
   - 
   - 

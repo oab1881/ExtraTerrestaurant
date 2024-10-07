@@ -191,7 +191,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen background
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7387617288701203183, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3193065737797678385, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+    - {fileID: 2587292541978578951, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+    - {fileID: 5998824650401491718, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+    - {fileID: 5871381018653001312, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+    - {fileID: 3724309338473419352, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -297,9 +306,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 712476639}
-  - component: {fileID: 712476638}
   - component: {fileID: 712476637}
-  m_Layer: 0
+  - component: {fileID: 712476638}
+  m_Layer: 6
   m_Name: shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +337,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

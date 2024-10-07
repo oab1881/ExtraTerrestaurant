@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4420864365471162661}
   - component: {fileID: 7583729424432606520}
-  - component: {fileID: 8423356363463042394}
   - component: {fileID: 2044005048547984884}
   m_Layer: 0
   m_Name: knife
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8423356363463042394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295212630854438629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: 98b9bf88041f0c64c9d7fc9a164e724d, type: 3}
 --- !u!60 &2044005048547984884
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -531,7 +517,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5551180968751323068}
   - component: {fileID: 568953252217570142}
-  - component: {fileID: 4438337589243953807}
   - component: {fileID: 7648185505854813811}
   m_Layer: 0
   m_Name: pestle
@@ -607,19 +592,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4438337589243953807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859672063856206759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: 9ba1d766945a03943b8dbbf12b0bfa67, type: 3}
 --- !u!60 &7648185505854813811
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -881,13 +853,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7387617288701203183}
   - component: {fileID: 4348548809048444124}
-  - component: {fileID: 3513078857418704821}
   - component: {fileID: 6585688245916543831}
-  - component: {fileID: 3193065737797678385}
+  - component: {fileID: 2021224398318456467}
+  - component: {fileID: 3513078857418704821}
   - component: {fileID: 523168378210080328}
   m_Layer: 0
   m_Name: sheets
-  m_TagString: Untagged
+  m_TagString: food bucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -959,6 +931,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6585688245916543831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812701267096047872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodItem: {fileID: 6026397797376136479, guid: 51315d8c1b45b2945877e0fbcb10cfa7, type: 3}
+  spawnPos: {x: 0, y: 0}
+--- !u!114 &2021224398318456467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812701267096047872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55c32afe1fb0f24b9ed1b5d8f2059d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: b8070ca106feef04f88c79b479e65232, type: 3}
 --- !u!61 &3513078857418704821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1004,33 +1003,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4710064, y: 1.847486}
   m_EdgeRadius: 0
---- !u!114 &6585688245916543831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2812701267096047872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodItem: {fileID: 6026397797376136479, guid: 51315d8c1b45b2945877e0fbcb10cfa7, type: 3}
-  spawnPos: {x: 0, y: 0}
---- !u!114 &3193065737797678385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2812701267096047872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: b8070ca106feef04f88c79b479e65232, type: 3}
 --- !u!60 &523168378210080328
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1050,10 +1022,10 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1594,13 +1566,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3892844020671803322}
   - component: {fileID: 2142738385811926084}
-  - component: {fileID: 4952412258053853032}
   - component: {fileID: 7530855658517261692}
-  - component: {fileID: 2587292541978578951}
+  - component: {fileID: 1198306495126965168}
+  - component: {fileID: 4952412258053853032}
   - component: {fileID: 8038481757083746259}
   m_Layer: 0
   m_Name: eggs
-  m_TagString: Untagged
+  m_TagString: food bucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,7 +1632,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -233373911
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ae09bfc127fd60b4a9407148f4ac2054, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1672,6 +1644,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7530855658517261692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243049625731554696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodItem: {fileID: 580618499572302972, guid: 488da1aec394d974f9e99c2ae95a09e8, type: 3}
+  spawnPos: {x: 0, y: 0}
+--- !u!114 &1198306495126965168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243049625731554696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55c32afe1fb0f24b9ed1b5d8f2059d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: ec47880bf41ce6142854c05c4d1a0bba, type: 3}
 --- !u!61 &4952412258053853032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1717,33 +1716,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9488089, y: 1.8726335}
   m_EdgeRadius: 0
---- !u!114 &7530855658517261692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243049625731554696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodItem: {fileID: 580618499572302972, guid: 488da1aec394d974f9e99c2ae95a09e8, type: 3}
-  spawnPos: {x: 0, y: 0}
---- !u!114 &2587292541978578951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243049625731554696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: ec47880bf41ce6142854c05c4d1a0bba, type: 3}
 --- !u!60 &8038481757083746259
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1763,10 +1735,10 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1840,13 +1812,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2676957958895239494}
   - component: {fileID: 8456516276274957541}
-  - component: {fileID: 6084274485806451091}
   - component: {fileID: 3773356758367305344}
-  - component: {fileID: 5871381018653001312}
+  - component: {fileID: 3100885988522573161}
+  - component: {fileID: 6084274485806451091}
   - component: {fileID: 1871128977395473846}
   m_Layer: 0
   m_Name: leaves
-  m_TagString: Untagged
+  m_TagString: food bucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1906,7 +1878,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -233373911
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 876146818e70a3348804f4e13453ce6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1918,6 +1890,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3773356758367305344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001715043037092166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodItem: {fileID: 6079846946831491505, guid: d7d59a94255c49642a90ce4532b752c6, type: 3}
+  spawnPos: {x: 0, y: 0}
+--- !u!114 &3100885988522573161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001715043037092166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55c32afe1fb0f24b9ed1b5d8f2059d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: c5eb017cd8bdb834591f626b272cd2ee, type: 3}
 --- !u!61 &6084274485806451091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1963,33 +1962,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0268564, y: 2.12817}
   m_EdgeRadius: 0
---- !u!114 &3773356758367305344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6001715043037092166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodItem: {fileID: 6079846946831491505, guid: d7d59a94255c49642a90ce4532b752c6, type: 3}
-  spawnPos: {x: 0, y: 0}
---- !u!114 &5871381018653001312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6001715043037092166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: c5eb017cd8bdb834591f626b272cd2ee, type: 3}
 --- !u!60 &1871128977395473846
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2009,10 +1981,10 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2092,13 +2064,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8118609484400017464}
   - component: {fileID: 8773841625535166451}
-  - component: {fileID: 1727087609826050041}
   - component: {fileID: 4579374687734821823}
-  - component: {fileID: 3724309338473419352}
+  - component: {fileID: 4591999475874016061}
+  - component: {fileID: 1727087609826050041}
   - component: {fileID: 1276710734032328517}
   m_Layer: 0
   m_Name: tentacles
-  m_TagString: Untagged
+  m_TagString: food bucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2158,7 +2130,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -233373911
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 29c2a8b55191cf44da4b9a7bb2dc8cc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2170,6 +2142,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4579374687734821823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410139899855665599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodItem: {fileID: 4281459659418726516, guid: e456772ba748b35418e7f80722951b68, type: 3}
+  spawnPos: {x: 0, y: 0}
+--- !u!114 &4591999475874016061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410139899855665599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55c32afe1fb0f24b9ed1b5d8f2059d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: 2fe8e4c8c5fbab74cbe38d049b8fc575, type: 3}
 --- !u!61 &1727087609826050041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2215,33 +2214,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7259426, y: 2.8415618}
   m_EdgeRadius: 0
---- !u!114 &4579374687734821823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6410139899855665599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodItem: {fileID: 4281459659418726516, guid: e456772ba748b35418e7f80722951b68, type: 3}
-  spawnPos: {x: 0, y: 0}
---- !u!114 &3724309338473419352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6410139899855665599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: 2fe8e4c8c5fbab74cbe38d049b8fc575, type: 3}
 --- !u!60 &1276710734032328517
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2261,10 +2233,10 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2435,13 +2407,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7197573589716786123}
   - component: {fileID: 3193075721567957194}
-  - component: {fileID: 8436525655512280331}
   - component: {fileID: 2965466587753076805}
-  - component: {fileID: 5998824650401491718}
+  - component: {fileID: 627280181463496649}
+  - component: {fileID: 8436525655512280331}
   - component: {fileID: 5013703139345884740}
   m_Layer: 0
   m_Name: crystals
-  m_TagString: Untagged
+  m_TagString: food bucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2501,7 +2473,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -233373911
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 86389e4bb0b6e9d45a8d0f5caf46a0ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2513,6 +2485,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2965466587753076805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854328931666912564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodItem: {fileID: 8291992907242694315, guid: 0649aa9ffb0eb0347b48a02a0bdfa680, type: 3}
+  spawnPos: {x: 0, y: 0}
+--- !u!114 &627280181463496649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854328931666912564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55c32afe1fb0f24b9ed1b5d8f2059d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: a5c89792a99b51b4c93024058079f22d, type: 3}
 --- !u!61 &8436525655512280331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2558,33 +2557,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.981157, y: 2.056364}
   m_EdgeRadius: 0
---- !u!114 &2965466587753076805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854328931666912564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300939b12116c054eab5f4d2121a6a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodItem: {fileID: 8291992907242694315, guid: 0649aa9ffb0eb0347b48a02a0bdfa680, type: 3}
-  spawnPos: {x: 0, y: 0}
---- !u!114 &5998824650401491718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854328931666912564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: a5c89792a99b51b4c93024058079f22d, type: 3}
 --- !u!60 &5013703139345884740
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2604,10 +2576,10 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2693,9 +2665,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6886399971888724030}
   - component: {fileID: 5352596335060466724}
+  - component: {fileID: 3019076968919356001}
+  - component: {fileID: 7041456592726587792}
   m_Layer: 0
   m_Name: freezer blue
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2757,7 +2731,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 4dbffa21daebd2446a01a5704b1e5b58, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.62352943}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2767,6 +2741,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3019076968919356001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979810621228910542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b448c812fd3fafa49b6e3c1e5374e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: 4dbffa21daebd2446a01a5704b1e5b58, type: 3}
+--- !u!61 &7041456592726587792
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979810621228910542}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.902413, y: 2.7611766}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.911172, y: 4.9476423}
+  m_EdgeRadius: 0
 --- !u!1 &7249880850648373407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,9 +2809,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8563368724439916297}
   - component: {fileID: 3078141485539975598}
+  - component: {fileID: 8789801433493712061}
+  - component: {fileID: 3981433497237822792}
   m_Layer: 0
   m_Name: oven red
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2851,6 +2885,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8789801433493712061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249880850648373407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b448c812fd3fafa49b6e3c1e5374e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: 0c6bf6e4d00f64a42a1d73e046d9909d, type: 3}
+--- !u!61 &3981433497237822792
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249880850648373407}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.91358, y: -2.458839}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.9311237, y: 4.967455}
+  m_EdgeRadius: 0
 --- !u!1 &7409074187962724107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,9 +3289,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1587544207295670699}
   - component: {fileID: 163326004116407099}
+  - component: {fileID: 3548894145777989391}
+  - component: {fileID: 2282103627294055458}
   m_Layer: 0
   m_Name: goop green
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3271,6 +3365,131 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3548894145777989391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437115717478149641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b448c812fd3fafa49b6e3c1e5374e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: e68279591b807064cba2b4710f13696d, type: 3}
+--- !u!60 &2282103627294055458
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437115717478149641}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.7099999, y: 0.26999998}
+      - {x: -1.56, y: 0.38}
+      - {x: -1.3199999, y: 0.63}
+      - {x: -1.1899999, y: 0.79999995}
+      - {x: -1.0799999, y: 0.98999995}
+      - {x: -0.91999996, y: 1.27}
+      - {x: -0.81, y: 1.4599999}
+      - {x: -0.65, y: 1.6899999}
+      - {x: -0.22999999, y: 2.26}
+      - {x: -0.13, y: 2.4099998}
+      - {x: -0.07, y: 2.51}
+      - {x: 0.04, y: 2.75}
+      - {x: 0.08, y: 2.86}
+      - {x: 0.11, y: 2.97}
+      - {x: 0.14, y: 3.12}
+      - {x: 0.16, y: 3.29}
+      - {x: 0.16, y: 3.76}
+      - {x: 0.14999999, y: 3.8799999}
+      - {x: 0.13, y: 4.0299997}
+      - {x: 0.089999996, y: 4.2999997}
+      - {x: 0.06, y: 4.39}
+      - {x: 0, y: 4.75}
+      - {x: -0.04, y: 4.97}
+      - {x: -0.049999997, y: 5.0699997}
+      - {x: -0.06, y: 5.21}
+      - {x: -0.07, y: 5.4}
+      - {x: -4, y: 5.4}
+      - {x: -4.0099998, y: 5.35}
+      - {x: -4.0099998, y: 5.16}
+      - {x: -4, y: 4.91}
+      - {x: -3.99, y: 4.73}
+      - {x: -3.98, y: 4.41}
+      - {x: -3.98, y: 3.6499999}
+      - {x: -3.99, y: 3.6399999}
+      - {x: -4, y: 3.4399998}
+      - {x: -4.04, y: 2.8999999}
+      - {x: -4.0499997, y: 2.76}
+      - {x: -4.06, y: 2.52}
+      - {x: -4.06, y: 1.87}
+      - {x: -4.0499997, y: 1.68}
+      - {x: -4.0299997, y: 1.4699999}
+      - {x: -3.98, y: 1.17}
+      - {x: -3.9499998, y: 1.05}
+      - {x: -3.8899999, y: 0.84999996}
+      - {x: -3.85, y: 0.76}
+      - {x: -3.74, y: 0.53}
+      - {x: -3.7099998, y: 0.48}
+      - {x: -3.6299999, y: 0.37}
+      - {x: -3.46, y: 0.19}
+      - {x: -3.4299998, y: 0.17999999}
+      - {x: -3.3, y: 0.17}
+      - {x: -3.06, y: 0.14}
+      - {x: -2.81, y: 0.089999996}
+      - {x: -2.6799998, y: 0.07}
+      - {x: -2.56, y: 0.06}
+      - {x: -2.31, y: 0.06}
+      - {x: -2.23, y: 0.07}
+      - {x: -2.09, y: 0.099999994}
+      - {x: -1.9699999, y: 0.13}
+    - - {x: 1.5799999, y: 5.4}
+      - {x: 0.24, y: 5.4}
+      - {x: 0.26, y: 5.16}
+      - {x: 0.42, y: 4.93}
+      - {x: 0.78999996, y: 4.93}
+      - {x: 1.18, y: 5.24}
+      - {x: 1.54, y: 5.33}
+      - {x: 1.5799999, y: 5.38}
+  m_UseDelaunayMesh: 0
 --- !u!1 &8940802417585436297
 GameObject:
   m_ObjectHideFlags: 0
