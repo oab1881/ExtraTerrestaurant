@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4420864365471162661}
   - component: {fileID: 7583729424432606520}
+  - component: {fileID: 8423356363463042394}
   m_Layer: 0
   m_Name: knife
   m_TagString: Untagged
@@ -84,6 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8423356363463042394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295212630854438629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: 98b9bf88041f0c64c9d7fc9a164e724d, type: 3}
 --- !u!1 &495569842316456145
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5551180968751323068}
   - component: {fileID: 568953252217570142}
+  - component: {fileID: 4438337589243953807}
   m_Layer: 0
   m_Name: pestle
   m_TagString: Untagged
@@ -504,6 +519,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4438337589243953807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859672063856206759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: 9ba1d766945a03943b8dbbf12b0bfa67, type: 3}
 --- !u!1 &2170816778546741538
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +712,7 @@ GameObject:
   - component: {fileID: 4348548809048444124}
   - component: {fileID: 3513078857418704821}
   - component: {fileID: 6585688245916543831}
+  - component: {fileID: 3193065737797678385}
   m_Layer: 0
   m_Name: sheets
   m_TagString: Untagged
@@ -817,6 +846,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodItem: {fileID: 6026397797376136479, guid: 51315d8c1b45b2945877e0fbcb10cfa7, type: 3}
   spawnPos: {x: 0, y: 0}
+--- !u!114 &3193065737797678385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812701267096047872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: b8070ca106feef04f88c79b479e65232, type: 3}
 --- !u!1 &2842987086762629203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1083,7 @@ Transform:
   - {fileID: 1587544207295670699}
   - {fileID: 7477065372487163272}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3555389714231520310
 GameObject:
@@ -1307,6 +1349,7 @@ GameObject:
   - component: {fileID: 2142738385811926084}
   - component: {fileID: 4952412258053853032}
   - component: {fileID: 7530855658517261692}
+  - component: {fileID: 2587292541978578951}
   m_Layer: 0
   m_Name: eggs
   m_TagString: Untagged
@@ -1440,6 +1483,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodItem: {fileID: 580618499572302972, guid: 488da1aec394d974f9e99c2ae95a09e8, type: 3}
   spawnPos: {x: 0, y: 0}
+--- !u!114 &2587292541978578951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243049625731554696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: ec47880bf41ce6142854c05c4d1a0bba, type: 3}
 --- !u!1 &6001715043037092166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1508,7 @@ GameObject:
   - component: {fileID: 8456516276274957541}
   - component: {fileID: 6084274485806451091}
   - component: {fileID: 3773356758367305344}
+  - component: {fileID: 5871381018653001312}
   m_Layer: 0
   m_Name: leaves
   m_TagString: Untagged
@@ -1585,6 +1642,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodItem: {fileID: 6079846946831491505, guid: d7d59a94255c49642a90ce4532b752c6, type: 3}
   spawnPos: {x: 0, y: 0}
+--- !u!114 &5871381018653001312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001715043037092166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: c5eb017cd8bdb834591f626b272cd2ee, type: 3}
 --- !u!1 &6410139899855665599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1667,7 @@ GameObject:
   - component: {fileID: 8773841625535166451}
   - component: {fileID: 1727087609826050041}
   - component: {fileID: 4579374687734821823}
+  - component: {fileID: 3724309338473419352}
   m_Layer: 0
   m_Name: tentacles
   m_TagString: Untagged
@@ -1730,6 +1801,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodItem: {fileID: 4281459659418726516, guid: e456772ba748b35418e7f80722951b68, type: 3}
   spawnPos: {x: 0, y: 0}
+--- !u!114 &3724309338473419352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410139899855665599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: 2fe8e4c8c5fbab74cbe38d049b8fc575, type: 3}
 --- !u!1 &6569178503511317771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1910,7 @@ GameObject:
   - component: {fileID: 3193075721567957194}
   - component: {fileID: 8436525655512280331}
   - component: {fileID: 2965466587753076805}
+  - component: {fileID: 5998824650401491718}
   m_Layer: 0
   m_Name: crystals
   m_TagString: Untagged
@@ -1959,6 +2044,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodItem: {fileID: 8291992907242694315, guid: 0649aa9ffb0eb0347b48a02a0bdfa680, type: 3}
   spawnPos: {x: 0, y: 0}
+--- !u!114 &5998824650401491718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854328931666912564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredSprite: {fileID: 21300000, guid: a5c89792a99b51b4c93024058079f22d, type: 3}
 --- !u!1 &6979810621228910542
 GameObject:
   m_ObjectHideFlags: 0

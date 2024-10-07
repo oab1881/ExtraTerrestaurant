@@ -28,7 +28,7 @@ public class DragAndDrop : MonoBehaviour
     bool canDragandDrop = true;
     // item being dragged?    -OnMouseDrag alternative, doesn't require object be clicked first
     public bool dragging = true;
-
+    
     public bool CanDragAndDrop
     {
         set { canDragandDrop = value; }
@@ -53,7 +53,6 @@ public class DragAndDrop : MonoBehaviour
         //Debug.Log("mouse up");
     }*/
 
-
     //Crashes the game when used
     /*private void Awake()
     {
@@ -69,6 +68,7 @@ public class DragAndDrop : MonoBehaviour
     private void Start()
     {
         rigidbod = gameObject.GetComponent<Rigidbody2D>();
+        //defaultSprite = gameObject.GetComponent<Sprite>();
     }
     private void Update()
     {
@@ -77,12 +77,14 @@ public class DragAndDrop : MonoBehaviour
             followMouse();
             rigidbod.velocity = Vector2.zero;
             rigidbod.angularVelocity = 0f;
+            rigidbod.simulated = false;
         }
         // OnMouseUp alternative for dragging solution
         if (Input.GetMouseButtonUp(0))
         {
             dragging = false;
             initalMouse = Vector3.zero;
+            rigidbod.simulated = true;
         }
         if (transform.position.y < -8)
         {
@@ -113,10 +115,10 @@ public class DragAndDrop : MonoBehaviour
     // destroys objects that fall below screen
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("coll");
+        //Debug.Log("coll");
         if (other.gameObject.tag == "dead_zone")
         {
-            Debug.Log("dead");
+            //Debug.Log("dead");
             Destroy(gameObject);
         }
     }
