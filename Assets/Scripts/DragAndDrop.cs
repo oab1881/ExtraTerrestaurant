@@ -8,6 +8,7 @@ Changelog:
     -Created script : 09/30/24
     -Made mouse follow a function for supplementing when food is created : 10/01/24
     -newly spawned items are now dragged by default without needing an extra click : 10/02 : jack
+    -when items are not being dragged, gravity is applied using a 2D rigidbody : 10/06 : jack
 */
 
 using System.Collections;
@@ -21,9 +22,12 @@ public class DragAndDrop : MonoBehaviour
     //Useing this to get the original point on start of click and drag
     [SerializeField]
     Vector3 initalMouse = Vector3.zero;
+    Rigidbody2D rigidbod;
+    //[SerializeField]
+    //GameObject deadZone;
     bool canDragandDrop = true;
     // item being dragged?    -OnMouseDrag alternative, doesn't require object be clicked first
-    bool dragging = true;
+    public bool dragging = true;
 
     public bool CanDragAndDrop
     {
@@ -62,11 +66,17 @@ public class DragAndDrop : MonoBehaviour
     }
     */
 
+    private void Start()
+    {
+        rigidbod = gameObject.GetComponent<Rigidbody2D>();
+    }
     private void Update()
     {
         if (dragging)
         {
             followMouse();
+            rigidbod.velocity = Vector2.zero;
+            rigidbod.angularVelocity = 0f;
         }
         // OnMouseUp alternative for dragging solution
         if (Input.GetMouseButtonUp(0))
@@ -74,8 +84,11 @@ public class DragAndDrop : MonoBehaviour
             dragging = false;
             initalMouse = Vector3.zero;
         }
+        if (transform.position.y < -8)
+        {
+            Destroy(gameObject);
+        }
     }
-
     private void followMouse()
     {
         if (canDragandDrop)
@@ -95,6 +108,16 @@ public class DragAndDrop : MonoBehaviour
 
             //Sets intial mouse to newPos at the end
             initalMouse = newPos;
+        }
+    }
+    // destroys objects that fall below screen
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("coll");
+        if (other.gameObject.tag == "dead_zone")
+        {
+            Debug.Log("dead");
+            Destroy(gameObject);
         }
     }
 }

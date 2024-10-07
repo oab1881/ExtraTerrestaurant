@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6765793632034582510}
   - component: {fileID: 4130368508489723484}
   - component: {fileID: 5756428243654078875}
+  - component: {fileID: -6235215649513243321}
   m_Layer: 0
   m_Name: tentacle_food
   m_TagString: Untagged
@@ -98,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c41fee416e00542914f09b0415e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initalMouse: {x: 0, y: 0, z: 0}
+  deadZone: {fileID: 5803066979606681472, guid: 6fba85347bf231945b96645ea8249245, type: 3}
+  dragging: 1
 --- !u!61 &5756428243654078875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +131,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -143,3 +147,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4318469, y: 1.7013605}
   m_EdgeRadius: 0
+--- !u!50 &-6235215649513243321
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281459659418726516}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
