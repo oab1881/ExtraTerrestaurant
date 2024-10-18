@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7807008616026827326}
   m_Layer: 0
   m_Name: leaf_food
-  m_TagString: Untagged
+  m_TagString: food item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c41fee416e00542914f09b0415e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 0}
   hoveredSprite: {fileID: 21300000, guid: 9356c7afd5fa60948a674571d33623e7, type: 3}
   initalMouse: {x: 0, y: 0, z: 0}
   dragging: 1

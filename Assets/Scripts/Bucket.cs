@@ -1,9 +1,12 @@
 ///         == created by jack carter 10/07 ==
 /// attached to food buckets, inherits Hover
 /// nothing yet
+/// Jake note using this on knife and pestel to add highlight 
+/// 
 ///  future:
 ///    may not highlight when mouse is dragging
 ///    may deplete with more items drawn
+
 
 using System.Collections;
 using System.Collections.Generic;
