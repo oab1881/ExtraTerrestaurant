@@ -49,7 +49,7 @@ public class ScoreManager : MonoBehaviour
 
         Returns an int representing the score the player earned on the order
     */
-    private int ScoreDish(List<List<string>> customer_order, List<List<string>> player_food)
+    public int ScoreDish(List<List<string>> customer_order, List<List<string>> player_food)
     {
         int totalScore = 0;
 
