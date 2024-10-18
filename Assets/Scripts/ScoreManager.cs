@@ -39,6 +39,13 @@ public class ScoreManager : MonoBehaviour
         Compares the food the player makes to the food the customer orders
         Takes customer's order and the player's food and compares them to see if the 
         ingredients used matched the ones that the customer asked for, and if they were prepared the correct way.
+        
+        For scoring prepared ingredients specifically: Since the customer could order the same ingredient but  
+        prepared in different ways, when scoring a prepared ingredient, the method will save the score of the
+        ingredient that scores the highest (i.e. the correct ingredient and correct preparation method) and that
+        ingredient's location in the "ingredients_used" list. After all components of the player's dish are
+        looped through, the method will then take the highest scoring result and add that to the total score
+        before removing that specific component off of the list.
 
         Returns an int representing the score the player earned on the order
     */
