@@ -23,6 +23,13 @@ public class Storage : Hover
     public int currentCapacity = 0;
 
 
+    //A property for the stored item list
+    public GameObject[] StoredItem
+    {
+        get { return storedItems; }
+        set { storedItems = value; }
+    }
+
     new void Start()
     {
         base.Start();

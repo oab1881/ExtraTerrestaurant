@@ -5,13 +5,14 @@ Makes it so items can be dragged and dropped around Screen
 They need a boxCollider2d and this script for functionality to work
 
 Changelog:
-    -Created script : 09/30/24
-    -Made mouse follow a function for supplementing when food is created : 10/01/24
+    -Created script : 09/30/24 : Jake
+    -Made mouse follow a function for supplementing when food is created : 10/01/24 : Jake
     -newly spawned items are now dragged by default without needing an extra click : 10/02 : jack
     -when items are not being dragged, gravity is applied using a 2D rigidbody : 10/06 : jack
     -items that fall off screen are deleted : 10/06 : jack
     -now inherits hover; added one-at-a-time collisions, CollToAction methods : 10/07 : jack
     -removed old commented code: 10/07 : jack
+    -Added a hard code for mortar pos and scale : 10/17/24 : Jake
 */
 
 using System.Collections;
@@ -210,10 +211,19 @@ public class DragAndDrop : Hover
         rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.localScale /= 2;
 
+        
         if (storedIn.GetComponent<BoxCollider2D>())
             transform.localPosition = storedIn.GetComponent<BoxCollider2D>().offset;
         else transform.localPosition = new Vector2(-2.0f, 2.5f);
         // above is a truly awful bandaid solution to include goop collider
+
+        //Reall bad hard code for temp fix -Jake
+        if (storedIn.name == "mortar")
+        {
+            transform.localScale *= 2;
+            transform.localPosition = new Vector3(0, 0, 0);
+        }
+
 
         /* og jack code
         rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
