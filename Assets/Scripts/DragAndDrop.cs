@@ -42,6 +42,14 @@ public class DragAndDrop : Hover
     private GameObject firstCollidingObject = null;
     private GameObject nextCollidingObject = null;
 
+    new void Start()
+    {
+        base.Start();
+        rigidbod = gameObject.GetComponent<Rigidbody2D>();
+        coll = gameObject.GetComponent<Collider2D>();
+        gameObject.tag = "food item";
+    }
+
     public bool CanDragAndDrop
     {
         set { canDragandDrop = value; }
@@ -49,24 +57,20 @@ public class DragAndDrop : Hover
 
     // do nothing on mouse hover
     //protected override void OnMouseEnter() {}
-    //protected override void OnMouseExit() {}
+    protected override void OnMouseExit()
+    {
+        HighlightSprite(dragging);
+    }
 
     private void OnMouseDown()
     {
         dragging = true;
     }
-
-    new void Start()
-    {
-        base.Start();
-        rigidbod = gameObject.GetComponent<Rigidbody2D>();
-        coll = gameObject.GetComponent<Collider2D>();
-    }
     private void Update()
     {
         if (dragging)
         {
-            followMouse();
+            FollowMouse();
             rigidbod.velocity = Vector2.zero;
             rigidbod.angularVelocity = 0f;
             rigidbod.gravityScale = 0;
@@ -75,21 +79,33 @@ public class DragAndDrop : Hover
         // OnMouseUp alternative for dragging solution
         if (Input.GetMouseButtonUp(0))
         {
+            // drop
             dragging = false;
             initalMouse = Vector3.zero;
             rigidbod.simulated = true;
             rigidbod.gravityScale = 1;
             gameObject.layer = 0; // default layer
-            EndCollToAction();
-            firstCollidingObject = null;
-            nextCollidingObject = null;
+            // end drop
+            // placed in storage?
+            if (firstCollidingObject)
+            {
+                if (firstCollidingObject.tag.Equals("storage"))
+                {
+                    Debug.Log("ITEM store attempt");
+                    firstCollidingObject.GetComponent<Storage>().StoreItem(gameObject);
+                }
+
+                EndCollToAction();
+                firstCollidingObject = null;
+                nextCollidingObject = null;
+            }
         }
         if (transform.position.y < -8)
         {
             Destroy(gameObject);
         }
     }
-    private void followMouse()
+    private void FollowMouse()
     {
         if (canDragandDrop)
         {
@@ -115,10 +131,10 @@ public class DragAndDrop : Hover
     private void CollToAction()
     {
         // highlights [storage] on collide
-        if (firstCollidingObject.tag == "storage")
-        //            || firstCollidingObject == originBucket) // for trashing items in original buckets (doesn't work)
+        if (firstCollidingObject.tag.Equals("storage"))
+        //            || firstCollidingObject.Equals(originBucket)) // for trashing items in original buckets (doesn't work)
         {
-            firstCollidingObject.GetComponent<Hover>().HighlightSprite(true);
+            firstCollidingObject.GetComponent<Storage>().HighlightSprite(true);
         }
     }
     // handles end of first collision action
@@ -127,12 +143,12 @@ public class DragAndDrop : Hover
     {
         // catches missing objects      can be made redundant, see Update --> MouseUp
         // unhighlights [storage] after collide
-        if (firstCollidingObject && firstCollidingObject.tag == "storage")
+        if (firstCollidingObject && firstCollidingObject.tag.Equals("storage"))
         {
-            firstCollidingObject.GetComponent<Hover>().HighlightSprite(false);
+            firstCollidingObject.GetComponent<Storage>().HighlightSprite(false);
         }
         /* // for trashing items in original buckets (doesn't work)
-        else if (firstCollidingObject == originBucket)
+        else if (firstCollidingObject.Equals(originBucket))
         {
             firstCollidingObject.GetComponent<Hover>().HighlightSprite(false);
             Destroy(gameObject);
@@ -144,13 +160,13 @@ public class DragAndDrop : Hover
         if (dragging && other.gameObject.tag != "food bucket")
         {
             // no current collision: store collision object, call action method
-            if (firstCollidingObject == null)
+            if (!firstCollidingObject)
             {
                 firstCollidingObject = other.gameObject;
                 CollToAction();
             }
             // queue next collision
-            else if (nextCollidingObject == null)
+            else if (!nextCollidingObject)
             {
                 nextCollidingObject = other.gameObject;
             }
@@ -160,7 +176,7 @@ public class DragAndDrop : Hover
     private void OnTriggerExit2D(Collider2D other)
     {
         //  exit current collision
-        if (other.gameObject == firstCollidingObject)
+        if (other.gameObject.Equals(firstCollidingObject))
         {
             EndCollToAction();
             firstCollidingObject = null;
@@ -173,9 +189,35 @@ public class DragAndDrop : Hover
             }
         }
         // exit next collision
-        else if (other.gameObject == nextCollidingObject)
+        else if (other.gameObject.Equals(nextCollidingObject))
         {
             nextCollidingObject = null;
         }
+    }
+    // enact property changes when stored
+    //  pos, rot: freeze
+    //  scale: decrease
+    //  canDragAndDrop: off
+    public void Stored(GameObject storedIn)
+    {
+        Debug.Log("stored");
+        // oog jake code - migrated from PlateCollisions script, now altered to fit
+        //==== We can change the data about the food gameobject to just put it on
+        //the plate ====
+
+        transform.SetParent(storedIn.transform, false);
+        canDragandDrop = false;
+        rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
+        transform.localScale /= 2;
+
+        if (storedIn.GetComponent<BoxCollider2D>())
+            transform.localPosition = storedIn.GetComponent<BoxCollider2D>().offset;
+        else transform.localPosition = new Vector2(-2.0f, 2.5f);
+        // above is a truly awful bandaid solution to include goop collider
+
+        /* og jack code
+        rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.transform.localScale = Vector3.one / 4;
+        canDragandDrop = false;*/
     }
 }

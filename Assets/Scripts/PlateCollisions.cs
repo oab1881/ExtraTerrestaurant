@@ -30,12 +30,13 @@ public class PlateCollisions : MonoBehaviour
 
         //Tests to see if object is null
         //This check is essential to find out if anything is actually colliding
-        if (collidingObject != null)
+        if (collidingObject && collidingObject.tag.Equals("food item"))
         {
             //Something can be colliding but maybe it shouldn't go on the plate...
             //So we wait for mouse to let off of
             if (Input.GetMouseButtonUp(0))
             {
+                /* moving this into a the Storage() method in d&d for food items, applying it to other storage
                 //==== We can change the data about the food gameobject to just put it on
                 //the plate ====
                 collidingObject.transform.SetParent(transform, false);
@@ -43,6 +44,8 @@ public class PlateCollisions : MonoBehaviour
                 collidingObject.transform.localScale = collidingObject.transform.localScale / 2;
                 //collidingObject.transform.localPosition = new Vector3(2, 2, 0);
                 collidingObject.transform.localPosition = Vector3.zero;
+                // new call to storage method below */
+                collidingObject.GetComponent<DragAndDrop>().Stored(gameObject);
 
                 // ==== Then for each food item we can test it's name ====
                 //And send it's data to the list of food items on the plate

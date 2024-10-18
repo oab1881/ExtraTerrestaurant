@@ -11,6 +11,7 @@ using UnityEngine;
 
 public abstract class Hover : MonoBehaviour
 {
+    //[SerializeField]
     protected Sprite defaultSprite;
     [SerializeField]
     protected Sprite hoveredSprite;
@@ -21,7 +22,10 @@ public abstract class Hover : MonoBehaviour
     {
         sprRend = gameObject.GetComponent<SpriteRenderer>();
         //defaultSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-        defaultSprite = sprRend.sprite;
+        if (!defaultSprite)
+            defaultSprite = sprRend.sprite;
+        if (!hoveredSprite)
+            hoveredSprite = defaultSprite;
     }
 
     // swaps sprite: default <-> highlighted
