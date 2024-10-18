@@ -114,7 +114,7 @@ public class ScoreManager : MonoBehaviour
         {
             score += 25;
             // If this test is passed, do the same with the preparation method.
-            if (ingredients[used_ingredient[1]].Contains(customer_order[1]))
+            if (preparation_methods[used_ingredient[1]].Contains(customer_order[1]))
             {
                 score += 25;
             }

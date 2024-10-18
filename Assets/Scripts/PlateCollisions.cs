@@ -54,37 +54,32 @@ public class PlateCollisions : MonoBehaviour
                 //For testing the tentacle food item
                 if (collidingObject.name == "tentacle_food(Clone)")
                 {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
+                    //Adds to list with corresponding food value obtained from Score Manager
                     plateData.AddIngredient("tentacle");
                 }
                 
 
                 else if(collidingObject.name == "leaf_food(Clone)")
                 {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
+                    //Adds to list with corresponding food value obtained from Score Manager
                     plateData.AddIngredient("leaf");
                 }
                 
                 else if (collidingObject.name == "cyrstal_food(Clone)")
                 {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
+                    //Adds to list with corresponding food value obtained from Score Manager
                     plateData.AddIngredient("crystal");
                 }
                 
                 else if (collidingObject.name == "egg_food(Clone)")
                 {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
+                    //Adds to list with corresponding food value obtained from Score Manager
                     plateData.AddIngredient("egg");
                 }
                 
                 else if (collidingObject.name == "sheet_food(Clone)")
                 {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
+                    //Adds to list with corresponding food value obtained from Score Manager
                     plateData.AddIngredient("sheet");
                 }
 
