@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 //Script by Owen Beck//
 public class OrderingAlien : MonoBehaviour
@@ -18,6 +19,8 @@ public class OrderingAlien : MonoBehaviour
     private GameObject alienInstance;  // Instance of the alien prefab
     private float journeyLength;
     private float distanceCovered = 0.0f;
+    bool hasApproached = false; //Bool tracking if the alien has finished approaching
+    private bool movedAway = true;  // Bool to track if the alien is done moving offscreen
     //************************************************************
 
     //Variables for Dialogue
@@ -26,13 +29,11 @@ public class OrderingAlien : MonoBehaviour
     public string[] lines;  //Lines of text
     public float textSpeed;     //Tracks speed of text
     private int index;
+    private bool hasClicked = false; //Tracks if Mouse has been clicked
     //************************************************************
 
     //Variables for Sticky Note
     public GameObject stickyNote;
-
-
-    bool hasApproached = false; //Bool tracking if the alien has finished approaching
 
     void Start()
     {
@@ -47,39 +48,60 @@ public class OrderingAlien : MonoBehaviour
         dialogueBox.gameObject.SetActive(false);
         textComponent.gameObject.SetActive(false); //Set to false until alien has approached you
         textComponent.text = string.Empty;
-        Invoke("StartDialogue", 8);
+        Invoke("StartDialogue", 6.5f); //Invoke the StartDialogue coroutine (6.5 second delay)
         //StartDialogue();
     }
 
     void Update()
     {
-        if (!hasApproached)
-            Lerp();
+        if (!hasApproached) //If alien hasn't finished approaching player
+        {
+            //Debug.Log("I'm being called!");
+            Lerp(); //Keep calling LERP
+        }
         else
         {
             //Ordering Code will go here****
+
+            //Show text box and dialog
             textComponent.gameObject.SetActive(true);
             dialogueBox.gameObject.SetActive(true);
-            if (Input.GetMouseButtonDown(0)) //If left mouse click pressed**
+
+            if (Input.GetMouseButtonDown(0) && !hasClicked) // If left mouse click pressed and hasn't clicked yet
             {
                 //Debugging
                 Debug.Log("Mouse Clicked");
                 //**********
+                hasClicked = true;
 
                 //Create Sticky Note with Order
-                CreateStickyNote(new Vector3(1, 1, -1));
+                CreateStickyNote(new Vector3(-4, 1, -1));   //Hardcoded Position for now****
 
                 //Clicking will read in next Lines
-                if(textComponent.text == lines[index])
-                {
-                    NextLine(); //Move to the next line
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    textComponent.text = lines[index];  //Get current line and fill it out
-                }
+                //if(textComponent.text == lines[index])
+                //{
+                //    NextLine(); //Move to the next line
+                //}
+                //else
+                //{
 
+                //Clicking will stop dialog and finish the text
+                StopAllCoroutines();
+                textComponent.text = lines[index];  //Get current line and fill it out
+
+                textComponent.gameObject.SetActive(false);
+                dialogueBox.gameObject.SetActive(false);
+
+                // Set the flag to start moving the alien offscreen
+                movedAway = false;
+                distanceCovered = 0.0f; //Reset DistanceCovered
+            }
+
+            //Move Alien Offscreen by calling LerpAway
+            if (!movedAway)
+            {
+                //Debug.Log("I'm being called!");
+                LerpAway();
             }
         }
     }
@@ -108,6 +130,35 @@ public class OrderingAlien : MonoBehaviour
         if (fractionOfJourney >= 1.0f)
         {
             hasApproached = true;  // The alien has finished approaching
+        }
+    }
+
+    //Method that will move the customer offscreen after ordering
+    void LerpAway()
+    {
+        //Reset variables
+        approachSpeed = 2.0f;
+        float fractionOfJourney = 0.0f;
+        Vector3 newStartPoint = endPoint;
+        Vector3 newEndPoint = new Vector3(-20, 0, 0);
+
+        // Calculate the journey length for LerpAway
+        float journeyLengthAway = Vector3.Distance(newStartPoint, newEndPoint);
+
+        // If the alien hasn't reached the stopping point, continue moving away
+        if (distanceCovered < journeyLengthAway)
+        {
+            distanceCovered += approachSpeed * Time.deltaTime;
+            fractionOfJourney = distanceCovered / journeyLengthAway;
+
+            // Lerp the alien's position between newStartPoint and newEndPoint
+            alienInstance.transform.position = Vector3.Lerp(newStartPoint, newEndPoint, fractionOfJourney);
+        }
+
+        // Check if the alien has reached the new end point
+        if (fractionOfJourney >= 1.0f)
+        {
+            movedAway = true;  // The alien has finished moving away
         }
     }
 

@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -632, y: -47}
+  m_AnchoredPosition: {x: -631.99994, y: -47}
   m_SizeDelta: {x: -2, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468646338
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7372549}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -459,14 +459,14 @@ MonoBehaviour:
   alienPrefab: {fileID: 3956127613196672547, guid: 7b7c197f6678e5549a5fa697ecb1547b, type: 3}
   startSize: 0.1
   endSize: 2
-  approachSpeed: 1
-  startPoint: {x: -2, y: 1.15, z: 10}
-  endPoint: {x: -2, y: 1.15, z: 1}
+  approachSpeed: 1.5
+  startPoint: {x: -8, y: 1.15, z: 10}
+  endPoint: {x: -6, y: 1.15, z: 1}
   dialogueBox: {fileID: 468646337}
   textComponent: {fileID: 267096293}
   lines:
   - gimme A with a side of BC
-  textSpeed: 0.001
+  textSpeed: 0.1
   stickyNote: {fileID: 7014099457773358522, guid: dd7fbcfdb0570cd418f54d37070aee23, type: 3}
 --- !u!4 &693149414
 Transform:
