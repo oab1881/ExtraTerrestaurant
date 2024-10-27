@@ -33,7 +33,7 @@ public class OrderingAlien : MonoBehaviour
     //************************************************************
 
     //Variables for Sticky Note
-    public GameObject stickyNote;
+    public GameObject orderScreen;
 
     void Start()
     {
@@ -75,7 +75,7 @@ public class OrderingAlien : MonoBehaviour
                 hasClicked = true;
 
                 //Create Sticky Note with Order
-                CreateStickyNote(new Vector3(-4, 1, -1));   //Hardcoded Position for now****
+                CreateOrder(new Vector3(-4, 1, -1));   //Hardcoded Position for now****
 
                 //Clicking will read in next Lines
                 //if(textComponent.text == lines[index])
@@ -196,21 +196,21 @@ public class OrderingAlien : MonoBehaviour
         }
     }
 
-    //This method creates a sticky note taking the capital letters from the NPC's order and displaying them on the note
-    void CreateStickyNote(Vector3 position)
+    //This method displays an order, taking the capital letters from the NPC's order and displaying them on the translator screen
+    void CreateOrder(Vector3 position)
     {
         // Instantiate the sticky note at the given position and with no rotation
-        GameObject stickyNoteInstance = Instantiate(stickyNote, position, Quaternion.identity);
+        //GameObject stickyNoteInstance = Instantiate(stickyNote, position, Quaternion.identity);
 
         // Get the TextMeshProUGUI component of the sticky note and set its text to the capital letters from the first line
-        TextMeshProUGUI stickyNoteText = stickyNoteInstance.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI orderText = orderScreen.GetComponentInChildren<TextMeshProUGUI>();
 
-        if (stickyNoteText != null)
+        if (orderText != null)
         {
             string firstLine = lines[0]; // Get the first line of dialogue
             string capitalLetters = GetCapitalLetters(firstLine);  // Extract only the capital letters
 
-            stickyNoteText.text = capitalLetters;  // Set the text to the filtered capital letters
+            orderText.text = capitalLetters;  // Set the text to the filtered capital letters
         }
         else
         {
