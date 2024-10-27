@@ -5,22 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    // Name of the scene to load
+    // Amount to shift the camera by
     [SerializeField]
-    private string sceneName;
+    private float shiftAmount;
 
+    // Reference to the camera
+    private Camera mainCamera;
 
-    // Method to detect clicks
+    void Start()
+    {
+        // Get the main camera if not already assigned
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            Debug.LogError("Main camera not found!");
+        }
+    }
+
+    // Detect clicks
     void OnMouseDown()
     {
-        if (!string.IsNullOrEmpty(sceneName))
+        if (mainCamera != null)
         {
-            // Load the scene with the provided name
-            SceneManager.LoadScene(sceneName);
-        }
-        else
-        {
-            Debug.LogError("Scene name is not specified!");
+            // Move the camera to the right by the shift amount
+            mainCamera.transform.position += new Vector3(shiftAmount, 0, 0);
         }
     }
 }
