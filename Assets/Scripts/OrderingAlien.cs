@@ -34,6 +34,7 @@ public class OrderingAlien : MonoBehaviour
 
     //Variables for Sticky Note
     public GameObject orderScreen;
+    public GameObject kitchenScreen;
 
     void Start()
     {
@@ -75,7 +76,7 @@ public class OrderingAlien : MonoBehaviour
                 hasClicked = true;
 
                 //Create Sticky Note with Order
-                CreateOrder(new Vector3(-4, 1, -1));   //Hardcoded Position for now****
+                CreateOrder();   //Hardcoded Position for now****
 
                 //Clicking will read in next Lines
                 //if(textComponent.text == lines[index])
@@ -101,6 +102,8 @@ public class OrderingAlien : MonoBehaviour
             if (!movedAway)
             {
                 //Debug.Log("I'm being called!");
+                textComponent.gameObject.SetActive(false);
+                dialogueBox.gameObject.SetActive(false);
                 LerpAway();
             }
         }
@@ -197,13 +200,14 @@ public class OrderingAlien : MonoBehaviour
     }
 
     //This method displays an order, taking the capital letters from the NPC's order and displaying them on the translator screen
-    void CreateOrder(Vector3 position)
+    void CreateOrder()
     {
         // Instantiate the sticky note at the given position and with no rotation
         //GameObject stickyNoteInstance = Instantiate(stickyNote, position, Quaternion.identity);
 
-        // Get the TextMeshProUGUI component of the sticky note and set its text to the capital letters from the first line
-        TextMeshProUGUI orderText = orderScreen.GetComponentInChildren<TextMeshProUGUI>();
+        // Get the TextMeshProUGUI component of the orderScreen and set its text to the capital letters from the first line
+        TextMeshProUGUI orderText = orderScreen.GetComponentInChildren<TextMeshProUGUI>();  //Displayed in order screen
+        TextMeshProUGUI orderText2 = kitchenScreen.GetComponentInChildren<TextMeshProUGUI>();   //Displayed on kitchen screen
 
         if (orderText != null)
         {
@@ -211,6 +215,13 @@ public class OrderingAlien : MonoBehaviour
             string capitalLetters = GetCapitalLetters(firstLine);  // Extract only the capital letters
 
             orderText.text = capitalLetters;  // Set the text to the filtered capital letters
+        }
+        if (orderText2 != null)
+        {
+            string firstLine = lines[0]; // Get the first line of dialogue
+            string capitalLetters = GetCapitalLetters(firstLine);  // Extract only the capital letters
+
+            orderText2.text = capitalLetters;  // Set the text to the filtered capital letters
         }
         else
         {
