@@ -1507,7 +1507,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3713813657781195324
@@ -2944,6 +2944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoveredSprite: {fileID: 21300000, guid: 4dbffa21daebd2446a01a5704b1e5b58, type: 3}
+  storedItems: []
+  maxCapacity: 5
+  currentCapacity: 0
 --- !u!61 &7041456592726587792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3121,6 +3124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoveredSprite: {fileID: 21300000, guid: 0c6bf6e4d00f64a42a1d73e046d9909d, type: 3}
+  storedItems: []
+  maxCapacity: 5
+  currentCapacity: 0
 --- !u!61 &3981433497237822792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3634,6 +3640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoveredSprite: {fileID: 21300000, guid: e68279591b807064cba2b4710f13696d, type: 3}
+  storedItems: []
+  maxCapacity: 5
+  currentCapacity: 0
 --- !u!60 &2282103627294055458
 PolygonCollider2D:
   m_ObjectHideFlags: 0

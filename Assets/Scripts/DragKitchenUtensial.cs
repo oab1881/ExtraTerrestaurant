@@ -16,48 +16,58 @@ public class DragKitchenUtensial : MonoBehaviour
     //Useing this to get the original point on start of click and drag
     Vector3 initalMouse = Vector3.zero;
     
+    //Stores rigid body
     [SerializeField]
     Rigidbody2D rigidbod;
    
+    //If it can drag and drop
+    //Stores intial transform and rotation this is for when they fall off the map
+    //Because of grabity
     bool canDragandDrop = true;
-    public bool dragging = true;
     Vector3 initalTransform;
     Quaternion intialRotation;
 
     private void Start()
     {
+        //Sets the values to the inital
         initalTransform = transform.position;
         intialRotation = transform.rotation;
     }
     private void Update()
     {
+        //If the knife or pestel go to far off the map teleports them back
         if (transform.position.y < -8)
         {
+            //Resets eveything
             transform.rotation = intialRotation;
             transform.position = initalTransform;
             rigidbod.velocity = Vector2.zero;
             rigidbod.angularVelocity = 0f;
             rigidbod.gravityScale = 0;
-            gameObject.layer = 7; // held layer
+            //gameObject.layer = 7; // held layer
         }
     }
 
 
     private void OnMouseDrag()
     {
+        //On mouse drag calls the follow mouse and then changes some information
         followMouse();
+
+        //Sets the velocity to zero velocity off and gravity off
         rigidbod.velocity = Vector2.zero;
         rigidbod.angularVelocity = 0f;
         rigidbod.gravityScale = 0;
-        gameObject.layer = 7; // held layer
+        //gameObject.layer = 7; // held layer
     }
 
     private void OnMouseUp()
     {
+        //Sets the intial mouse to zero and turns grabity and physics back on
         initalMouse = Vector3.zero;
         rigidbod.simulated = true;
         rigidbod.gravityScale = 1;
-        gameObject.layer = 0; // default layer
+        //gameObject.layer = 0; // default layer
     }
 
    
