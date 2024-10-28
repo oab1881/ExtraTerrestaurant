@@ -683,7 +683,7 @@ MonoBehaviour:
   startSize: 0.1
   endSize: 2
   approachSpeed: 1.5
-  startPoint: {x: -8, y: 1.15, z: 10}
+  startPoint: {x: -8, y: 2, z: 10}
   endPoint: {x: -6, y: 1.15, z: 1}
   dialogueBox: {fileID: 468646337}
   textComponent: {fileID: 267096293}
