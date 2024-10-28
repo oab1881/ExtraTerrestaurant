@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using System.IO;
 
 //Script by Owen Beck//
 public class OrderingAlien : MonoBehaviour
@@ -26,7 +27,8 @@ public class OrderingAlien : MonoBehaviour
     //Variables for Dialogue
     public RectTransform dialogueBox;    //Reference to Dialogue box
     public TextMeshProUGUI textComponent;   //Reference to TMPro component
-    public string[] lines;  //Lines of text
+    public string textFileName;  // Name of the text file in Resources folder
+    private string[] lines;  //Lines of text
     public float textSpeed;     //Tracks speed of text
     private int index;
     private bool hasClicked = false; //Tracks if Mouse has been clicked
@@ -49,6 +51,10 @@ public class OrderingAlien : MonoBehaviour
         dialogueBox.gameObject.SetActive(false);
         textComponent.gameObject.SetActive(false); //Set to false until alien has approached you
         textComponent.text = string.Empty;
+
+        // Load dialogue lines from the text file
+        LoadTextFile(textFileName);
+
         Invoke("StartDialogue", 6.5f); //Invoke the StartDialogue coroutine (6.5 second delay)
         //StartDialogue();
     }
@@ -90,9 +96,6 @@ public class OrderingAlien : MonoBehaviour
                 StopAllCoroutines();
                 textComponent.text = lines[index];  //Get current line and fill it out
 
-                textComponent.gameObject.SetActive(false);
-                dialogueBox.gameObject.SetActive(false);
-
                 // Set the flag to start moving the alien offscreen
                 movedAway = false;
                 distanceCovered = 0.0f; //Reset DistanceCovered
@@ -102,10 +105,28 @@ public class OrderingAlien : MonoBehaviour
             if (!movedAway)
             {
                 //Debug.Log("I'm being called!");
+
+                //Remove text box
                 textComponent.gameObject.SetActive(false);
                 dialogueBox.gameObject.SetActive(false);
+
+                //LERP the alien offscreen by calling LErpAway
                 LerpAway();
             }
+        }
+    }
+
+    //Method to load in order files from the resources folder
+    void LoadTextFile(string fileName)
+    {
+        TextAsset textFile = Resources.Load<TextAsset>(fileName);
+        if (textFile != null)
+        {
+            lines = textFile.text.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+        }
+        else
+        {
+            Debug.LogError("Text file not found in Resources folder.");
         }
     }
 
@@ -209,23 +230,16 @@ public class OrderingAlien : MonoBehaviour
         TextMeshProUGUI orderText = orderScreen.GetComponentInChildren<TextMeshProUGUI>();  //Displayed in order screen
         TextMeshProUGUI orderText2 = kitchenScreen.GetComponentInChildren<TextMeshProUGUI>();   //Displayed on kitchen screen
 
-        if (orderText != null)
+        if (orderText != null && orderText2 != null)
         {
-            string firstLine = lines[0]; // Get the first line of dialogue
-            string capitalLetters = GetCapitalLetters(firstLine);  // Extract only the capital letters
-
-            orderText.text = capitalLetters;  // Set the text to the filtered capital letters
-        }
-        if (orderText2 != null)
-        {
-            string firstLine = lines[0]; // Get the first line of dialogue
-            string capitalLetters = GetCapitalLetters(firstLine);  // Extract only the capital letters
-
-            orderText2.text = capitalLetters;  // Set the text to the filtered capital letters
+            string firstLine = lines[0]; //Read in first line
+            string capitalLetters = GetCapitalLetters(firstLine);   //Take only capital letters
+            orderText.text = capitalLetters;    //Display order on order screen
+            orderText2.text = capitalLetters;   //Display order on kitchen screen
         }
         else
         {
-            Debug.LogWarning("Sticky note does not have a TextMeshProUGUI component.");
+            Debug.LogWarning("Order screen does not have a TextMeshProUGUI component.");
         }
     }
 
