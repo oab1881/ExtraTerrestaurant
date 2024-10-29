@@ -62,6 +62,7 @@ public class Storage : Hover
     // called by DragAndDrop() when item dropped into storage
     public void StoreItem(GameObject item)
     {
+        Debug.Log("Current Capacity On Store: " + currentCapacity);
         if (currentCapacity >= maxCapacity)
         {
             Debug.Log("store attempt FAILED");
@@ -122,6 +123,7 @@ public class Storage : Hover
         Destroy(storedItems[index]);
         storedItems = newList;
         currentCapacity--;
+        Debug.Log("Current Capacity after remove: " + currentCapacity);
 
     }
     // do nothing on mouse hover

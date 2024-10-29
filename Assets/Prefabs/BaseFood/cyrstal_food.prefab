@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3761010559784638075}
   - component: {fileID: 2333201935791496569}
   - component: {fileID: 6389654488614239208}
+  - component: {fileID: -5924188257960240127}
   m_Layer: 0
   m_Name: cyrstal_food
   m_TagString: food item
@@ -366,3 +367,18 @@ PolygonCollider2D:
       - {x: 0.265, y: -0.78999996}
       - {x: 0.305, y: -0.74}
   m_UseDelaunayMesh: 0
+--- !u!114 &-5924188257960240127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291992907242694315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crushed: {fileID: 0}
+  cut: {fileID: 0}
+  cooked: {fileID: 0}

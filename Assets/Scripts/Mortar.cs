@@ -10,6 +10,7 @@ Changelog:
 */
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Mortar : MonoBehaviour
@@ -26,7 +27,6 @@ public class Mortar : MonoBehaviour
     ParticleSystem particles;
 
 
-
     private void Start()
     {
         //On the start sets the pestel count to 0
@@ -38,9 +38,10 @@ public class Mortar : MonoBehaviour
         //For using the pestel : When it enters the mortar collider
         //Do a quick check to see if there is in fact something at 0 index
         //Then another check on food data, which checks if 
-        if(collision.name == "pestle" && storageScript.StoredItem[0] != null &&
-            storageScript.StoredItem[0].GetComponent<FoodData>().Crushed != null)
-        {
+        if(storageScript.StoredItem[0] != null && 
+            storageScript.StoredItem[0].GetComponent<FoodData>().Crushed != null &&
+            collision.name == "pestle" ) {
+            
             //Debug.Log("Smash!!!");
             //Increases the pestel count on every enter
             pestelCount++;
@@ -48,7 +49,7 @@ public class Mortar : MonoBehaviour
             particles.Play();
 
             //If the count is equal to 5
-            if(pestelCount == 5)
+            if (pestelCount == 5)
             {
                 //Temp gameobject that is new type(Which is the crushed GameObject)
                 GameObject newType = storageScript.StoredItem[0].GetComponent<FoodData>().Crushed;
@@ -57,12 +58,15 @@ public class Mortar : MonoBehaviour
                 pestelCount = 0;
 
                 //Destorys current item in storage and instanitates new one in it's place
-                // *** Note For some reason doesn't create new prefab ***
+                // *** Prefab now gets created but does not get stored ***
                 storageScript.RemoveItem(0);
-                Instantiate(newType, transform);
-                //storageScript.StoreItem();
-            }
-
+                GameObject temp; 
+                temp = Instantiate(newType, transform);
+                storageScript.StoreItem(temp);
+            } 
         }
+
+
+        
     }
 }
