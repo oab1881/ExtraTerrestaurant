@@ -10,11 +10,103 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 15005840230690440, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.1663858
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 15005840230690440, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 15005840230690440, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 15005840230690440, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.011631568
+      objectReference: {fileID: 0}
+    - target: {fileID: 15005840230690440, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.16597874
+      objectReference: {fileID: 0}
+    - target: {fileID: 15005840230690440, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 313014822725291143, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.21885568
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 313014822725291143, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 313014822725291143, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 313014822725291143, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.06526516
+      objectReference: {fileID: 0}
+    - target: {fileID: 313014822725291143, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.20889774
+      objectReference: {fileID: 0}
+    - target: {fileID: 313014822725291143, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 634088823390626364, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 634088823390626364, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 634088823390626364, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 873901376125736064, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Distance
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 873901376125736064, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 873901376125736064, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 873901376125736064, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.083078206
+      objectReference: {fileID: 0}
+    - target: {fileID: 873901376125736064, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.2461298
+      objectReference: {fileID: 0}
+    - target: {fileID: 873901376125736064, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047262912513345153, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 1047262912513345153, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047262912513345153, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408321776735708782, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.44905615
       objectReference: {fileID: 0}
     - target: {fileID: 1470129788775029614, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
@@ -30,11 +122,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2334031697834631593, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.1663858
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334031697834631593, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334031697834631593, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334031697834631593, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.025991045
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334031697834631593, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.16434315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334031697834631593, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2480843753741326337, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.20951599
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480843753741326337, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480843753741326337, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480843753741326337, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.06065236
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480843753741326337, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.2034476
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480843753741326337, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2548019266651144054, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
@@ -46,51 +178,347 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3152790679319436418, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.8776433
+      value: 0.8919557
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152790679319436418, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152790679319436418, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152790679319436418, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249641611653326096, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 3249641611653326096, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249641611653326096, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3261903453930580047, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.20660874
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261903453930580047, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261903453930580047, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261903453930580047, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.044941902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261903453930580047, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.20166183
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261903453930580047, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360254671742024088, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24084187
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360254671742024088, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3722496
       objectReference: {fileID: 0}
     - target: {fileID: 3498635929641927615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.1838136
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498635929641927615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498635929641927615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498635929641927615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.053374637
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498635929641927615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.17589384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498635929641927615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955731257449864441, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 3955731257449864441, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955731257449864441, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4051464902534127902, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.20951296
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051464902534127902, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051464902534127902, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051464902534127902, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.012307034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051464902534127902, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.20915107
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051464902534127902, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4071970742504697060, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Name
       value: bouncyEgg Variant Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4109124871122925921, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 4109124871122925921, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109124871122925921, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4261301981199480653, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.25629193
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261301981199480653, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261301981199480653, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261301981199480653, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.061800096
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261301981199480653, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.24872912
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261301981199480653, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322537143418875932, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Distance
+      value: 0.8973452
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322537143418875932, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322537143418875932, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322537143418875932, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4468266162711987446, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.2512687
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468266162711987446, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468266162711987446, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468266162711987446, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.059080094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468266162711987446, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.2259513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468266162711987446, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4480236861998552382, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.23149695
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480236861998552382, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480236861998552382, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480236861998552382, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.085735425
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480236861998552382, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.24031028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480236861998552382, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4511586614622578674, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.20951599
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511586614622578674, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511586614622578674, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511586614622578674, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.06159041
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511586614622578674, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.20316559
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511586614622578674, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4573681095004114168, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.21885568
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573681095004114168, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573681095004114168, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573681095004114168, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.06316783
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573681095004114168, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.20954151
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573681095004114168, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4681486625244439551, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.20951296
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681486625244439551, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681486625244439551, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681486625244439551, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.070551895
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681486625244439551, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.19727664
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681486625244439551, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781434691235549865, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781434691235549865, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781434691235549865, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822704501039204988, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 4822704501039204988, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822704501039204988, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4829722765187522610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.2972549
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829722765187522610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829722765187522610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829722765187522610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.12849376
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829722765187522610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.26903078
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829722765187522610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4840315588222050977, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
@@ -98,19 +526,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894152402120572397, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.2512687
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894152402120572397, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894152402120572397, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894152402120572397, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.06995657
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894152402120572397, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.22282399
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894152402120572397, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5033215935133853929, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.86873555
+      value: 0.8687357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033215935133853929, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033215935133853929, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033215935133853929, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5123370259376078667, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.8268956
+      value: 0.82689565
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123370259376078667, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123370259376078667, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123370259376078667, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5852403249683354890, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.2197343
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852403249683354890, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852403249683354890, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852403249683354890, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.04839897
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852403249683354890, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.2143377
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852403249683354890, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5855860683714717031, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
@@ -122,23 +614,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093529544202272220, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.8776433
+      value: 0.8919557
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093529544202272220, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093529544202272220, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093529544202272220, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316082677109140724, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Distance
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316082677109140724, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316082677109140724, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316082677109140724, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.08409105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316082677109140724, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.2457856
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316082677109140724, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6406828960710384059, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
       value: 0.06
       objectReference: {fileID: 0}
+    - target: {fileID: 6855221524606679391, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 6855221524606679391, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855221524606679391, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070068317349830380, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Distance
+      value: 0.8973452
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070068317349830380, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070068317349830380, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070068317349830380, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139087665414123025, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.23738003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139087665414123025, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38067055
+      objectReference: {fileID: 0}
     - target: {fileID: 7184121517677413610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7184121517677413610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.03
+      value: -0.8299999
       objectReference: {fileID: 0}
     - target: {fileID: 7184121517677413610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.48
+      value: 2.1299999
       objectReference: {fileID: 0}
     - target: {fileID: 7184121517677413610, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_LocalPosition.z
@@ -176,13 +740,45 @@ PrefabInstance:
       propertyPath: m_Distance
       value: 0.85754055
       objectReference: {fileID: 0}
+    - target: {fileID: 7525000401205776940, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525000401205776940, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525000401205776940, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7545000227875702485, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
       value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 7603045272267903466, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.2972549
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603045272267903466, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603045272267903466, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603045272267903466, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.08546804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603045272267903466, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.2856281
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603045272267903466, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7653224223644680780, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
@@ -190,7 +786,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7659071301121528584, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.23149695
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659071301121528584, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659071301121528584, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659071301121528584, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.06519796
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659071301121528584, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.24667549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659071301121528584, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859764301158438599, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 7859764301158438599, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859764301158438599, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924530975622410154, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924530975622410154, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924530975622410154, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085934640400381830, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Distance
+      value: 0.89832914
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085934640400381830, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085934640400381830, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085934640400381830, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152293497227810047, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Radius
@@ -198,25 +854,185 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8380455884598696202, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.20660874
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380455884598696202, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380455884598696202, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380455884598696202, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.028347436
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380455884598696202, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.20465505
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380455884598696202, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423229455385503735, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Distance
+      value: 0.8507687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423229455385503735, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423229455385503735, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423229455385503735, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499479125541451882, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 8499479125541451882, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499479125541451882, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8567047072139417842, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.2197343
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567047072139417842, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567047072139417842, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567047072139417842, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.08780247
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567047072139417842, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.2014295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567047072139417842, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632868426672972101, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 8632868426672972101, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632868426672972101, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933512431890117257, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 8933512431890117257, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933512431890117257, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9043044019768984615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
       value: 0.85754055
       objectReference: {fileID: 0}
+    - target: {fileID: 9043044019768984615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043044019768984615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043044019768984615, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9083257551153708307, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.25629193
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083257551153708307, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083257551153708307, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083257551153708307, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.07114926
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083257551153708307, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.24621774
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083257551153708307, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9122564153451119229, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
       propertyPath: m_Distance
-      value: 0.1838136
+      value: 0.005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9122564153451119229, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122564153451119229, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_DampingRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122564153451119229, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.020613031
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122564153451119229, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.18265434
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122564153451119229, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171503608265151087, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+    - target: {fileID: 9171503608265151087, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171503608265151087, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3398900286616844568, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+    - {fileID: 3909818774895340660, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+    - {fileID: 5464430849865653473, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
+    - {fileID: 7768026050415248846, guid: 1dc8e87a47d2f184dafd162c73800232, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
