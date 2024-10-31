@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.IO;
+using System.Linq;
 
 //Script by Owen Beck//
 public class OrderingAlien : MonoBehaviour
@@ -28,7 +29,7 @@ public class OrderingAlien : MonoBehaviour
     public RectTransform dialogueBox;    //Reference to Dialogue box
     public TextMeshProUGUI textComponent;   //Reference to TMPro component
     public string textFileName;  // Name of the text file in Resources folder
-    private string[] lines;  //Lines of text
+    private List<string> lines;  //Lines of text
     public float textSpeed;     //Tracks speed of text
     private int index;
     private bool hasClicked = false; //Tracks if Mouse has been clicked
@@ -37,6 +38,9 @@ public class OrderingAlien : MonoBehaviour
     //Variables for Sticky Note
     public GameObject orderScreen;
     public GameObject kitchenScreen;
+
+    // The order to be made and scored
+    public List<List<string>> order = new List<List<string>>();
 
     void Start()
     {
@@ -122,7 +126,7 @@ public class OrderingAlien : MonoBehaviour
         TextAsset textFile = Resources.Load<TextAsset>(fileName);
         if (textFile != null)
         {
-            lines = textFile.text.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+            lines = textFile.text.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList<string>();
         }
         else
         {
@@ -207,7 +211,7 @@ public class OrderingAlien : MonoBehaviour
     void NextLine()
     {
         //If there is text.. write it
-        if(index < lines.Length - 1)
+        if(index < lines.Count - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -236,6 +240,16 @@ public class OrderingAlien : MonoBehaviour
             string capitalLetters = GetCapitalLetters(firstLine);   //Take only capital letters
             orderText.text = capitalLetters;    //Display order on order screen
             orderText2.text = capitalLetters;   //Display order on kitchen screen
+
+            // Adds to the order list using the second line of the given text file
+            // Note: will only work with unprepared food items for now. Need to update
+            // it later to work with more than that. - Chris
+            List<string> orderComponents = lines[1].Split(",").ToList();
+            foreach (string c in orderComponents)
+            {
+                List<string> com = new List<string>() { c };
+                order.Add(com);
+            }
         }
         else
         {
