@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crushed: {fileID: 0}
+  crushed: {fileID: 8297354940826436125, guid: d0745c4d377fc0c489f4c97dce8db6d6, type: 3}
   cut: {fileID: 0}
   cooked: {fileID: 0}
+  foodColor: {r: 0.38823533, g: 0.07058824, b: 0.054901965, a: 1}

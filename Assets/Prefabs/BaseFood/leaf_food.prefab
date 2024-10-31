@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9153905355419483617}
   - component: {fileID: 7073347277637520463}
   - component: {fileID: 7807008616026827326}
+  - component: {fileID: -2348643871337125086}
   m_Layer: 0
   m_Name: leaf_food
   m_TagString: food item
@@ -298,3 +299,19 @@ PolygonCollider2D:
       - {x: -0.07, y: -0.805}
       - {x: 0.13, y: -0.645}
   m_UseDelaunayMesh: 0
+--- !u!114 &-2348643871337125086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079846946831491505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crushed: {fileID: 8297354940826436125, guid: 7df30be1bd1f89b458f355bbc140a19d, type: 3}
+  cut: {fileID: 0}
+  cooked: {fileID: 0}
+  foodColor: {r: 0.7960785, g: 0.6666667, b: 0.61960787, a: 1}

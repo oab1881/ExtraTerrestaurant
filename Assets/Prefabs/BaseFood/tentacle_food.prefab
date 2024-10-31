@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5756428243654078875}
   - component: {fileID: -6235215649513243321}
   - component: {fileID: 3323012342824336015}
+  - component: {fileID: 6825458188127815068}
   m_Layer: 0
   m_Name: tentacle_food
   m_TagString: food item
@@ -267,3 +268,19 @@ PolygonCollider2D:
       - {x: 1.0749999, y: -0.41}
       - {x: 1.155, y: -0.22999999}
   m_UseDelaunayMesh: 0
+--- !u!114 &6825458188127815068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281459659418726516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crushed: {fileID: 8297354940826436125, guid: aba9ed37d2f0e8b4ba07129d0df2f608, type: 3}
+  cut: {fileID: 0}
+  cooked: {fileID: 0}
+  foodColor: {r: 0.5764706, g: 0.7137255, b: 0.70980394, a: 1}

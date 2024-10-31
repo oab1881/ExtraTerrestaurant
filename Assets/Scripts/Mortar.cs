@@ -45,7 +45,15 @@ public class Mortar : MonoBehaviour
             //Debug.Log("Smash!!!");
             //Increases the pestel count on every enter
             pestelCount++;
+
+
+            //Another version to change the color apparently it's better 
+            //ParticleSystem.MainModule main = GetComponent<ParticleSystem>().main;
+            //main.startColor = storageScript.StoredItem[0].GetComponent<FoodData>().FoodColor;
+
             //Plays particles on smash
+            //Changes the color
+            particles.startColor = storageScript.StoredItem[0].GetComponent<FoodData>().FoodColor;
             particles.Play();
 
             //If the count is equal to 5
@@ -59,7 +67,7 @@ public class Mortar : MonoBehaviour
 
                 //Destorys current item in storage and instanitates new one in it's place
                 // *** Prefab now gets created but does not get stored ***
-                storageScript.RemoveItem(0);
+                storageScript.RemoveItem(0, true);
                 GameObject temp; 
                 temp = Instantiate(newType, transform);
                 storageScript.StoreItem(temp);

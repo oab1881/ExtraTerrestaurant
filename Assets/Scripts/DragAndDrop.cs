@@ -208,7 +208,10 @@ public class DragAndDrop : Hover
 
         transform.SetParent(storedIn.transform, false);
         canDragandDrop = false;
-        rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        //Switching this from rigbod.constraints to gameObject.GetComponent<Rigidbody2D>() fixed issue with
+        //mortar and pestle -Jake
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         transform.localScale /= 2;
 
         

@@ -81,7 +81,7 @@ public class Storage : Hover
     /// Removes item from list and destorys it(Useful for switching item from storage
     /// </summary>
     /// <param name="index">Index to remove from</param>
-    public void RemoveItem(int index)
+    public void RemoveItem(int index, bool delete)
     {
         ///*****Note Only Implemented with 1 item at front or back of list and nothing else Will update when needed.*****
         
@@ -120,7 +120,10 @@ public class Storage : Hover
         //Destroys the old item
         //Sets the stored list to the new list
         //Decreases capacity
-        Destroy(storedItems[index]);
+        if (delete)
+        {
+            Destroy(storedItems[index]);
+        }
         storedItems = newList;
         currentCapacity--;
         Debug.Log("Current Capacity after remove: " + currentCapacity);

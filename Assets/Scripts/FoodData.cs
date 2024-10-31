@@ -22,6 +22,9 @@ public class FoodData : MonoBehaviour
     GameObject cut;
     [SerializeField]
     GameObject cooked;
+
+    [SerializeField]
+    Color foodColor;
     
     /// <summary>
     /// Gets the crushed prefab that replaces it
@@ -31,5 +34,6 @@ public class FoodData : MonoBehaviour
         get { return crushed; }
     }
 
+    public Color FoodColor { get { return foodColor; } }
     
 }
