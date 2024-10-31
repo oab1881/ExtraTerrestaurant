@@ -203,7 +203,7 @@ public class OrderingAlien : MonoBehaviour
         }
     }
 
-    //Method to move to the next Line
+    //Method to move to the next Line (sorta scrapped for now)
     void NextLine()
     {
         //If there is text.. write it

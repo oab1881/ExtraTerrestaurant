@@ -1,1 +1,2 @@
-wassup foo, gimme a D and a B
+gimme one AB and throw some C on there too
+AB, C
