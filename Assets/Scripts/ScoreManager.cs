@@ -29,12 +29,6 @@ public class ScoreManager : MonoBehaviour
         score = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     /*
         Compares the food the player makes to the food the customer orders
         Takes customer's order and the player's food and compares them to see if the 
