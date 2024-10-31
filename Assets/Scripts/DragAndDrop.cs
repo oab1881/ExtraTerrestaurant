@@ -29,9 +29,12 @@ public class DragAndDrop : Hover
     Rigidbody2D rigidbod;
     Collider2D coll;
     //public GameObject originBucket; // for trashing items in original buckets (doesn't work)
-    //[SerializeField]
-    //GameObject deadZone;
+
+    [SerializeField]
     bool canDragandDrop = true;
+
+    [SerializeField]
+    bool isPlate = false;
     // item being dragged?    -OnMouseDrag alternative, doesn't require object be clicked first
     public bool dragging = true;
 
@@ -69,6 +72,10 @@ public class DragAndDrop : Hover
     }
     private void Update()
     {
+        if(isPlate && Input.GetMouseButtonDown(0))
+        {
+            canDragandDrop = true;
+        }
         if (dragging)
         {
             FollowMouse();

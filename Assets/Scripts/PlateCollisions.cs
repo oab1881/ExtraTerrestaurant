@@ -22,6 +22,7 @@ public class PlateCollisions : MonoBehaviour
     [SerializeField]
     PlateData plateData;
 
+    Vector2 difference = Vector2.zero;
 
     void Update()
     {
@@ -120,7 +121,11 @@ public class PlateCollisions : MonoBehaviour
     //This will be for moving the plate to the other screen when order is complete
     private void OnMouseDown()
     {
-        
+        difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
+    }
+    private void OnMouseDrag()
+    {
+        transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
     }
 }
 
