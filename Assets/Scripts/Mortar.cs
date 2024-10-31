@@ -31,6 +31,8 @@ public class Mortar : MonoBehaviour
     {
         //On the start sets the pestel count to 0
         pestelCount= 0;
+        //storageScript.maxCapacity = 1;
+        //storageScript.positions[0] = gameObject.transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

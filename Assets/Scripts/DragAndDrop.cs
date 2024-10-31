@@ -135,7 +135,7 @@ public class DragAndDrop : Hover
         if (firstCollidingObject.tag.Equals("storage"))
         //            || firstCollidingObject.Equals(originBucket)) // for trashing items in original buckets (doesn't work)
         {
-            firstCollidingObject.GetComponent<Storage>().HighlightSprite(true);
+            firstCollidingObject.GetComponent<Storage>().HighlightSprite(sprRend);
         }
     }
     // handles end of first collision action
@@ -199,7 +199,7 @@ public class DragAndDrop : Hover
     //  pos, rot: freeze
     //  scale: decrease
     //  canDragAndDrop: off
-    public void Stored(GameObject storedIn)
+    public void Stored(GameObject storedIn, Vector2 storedPos)
     {
         Debug.Log("stored");
         // oog jake code - migrated from PlateCollisions script, now altered to fit
@@ -214,9 +214,10 @@ public class DragAndDrop : Hover
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         transform.localScale /= 2;
 
-        
+
         if (storedIn.GetComponent<BoxCollider2D>())
-            transform.localPosition = storedIn.GetComponent<BoxCollider2D>().offset;
+            //transform.localPosition = storedIn.GetComponent<BoxCollider2D>().offset;
+            transform.localPosition = storedPos;
         else transform.localPosition = new Vector2(-2.0f, 2.5f);
         // above is a truly awful bandaid solution to include goop collider
 

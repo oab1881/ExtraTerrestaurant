@@ -26,6 +26,12 @@ public class Storage : Hover
     public int maxCapacity = 5;
     public int currentCapacity = 0;
 
+    [SerializeField]
+    private GameObject snapZone;
+    private SpriteRenderer snapSprite;
+    [SerializeField]
+    private Vector2[] positions;
+
 
     //A property for the stored item list
     public GameObject[] StoredItem
@@ -44,19 +50,49 @@ public class Storage : Hover
         fullColor.a = 1f;
 
         storedItems = new GameObject[maxCapacity];
+
+        snapSprite = snapZone.GetComponent<SpriteRenderer>();
     }
+
+    /// storage positions
+    ///     vector2 array, loaded at runtime
+    ///     single snap zone child
+    ///         place at first available position (current capacity)
+    ///         visible when food item hovering storage
+    ///         takes food item sprite
+    ///         change color on item hover
 
     // change opacity
     public override void HighlightSprite(bool highlight)
     {
-        // no highlight;;; max cap or not
+        // no highlight
         if (!highlight)
+        {
             sprRend.color = ogColor;
+            snapSprite.enabled = false;
+        }
         else
+        {
             if (currentCapacity == maxCapacity)
                 sprRend.color = fullColor;
             else
                 sprRend.color = hoverColor;
+        }
+    }
+
+    // highlight overload for item hover --> sprite renderer
+    public void HighlightSprite(SpriteRenderer itemSprite)
+    {
+        if (currentCapacity == maxCapacity)
+            sprRend.color = fullColor;
+        else
+        {
+            snapZone.transform.localPosition = positions[currentCapacity];
+            // get held item sprite
+            snapSprite.sprite = itemSprite.sprite;
+            snapSprite.enabled = true;
+            HighlightSprite(true);
+        }
     }
 
     // called by DragAndDrop() when item dropped into storage
@@ -72,8 +108,9 @@ public class Storage : Hover
         {
             Debug.Log("STORAGE store attempt");
             storedItems[currentCapacity] = item;
+            item.GetComponent<DragAndDrop>().Stored(gameObject, positions[currentCapacity]);
             currentCapacity++;
-            item.GetComponent<DragAndDrop>().Stored(gameObject);
+            snapSprite.enabled = false;
         }
     }
 
