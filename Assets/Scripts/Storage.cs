@@ -9,6 +9,8 @@
 ///    
 ///    Changes:
 ///    10/27/24 : Jake : Added remove items function
+///    10/30/24 : Jake : Made the remove items have destory
+///    10/30/24 : Jake : Made the remove items have a resize
 ///    
 
 using System.Collections;
@@ -118,10 +120,8 @@ public class Storage : Hover
     /// Removes item from list and destorys it(Useful for switching item from storage
     /// </summary>
     /// <param name="index">Index to remove from</param>
-    public void RemoveItem(int index, bool delete)
-    {
-        ///*****Note Only Implemented with 1 item at front or back of list and nothing else Will update when needed.*****
-        
+    public void RemoveItem(int index, bool delete, bool resize)
+    { 
         //Creates a new temp list
         GameObject[] newList = new GameObject[maxCapacity];
 
@@ -142,28 +142,44 @@ public class Storage : Hover
                 newList[i] = storedItems[i + 1];
             }
         }
-        /* Commenting this out til it's needed!!!!
+        //For case of removing in the middle
         else
         {
             //Loop until index
+
+            //Goes from 0 to index gets
+            //Gets eveything before removal becasue they don't change
             for (int i = 0; i < index; i++)
             {
                     newList[i] = storedItems[i];
             }
-
+            //Skips over index and moves everything back till the end
+            for (int i = index; i < currentCapacity - 1; i++)
+            {
+                newList[i] = storedItems[i + 1];
+            }
+        }
+        
+        /*
+        for(int i =0; i < currentCapacity; i++)
+        {
+            newList[i].transform.position = positions[i];
         }
         */
-
-        //Destroys the old item
+        //Destroys the old item if parameter says to
+        //Resizes if the parameter says to
         //Sets the stored list to the new list
         //Decreases capacity
         if (delete)
         {
             Destroy(storedItems[index]);
         }
+        if (resize)
+        {
+            storedItems[index].transform.localScale *= 2;
+        }
         storedItems = newList;
         currentCapacity--;
-        Debug.Log("Current Capacity after remove: " + currentCapacity);
 
     }
     // do nothing on mouse hover

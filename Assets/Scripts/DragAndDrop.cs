@@ -13,6 +13,8 @@ Changelog:
     -now inherits hover; added one-at-a-time collisions, CollToAction methods : 10/07 : jack
     -removed old commented code: 10/07 : jack
     -Added a hard code for mortar pos and scale : 10/17/24 : Jake
+    -Changed line in storeItem to getComponent instead of rigbod : 10/30/24 : Jake
+    -Made items removable in onTriggerExit function : 10/31/24 : Jake
 */
 
 using System.Collections;
@@ -27,6 +29,7 @@ public class DragAndDrop : Hover
     [SerializeField]
     Vector3 initalMouse = Vector3.zero;
     Rigidbody2D rigidbod;
+    bool stored = false;
     Collider2D coll;
     //public GameObject originBucket; // for trashing items in original buckets (doesn't work)
 
@@ -45,6 +48,9 @@ public class DragAndDrop : Hover
     [SerializeField]
     private GameObject firstCollidingObject = null;
     private GameObject nextCollidingObject = null;
+
+
+
 
     new void Start()
     {
@@ -201,6 +207,29 @@ public class DragAndDrop : Hover
         {
             nextCollidingObject = null;
         }
+
+
+        //System for removing items from storage system
+        if (stored && (other.gameObject.tag == "storage" || other.gameObject.name == "single plate"))
+        {
+            Storage goStorage = other.gameObject.GetComponent<Storage>();
+            int indexRemove = -1;
+            dragging = true;
+            for(int i = 0; i < goStorage.currentCapacity; i++)
+            {
+                if (goStorage.StoredItem[i].Equals(gameObject))
+                {
+                    indexRemove = i;
+                    break;
+                }
+            }
+            if (indexRemove != -1)
+            {
+                goStorage.RemoveItem(indexRemove, false, true);
+            }
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        }
+        stored = false;
     }
     // enact property changes when stored
     //  pos, rot: freeze
@@ -214,7 +243,8 @@ public class DragAndDrop : Hover
         //the plate ====
 
         transform.SetParent(storedIn.transform, false);
-        canDragandDrop = false;
+        
+        //canDragandDrop = false; Commenting out for removal
 
         //Switching this from rigbod.constraints to gameObject.GetComponent<Rigidbody2D>() fixed issue with
         //mortar and pestle -Jake
@@ -231,11 +261,11 @@ public class DragAndDrop : Hover
         //Reall bad hard code for temp fix -Jake
         if (storedIn.name == "mortar")
         {
-            transform.localScale *= 2;
+            //transform.localScale *= 2;
             transform.localPosition = new Vector3(0, 0, 0);
         }
 
-
+        stored = true;
         /* og jack code
         rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.transform.localScale = Vector3.one / 4;

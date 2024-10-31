@@ -69,7 +69,7 @@ public class Mortar : MonoBehaviour
 
                 //Destorys current item in storage and instanitates new one in it's place
                 // *** Prefab now gets created but does not get stored ***
-                storageScript.RemoveItem(0, true);
+                storageScript.RemoveItem(0, true, false);
                 GameObject temp; 
                 temp = Instantiate(newType, transform);
                 storageScript.StoreItem(temp);
