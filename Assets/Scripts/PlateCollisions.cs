@@ -15,7 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateCollisions : MonoBehaviour
+/*public class PlateCollisions : MonoBehaviour
 {
     //Stores the object colliding with the plate
     GameObject collidingObject;
@@ -29,7 +29,7 @@ public class PlateCollisions : MonoBehaviour
     {
         /* -Handles changing data about the food item 
            -Also sends information on what food item is to the plate data
-         */
+         *]/
 
         //Tests to see if object is null
         //This check is essential to find out if anything is actually colliding
@@ -52,7 +52,7 @@ public class PlateCollisions : MonoBehaviour
                 collidingObject.transform.localScale = collidingObject.transform.localScale / 2;
                 //collidingObject.transform.localPosition = new Vector3(2, 2, 0);
                 collidingObject.transform.localPosition = Vector3.zero;
-                */
+                *]/
                 collidingObject.GetComponent<DragAndDrop>().Stored(gameObject, Vector2.zero);
 
                 // ==== Then for each food item we can test it's name ====
@@ -128,5 +128,5 @@ public class PlateCollisions : MonoBehaviour
     {
         transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
     }
-}
+}*/
 

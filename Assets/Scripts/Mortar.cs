@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class Mortar : MonoBehaviour
+/*public class Mortar : MonoBehaviour
 {
     //Stores how many times the pestel has been smashed
     int pestelCount;
@@ -79,4 +79,4 @@ public class Mortar : MonoBehaviour
 
         
     }
-}
+}*/
