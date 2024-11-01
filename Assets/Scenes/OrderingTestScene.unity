@@ -549,7 +549,7 @@ MonoBehaviour:
   alienPrefab: {fileID: 3956127613196672547, guid: 7b7c197f6678e5549a5fa697ecb1547b, type: 3}
   startSize: 0.1
   endSize: 2
-  approachSpeed: 2
+  approachSpeed: 1.5
   startPoint: {x: -8, y: 2, z: 10}
   endPoint: {x: -6, y: 1.15, z: 1}
   dialogueBox: {fileID: 468646337}
@@ -720,6 +720,10 @@ PrefabInstance:
     - target: {fileID: 2939843601563900970, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939843601563900970, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3247914715667506551, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Name
