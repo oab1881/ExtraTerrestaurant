@@ -8,6 +8,7 @@ Changelog:
     -Created script : 10/01/24
     -changed item placement to new plate center : 10/02 : jack
     -Made new changes for new scoring system and cap to amount of food 10/17/24 : Jake
+    -Added drag and drop for plate : 10/31 : Chris
 */
 
 using System.Collections;

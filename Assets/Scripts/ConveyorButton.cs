@@ -15,17 +15,22 @@ public class ConveyorButton : MonoBehaviour
     public Sprite unpressedButton;
     public SpriteRenderer spriteRenderer;
 
+    [SerializeField]
+    public ScoreManager scoring;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
+
     }
 
     private void OnMouseDown()
     {
         ChangeSprite(pressedButton);
+        scoring.DisplayScore();
     }
     private void OnMouseUp()
     {

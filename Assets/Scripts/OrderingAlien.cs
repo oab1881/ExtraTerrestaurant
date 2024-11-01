@@ -250,6 +250,14 @@ public class OrderingAlien : MonoBehaviour
                 List<string> com = new List<string>() { c };
                 order.Add(com);
             }
+
+            foreach (List<string> list in order)
+            {
+                foreach (string line in list)
+                {
+                    Debug.Log(line);
+                }
+            }
         }
         else
         {
