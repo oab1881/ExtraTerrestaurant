@@ -92,7 +92,7 @@ public class DragAndDrop : MonoBehaviour
     {
         //coll.isTrigger = !togOn;
         //rigidbod.simulated = togOn;
-        rigidbod.velocity = Vector2.zero;
+        //rigidbod.velocity = Vector2.zero;
         rigidbod.angularVelocity = 0f;
         if (togOn)
             rigidbod.constraints = RigidbodyConstraints2D.None;
