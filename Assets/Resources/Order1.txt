@@ -1,2 +1,2 @@
-gimme one A with some B, and throw some C on there too.
-A, B, C
+gimme one AG , and throw some C on there too.
+A, G, C
