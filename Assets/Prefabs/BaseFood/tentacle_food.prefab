@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodName: tentacle
   crushed: {fileID: 8297354940826436125, guid: aba9ed37d2f0e8b4ba07129d0df2f608, type: 3}
   cut: {fileID: 0}
   cooked: {fileID: 0}

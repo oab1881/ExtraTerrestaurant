@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredSprite: {fileID: 21300000, guid: 3c4bffee594023f4fad1af427066b4f4, type: 3}
   initalMouse: {x: 0, y: 0, z: 0}
+  canDragandDrop: 1
+  isPlate: 0
   dragging: 0
   firstCollidingObject: {fileID: 0}
 --- !u!60 &2580393201828386610
@@ -208,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodName: leaf
   crushed: {fileID: 0}
   cut: {fileID: 0}
   cooked: {fileID: 0}
+  foodColor: {r: 0, g: 0, b: 0, a: 0}

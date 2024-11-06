@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodName: leaf
   crushed: {fileID: 8297354940826436125, guid: 7df30be1bd1f89b458f355bbc140a19d, type: 3}
   cut: {fileID: 0}
   cooked: {fileID: 0}

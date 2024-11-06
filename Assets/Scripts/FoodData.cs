@@ -4,7 +4,8 @@
 Stores important information on food
 
 Changelog:
-    -Created script: 10/27/24 : Jake
+    - Created script: 10/27/24 : Jake
+    - Added values for a food item's name and booleans for if they are crushed, cooked, or cut
     
 */
 using System.Collections;
@@ -13,13 +14,19 @@ using UnityEngine;
 
 public class FoodData : MonoBehaviour
 {
-    //If any of these are null that means this item
-    //can't be transformed that way ie crushed food has no
-    //crushed gameobject it is already crushed
+    [SerializeField]
+    string foodName;
+    string prepName;
+
+    // If any of these are null that means this item
+    // can't be transformed that way ie crushed food has no
+    // crushed gameobject it is already crushed
     [SerializeField]
     GameObject crushed;
+
     [SerializeField]
     GameObject cut;
+
     [SerializeField]
     GameObject cooked;
 
@@ -34,6 +41,9 @@ public class FoodData : MonoBehaviour
         get { return crushed; }
     }
 
-    public Color FoodColor { get { return foodColor; } }
+    public Color FoodColor 
+    { 
+        get { return foodColor; } 
+    }
     
 }
