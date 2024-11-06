@@ -4,9 +4,10 @@
 Holds information on the plate such as list of all ingriedients
 
 Changelog:
-    -Created script : 10/01/24 : Jake
-    -Changed style of list to match score manager : 10/17/24 : Jake
-    -Added a property for size of list : 10/17/24 : Jake
+    - Created script : 10/01/24 : Jake
+    - Changed style of list to match score manager : 10/17/24 : Jake
+    - Added a property for size of list : 10/17/24 : Jake
+    - Updated to use GameObjects instead of strings : Chris
 */
 using System.Collections;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ public class PlateData : MonoBehaviour
     //List to store list of strings
     //The list of strings is for {"Ingredient", "Effect"} 
     //Ex - {"tentacle", "Cooked"}
-    public List<List<string>> ingredients = new List<List<string>>();
+    public List<GameObject> ingredients = new List<GameObject>();
 
     /// <summary>
     /// Returns size of the list of ingredients
@@ -35,17 +36,9 @@ public class PlateData : MonoBehaviour
     /// </summary>
     /// <param name="ingredient1">Ingriedent to be added</param>
     /// <param name="effect">The effect added to the ingreident</param>
-    public void AddIngredient(string ingredient1, string effect)
+    public void AddIngredient(GameObject food)
     {
-        if (effect == "")
-        {
-
-            ingredients.Add(new List<string> { ingredient1 });
-        }
-        else
-        {
-            ingredients.Add(new List<string> { ingredient1, effect });
-        }
+        ingredients.Add(food);
     }
     
 }

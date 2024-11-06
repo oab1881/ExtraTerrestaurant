@@ -5,10 +5,11 @@ Does collision between the food objects and the plates in the game! Also
 between mouse and plate!
 
 Changelog:
-    -Created script : 10/01/24
-    -changed item placement to new plate center : 10/02 : jack
-    -Made new changes for new scoring system and cap to amount of food 10/17/24 : Jake
-    -Added drag and drop for plate : 10/31 : Chris
+    - Created script : 10/01/24
+    - Changed item placement to new plate center : 10/02 : jack
+    - Made new changes for new scoring system and cap to amount of food 10/17/24 : Jake
+    - Added drag and drop for plate : 10/31 : Chris
+    - Updated the ingredient adding to add the GameObject of the food to the plate data : Chris
 */
 
 using System.Collections;
@@ -56,45 +57,9 @@ public class PlateCollisions : MonoBehaviour
                 collidingObject.GetComponent<DragAndDrop>().Stored(gameObject, Vector2.zero);
 
                 // ==== Then for each food item we can test it's name ====
-                //And send it's data to the list of food items on the plate
+                // And send it's data to the list of food items on the plate
 
-
-                //For testing the tentacle food item
-                if (collidingObject.name == "tentacle_food(Clone)")
-                {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
-                    plateData.AddIngredient("tentacle", "");
-                }
-
-
-                else if (collidingObject.name == "leaf_food(Clone)")
-                {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
-                    plateData.AddIngredient("leaf", "");
-                }
-
-                else if (collidingObject.name == "cyrstal_food(Clone)")
-                {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
-                    plateData.AddIngredient("crystal", "");
-                }
-
-                else if (collidingObject.name == "egg_food(Clone)")
-                {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
-                    plateData.AddIngredient("egg", "");
-                }
-
-                else if (collidingObject.name == "sheet_food(Clone)")
-                {
-                    //Adds to list with corresponding food value obtained from Score
-                    //Manager
-                    plateData.AddIngredient("sheet", "");
-                }
+                plateData.AddIngredient(collidingObject);
 
                 //At the end we set collidingObject to null to end the plate collision
                 //Also deactivates collisions
