@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodName: egg
   crushed: {fileID: 8297354940826436125, guid: 340748ec438b1984cbd0cfc196649fc9, type: 3}
   cut: {fileID: 0}
   cooked: {fileID: 0}
