@@ -150,51 +150,52 @@ public class ScoreManager : MonoBehaviour
 
     public void DisplayScore()
     {
-        string displayText = "";
-
-        TextMeshProUGUI scoreText = kitchenMonitor.GetComponentInChildren<TextMeshProUGUI>();
-        (int totalScore, List<int> results) = ScoreDish(alienOrder.order, plateData.ingredients);
-        Debug.Log(totalScore);
-        foreach (int i in results) 
-        {
-            Debug.Log(i);
-        }
-        for(int i = 0; i < alienOrder.order.Count; i++)
-        {
-            switch (results[i]) 
-            {
-                case 0:
-                    string text1 = "";
-                    foreach(string letter in alienOrder.order[i])
-                    {
-                        text1 = $"<color=#FF0000>{letter.Replace(" ", "")}</color>";
-                    }
-                    displayText = string.Concat(displayText, text1);
-                    break;
-
-                case 1:
-                    string text2 = "";
-                    foreach (string letter in alienOrder.order[i])
-                    {
-                        text2 = $"<color=#FFEA00>{letter.Replace(" ", "")}</color>";
-                    }
-                    displayText = string.Concat(displayText, text2);
-                    break;
-
-                case 2:
-                    string text3 = "";
-                    foreach (string letter in alienOrder.order[i])
-                    {
-                        text3 = $"<color=#00FF00>{letter.Replace(" ", "")}</color>";
-                    }
-                    displayText = string.Concat(displayText, text3);
-                    break;
-
-                default:
-                    Debug.Log("Something went wrong...");
-                    break;
-            }
-        }
-        scoreText.text = displayText;
+        //Commented out because of an error
+        //string displayText = "";
+        //
+        //TextMeshProUGUI scoreText = kitchenMonitor.GetComponentInChildren<TextMeshProUGUI>();
+        //(int totalScore, List<int> results) = ScoreDish(alienOrder.order, plateData.ingredients); //ERROR DETECTED
+        //Debug.Log(totalScore);
+        //foreach (int i in results) 
+        //{
+        //    Debug.Log(i);
+        //}
+        //for(int i = 0; i < alienOrder.order.Count; i++)
+        //{
+        //    switch (results[i]) 
+        //    {
+        //        case 0:
+        //            string text1 = "";
+        //            foreach(string letter in alienOrder.order[i])
+        //            {
+        //                text1 = $"<color=#FF0000>{letter.Replace(" ", "")}</color>";
+        //            }
+        //            displayText = string.Concat(displayText, text1);
+        //            break;
+        //
+        //        case 1:
+        //            string text2 = "";
+        //            foreach (string letter in alienOrder.order[i])
+        //            {
+        //                text2 = $"<color=#FFEA00>{letter.Replace(" ", "")}</color>";
+        //            }
+        //            displayText = string.Concat(displayText, text2);
+        //            break;
+        //
+        //        case 2:
+        //            string text3 = "";
+        //            foreach (string letter in alienOrder.order[i])
+        //            {
+        //                text3 = $"<color=#00FF00>{letter.Replace(" ", "")}</color>";
+        //            }
+        //            displayText = string.Concat(displayText, text3);
+        //            break;
+        //
+        //        default:
+        //            Debug.Log("Something went wrong...");
+        //            break;
+        //    }
+        //}
+        //scoreText.text = displayText;
     }
 }
