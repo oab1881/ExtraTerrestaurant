@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShatterOnDrop : MonoBehaviour
 {
-    public GameObject[] chunkPrefabs; // Array to hold your chunk prefabs
+    public GameObject[] chunkPrefabs; // Array to hold chunk prefabs
     public float shatterHeight = 5f;  // Height threshold for shattering
     private bool isFalling = false;   // Track if the ingredient is falling
     private float fallStartHeight;    // Track height when the ingredient starts falling
