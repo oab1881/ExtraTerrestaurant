@@ -6,12 +6,19 @@ Stores important information on food
 Changelog:
     - Created script: 10/27/24 : Jake
     - Added values for a food item's name and booleans for if they are crushed, cooked, or cut
+    -Added enum for the layerState; Funcrtion to change states : Jake/Owen : 11/8/24
     
 */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum LayerState
+{
+    Base,
+    Gooped,
+    Cooked,
+    Frozen,
+}
 public class FoodData : MonoBehaviour
 {
     [SerializeField]
@@ -23,12 +30,10 @@ public class FoodData : MonoBehaviour
     // crushed gameobject it is already crushed
     [SerializeField]
     GameObject crushed;
-
     [SerializeField]
     GameObject cut;
 
-    [SerializeField]
-    GameObject cooked;
+    LayerState currentState;
 
     [SerializeField]
     Color foodColor;
@@ -45,5 +50,22 @@ public class FoodData : MonoBehaviour
     { 
         get { return foodColor; } 
     }
-    
+
+    public LayerState CurrentState
+    {
+        get { return currentState; }
+        set { currentState = value; }
+    }
+
+    private void Start()
+    {
+        currentState= LayerState.Base;
+    }
+
+
+    public void ChangeState(LayerState newState, Color newColor)
+    {
+        currentState= newState;
+        gameObject.GetComponent<SpriteRenderer>().color= newColor;
+    }
 }
