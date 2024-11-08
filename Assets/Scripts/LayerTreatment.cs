@@ -19,6 +19,8 @@ public class LayerTreatment : MonoBehaviour
     LayerState changeType;  //Reference to FoodData - LayerState enum
     Color changeColor;      //Color that the ingredient will change to (Red, Blue, Green)
 
+    public PhysicsMaterial2D bouncyMaterial;   //Used to make gooped objects bouncy
+
     List<float> timers = new List<float>(); //List of timers used to keep track of timers on treated food
 
     private void Start()
@@ -26,7 +28,7 @@ public class LayerTreatment : MonoBehaviour
         if(gameObject.name == "oven red")   //If ingredient goes in oven
         {
             changeType = LayerState.Cooked; //Change its state to cooked
-            changeColor = Color.red;        //Change color to red
+            changeColor = new Color32(110, 38, 14, 255);         //Change color to red
         }
         else if(gameObject.name == "freezer blue")  //If ingredient goes in freezer
         {
@@ -43,7 +45,7 @@ public class LayerTreatment : MonoBehaviour
 
     private void Update()
     {
-        /*
+        
         if(currentCount < storageScript.currentCapacity)    //If the current # of ingredients being stored < current capacity of objects that can be stored
         {
             currentCount++;     //Increase # of ingredients being stored
@@ -51,7 +53,7 @@ public class LayerTreatment : MonoBehaviour
         }
         DecreaseTimer();        //Call Decrease timer every frame
         CheckTimer();           //Call CheckTimer to see if timer ended
-        */
+        
     }
 
     //Create a timer for an instance of a treated food
@@ -78,7 +80,20 @@ public class LayerTreatment : MonoBehaviour
             if (timers[i] < 0.0f)
             {
                 storageScript.StoredItem[i].GetComponent<FoodData>().ChangeState(changeType,changeColor);  //Change food's type and color
+
+                //If the changeType is Gooped, add the bouncy material
+                if (changeType == LayerState.Gooped && bouncyMaterial != null)
+                {
+                    Rigidbody2D ingredientRB = storageScript.StoredItem[i].GetComponent<Rigidbody2D>();
+                    //Collider2D ingredientCollider = storageScript.StoredItem[i].GetComponent<Collider2D>();
+                    if (ingredientRB != null)
+                    {
+                        ingredientRB.sharedMaterial = bouncyMaterial; //Apply the bouncy material
+                    }
+                }
+
                 timers.RemoveAt(i); //Remove timer from list
+                i--; // Adjust the index due to timer removal
             }
         }
     }
