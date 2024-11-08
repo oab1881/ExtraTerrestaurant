@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    // Amount to shift the camera by
+    //Amount to shift the camera by
     [SerializeField]
     private float shiftAmount;
 
-    // Reference to the camera
+    //Reference to the camera
     private Camera mainCamera;
 
     void Start()
     {
-        // Get the main camera if not already assigned
+        //Get reference to main camera
         mainCamera = Camera.main;
         if (mainCamera == null)
         {
@@ -22,7 +22,7 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
-    // Detect clicks
+    //Detect if player clicked
     void OnMouseDown()
     {
         if (mainCamera != null)
