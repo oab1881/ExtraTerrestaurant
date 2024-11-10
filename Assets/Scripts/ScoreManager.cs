@@ -58,9 +58,8 @@ public class ScoreManager : MonoBehaviour
 
         Returns an int representing the score the player earned on the order
     */
-    private (int totalScore, List<int> results) ScoreDish(List<List<string>> customer_order, List<List<string>> player_food)
+    private List<int> ScoreDish(List<List<string>> customer_order, List<FoodData> player_food)
     {
-        int totalScore = 0;
         List<int> results = new List<int>();
 
         // Create modifiable list based off of the food on the plate
@@ -69,7 +68,6 @@ public class ScoreManager : MonoBehaviour
         // Loop through each component of the customer's order
         foreach(List<string> component in customer_order)
         {
-            int preppedHighest = 0;
             int preppedHighestRating = 0;
             int preppedHighestIndex = 0;
 
@@ -78,11 +76,9 @@ public class ScoreManager : MonoBehaviour
                 // Evaluate a single raw ingredient
                 if (component.Count == 1)
                 {
-                    (int score, int res) = EvaluateRaw(component, player_food[i]);
-                    if (score > preppedHighest)
+                    int res = EvaluateRaw(component, player_food[i]);
+                    if (res > preppedHighestRating)
                     {
-                        preppedHighest = score;
-                        //ingredientsUsed.RemoveAt(i);
                         preppedHighestRating = res;
                         continue;
                     }
@@ -90,112 +86,104 @@ public class ScoreManager : MonoBehaviour
                 // Evaluate a single prepared ingredient
                 else if (component.Count == 2) 
                 {
-                    (int score, int res) = EvaluatePrepped(component, player_food[i]);
-                    if(score > preppedHighest)
+                    int res = EvaluatePrepped(component, player_food[i]);
+                    if(res > preppedHighestRating)
                     {
-                        preppedHighest = score;
                         preppedHighestRating = res;
                         preppedHighestIndex = i;
                     }
                 }
             }
 
-            totalScore += score;
             results.Add(preppedHighestRating);
             //ingredientsUsed.RemoveAt(preppedHighestIndex);
         }
-        return (totalScore, results);
+        return results;
     }
 
     // Used to evaluate an ingredient that has no preparation methods used on it
-    private (int score, int result) EvaluateRaw(List<string> customer_order, List<string> used_ingredient)
+    private int EvaluateRaw(List<string> customer_order, FoodData used_ingredient)
     {
-        int score = 0;
         int result = 0;
         string value = customer_order[0].Trim();
 
         // Use the ingredient the player used as the key to the ingredients dictionary and see if the item the customer ordered matches the value
-        if (ingredients[used_ingredient[0]] == value)
+        if (ingredients[used_ingredient.FoodName] == value)
         { 
-            score += 25;
             result += 2;
         }
 
-        return (score, result);
+        return result;
     }
 
     // Used to evaluate an ingredient that has a single preparation method used on it.
-    private (int score, int result) EvaluatePrepped(List<string> customer_order, List<string> used_ingredient)
+    private int EvaluatePrepped(List<string> customer_order, FoodData used_ingredient)
     {
-        int score = 0;
         int result = 0;
         string ingredientValue = customer_order[0].Trim();
         string prepValue = customer_order[1].Trim();
 
         // Use the ingredient the player used as the key to the ingredients dictionary and see if the item the customer ordered matches the value
-        if (ingredients[used_ingredient[0]] == ingredientValue)
+        if (ingredients[used_ingredient.FoodName] == ingredientValue)
         {
-            score += 25;
             result += 1;
             // If this test is passed, do the same with the preparation method.
-            if (preparationMethods[used_ingredient[1]] == prepValue)
+            if (preparationMethods[used_ingredient.PrepName] == prepValue)
             {
-                score += 25;
                 result += 1;
             }
         }
 
-        return (score, result);
+        return result;
     }
 
     public void DisplayScore()
     {
-        //Commented out because of an error
-        //string displayText = "";
-        //
-        //TextMeshProUGUI scoreText = kitchenMonitor.GetComponentInChildren<TextMeshProUGUI>();
-        //(int totalScore, List<int> results) = ScoreDish(alienOrder.order, plateData.ingredients); //ERROR DETECTED
-        //Debug.Log(totalScore);
-        //foreach (int i in results) 
-        //{
-        //    Debug.Log(i);
-        //}
-        //for(int i = 0; i < alienOrder.order.Count; i++)
-        //{
-        //    switch (results[i]) 
-        //    {
-        //        case 0:
-        //            string text1 = "";
-        //            foreach(string letter in alienOrder.order[i])
-        //            {
-        //                text1 = $"<color=#FF0000>{letter.Replace(" ", "")}</color>";
-        //            }
-        //            displayText = string.Concat(displayText, text1);
-        //            break;
-        //
-        //        case 1:
-        //            string text2 = "";
-        //            foreach (string letter in alienOrder.order[i])
-        //            {
-        //                text2 = $"<color=#FFEA00>{letter.Replace(" ", "")}</color>";
-        //            }
-        //            displayText = string.Concat(displayText, text2);
-        //            break;
-        //
-        //        case 2:
-        //            string text3 = "";
-        //            foreach (string letter in alienOrder.order[i])
-        //            {
-        //                text3 = $"<color=#00FF00>{letter.Replace(" ", "")}</color>";
-        //            }
-        //            displayText = string.Concat(displayText, text3);
-        //            break;
-        //
-        //        default:
-        //            Debug.Log("Something went wrong...");
-        //            break;
-        //    }
-        //}
-        //scoreText.text = displayText;
+        
+        string displayText = "";
+        
+        TextMeshProUGUI scoreText = kitchenMonitor.GetComponentInChildren<TextMeshProUGUI>();
+        List<int> results = ScoreDish(alienOrder.order, plateData.ingredients);
+        foreach (int i in results) 
+        {
+            Debug.Log(i);
+        }
+        for(int i = 0; i < alienOrder.order.Count; i++)
+        {
+            switch (results[i]) 
+            {
+                case 0:
+                    string text1 = "";
+                    foreach(string letter in alienOrder.order[i])
+                    {
+                        text1 = $"<color=#FF0000>{letter.Replace(" ", "")}</color>";
+                    }
+                    displayText = string.Concat(displayText, text1);
+                    break;
+        
+                case 1:
+                    string text2 = "";
+                    foreach (string letter in alienOrder.order[i])
+                    {
+                        text2 = $"<color=#FFEA00>{letter.Replace(" ", "")}</color>";
+                    }
+                    displayText = string.Concat(displayText, text2);
+                    break;
+        
+                case 2:
+                    string text3 = "";
+                    foreach (string letter in alienOrder.order[i])
+                    {
+                        text3 = $"<color=#00FF00>{letter.Replace(" ", "")}</color>";
+                    }
+                    displayText = string.Concat(displayText, text3);
+                    break;
+        
+                default:
+                    Debug.Log("Something went wrong...");
+                    break;
+            }
+        }
+        scoreText.text = displayText;
     }
 }

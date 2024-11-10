@@ -35,7 +35,7 @@ public class PlateData : MonoBehaviour
     /// <param name="food">The food item to be added to the ingredients list</param>
     public void AddIngredient(GameObject food)
     {
-        ingredients.Add(food);
+        ingredients.Add(food.GetComponent<FoodData>());
     }
     
 }
