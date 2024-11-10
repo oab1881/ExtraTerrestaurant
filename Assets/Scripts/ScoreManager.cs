@@ -34,10 +34,10 @@ public class ScoreManager : MonoBehaviour
         ingredients.Add("sheet", "E");
 
         // Create the Dictionary of preparation_methods
-        preparationMethods.Add("cooked", "F");
+        preparationMethods.Add("cooked", "H");
         preparationMethods.Add("frozen", "G");
-        preparationMethods.Add("chopped", "H");
-        preparationMethods.Add("grinded", "I");
+        preparationMethods.Add("chopped", "M");
+        preparationMethods.Add("grinded", "O");
         preparationMethods.Add("gooped", "J");
 
         // Set Score to 0
