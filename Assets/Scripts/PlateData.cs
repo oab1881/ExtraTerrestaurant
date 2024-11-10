@@ -15,10 +15,8 @@ using UnityEngine;
 
 public class PlateData : MonoBehaviour
 {
-    //List to store list of strings
-    //The list of strings is for {"Ingredient", "Effect"} 
-    //Ex - {"tentacle", "Cooked"}
-    public List<GameObject> ingredients = new List<GameObject>();
+    //List to store the different ingredients on the plate
+    public List<FoodData> ingredients = new List<FoodData>();
 
     /// <summary>
     /// Returns size of the list of ingredients
@@ -34,8 +32,7 @@ public class PlateData : MonoBehaviour
     /// <summary>
     /// Public function to add ingredients/effects to the plate
     /// </summary>
-    /// <param name="ingredient1">Ingriedent to be added</param>
-    /// <param name="effect">The effect added to the ingreident</param>
+    /// <param name="food">The food item to be added to the ingredients list</param>
     public void AddIngredient(GameObject food)
     {
         ingredients.Add(food);
