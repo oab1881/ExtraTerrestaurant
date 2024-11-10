@@ -6,7 +6,7 @@ Stores important information on food
 Changelog:
     - Created script: 10/27/24 : Jake
     - Added values for a food item's name and booleans for if they are crushed, cooked, or cut
-    -Added enum for the layerState; Funcrtion to change states : Jake/Owen : 11/8/24
+    - Added enum for the layerState; Function to change states : Jake/Owen : 11/8/24
     
 */
 using System.Collections;
@@ -49,6 +49,15 @@ public class FoodData : MonoBehaviour
     public Color FoodColor 
     { 
         get { return foodColor; } 
+    }
+
+    public string FoodName
+    {
+        get { return foodName; }
+    }
+    public string PrepName
+    {
+        get { return PrepName; }
     }
 
     public LayerState CurrentState
