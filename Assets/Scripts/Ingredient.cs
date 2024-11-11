@@ -52,7 +52,6 @@ public class Ingredient : MonoBehaviour
                 currentColl = null;
                 nextColl = null;
             }
-            
         }
     }
 
@@ -64,21 +63,17 @@ public class Ingredient : MonoBehaviour
 
         // turn off physics
         dnd.TogglePhysics(false);
-        dnd.rigidbod.simulated = false;
+        //dnd.rigidbod.simulated = false;
 
         // set storage parent
-        transform.SetParent(currentColl.gameObject.transform, false);
+        //transform.SetParent(currentColl.gameObject.transform, false);
         //for detach? transform.SetParent(null, false);
-
 
         // change layer, stored layer == 9
         gameObject.layer = 9;
-
-
-
-        //gameObject.GetComponent<SpriteRenderer>().sortinglayer;
-
-
+        // draw behind storage tint
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "storage";
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
 
         // set new position
         //transform.localPosition = currentColl.positions[currentColl.currentCap];

@@ -26,16 +26,18 @@ public class DragAndDrop : MonoBehaviour
         //{
         //    FollowMouse();
         //}
-        if (dragging) FollowMouse();
-        
-        // on release
-        if (Input.GetMouseButtonUp(0))
+        if (dragging)
         {
-            // stop dragging, resume physics
-            //Debug.Log("UPDATE: mouse up");
-            initialMouse = Vector3.zero;
-            dragging = false;
-            TogglePhysics(true);
+            FollowMouse();
+            // on release
+            if (Input.GetMouseButtonUp(0))
+            {
+                // stop dragging, resume physics
+                //Debug.Log("drag end");
+                initialMouse = Vector3.zero;
+                dragging = false;
+                TogglePhysics(true);
+            }
         }
     }
 
@@ -85,7 +87,17 @@ public class DragAndDrop : MonoBehaviour
         //FollowMouse(Vector3.zero);
         //FollowMouse();
         dragging = true;
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "active";
     }
+
+    // on release
+    /*private void OnMouseUpAsButton()
+    {
+        // stop dragging, resume physics
+        initialMouse = Vector3.zero;
+        dragging = false;
+        TogglePhysics(true);
+    }*/
 
     public void TogglePhysics(bool togOn)
     {
