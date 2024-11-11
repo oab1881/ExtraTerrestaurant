@@ -1,7 +1,5 @@
-/// === overhaul by jack 11/01 ===
-/// stores objects, but which?
-///  -d&d? ingredients?
-
+/// === overhauled by jack 11/01 ===
+/// stores ingredients
 using UnityEngine;
 
 public class Storage : MonoBehaviour
@@ -59,24 +57,30 @@ public class Storage : MonoBehaviour
         }
         else
         {
-            if (currentCap == maxCapacity)
+            /*if (currentCap == maxCapacity)
                 sprRend.color = fullColor;
-            else
+            else*/
                 sprRend.color = hoverColor;
         }
     }
 
-    // highlight overload for item hover --> sprite renderer
+    // highlight overload for item hover: takes sprite of hovered item, passes to snap ghost
     public void HighlightSprite(SpriteRenderer itemSprite)
     {
+        // if full, max opacity
         if (currentCap == maxCapacity)
             sprRend.color = fullColor;
         else
         {
-            snapSprite.gameObject.transform.localPosition = positions[currentCap-1];
-            // get held item sprite
-            snapSprite.sprite = itemSprite.sprite;
-            snapSprite.enabled = true;
+            // not tray: reveal, position snap ghost
+            if (!isTray)
+            {
+                Debug.Log(positions[currentCap]);
+                snapSprite.gameObject.transform.localPosition = positions[currentCap];
+                // get held item sprite
+                snapSprite.sprite = itemSprite.sprite;
+                snapSprite.enabled = true;
+            }
             HighlightSprite(true);
         }
     }

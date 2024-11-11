@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7879753483142807167}
   - component: {fileID: 3323012342824336015}
   - component: {fileID: 7004981561572283162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tentacle_food
   m_TagString: food item
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragging: 1
+  rigidbod: {fileID: 0}
 --- !u!114 &-7879753483142807167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c5fee204b2d6d43b1b7349b0e4cd93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentColl: {fileID: 0}
+  stored: 0
 --- !u!60 &3323012342824336015
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -135,7 +138,7 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 383
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -1,12 +1,11 @@
-/// === overhaul by jack 11/01 ===
-///     does what it says on the tin
-///     :p
+/// === overhauled by jack 11/01 ===
+/// does what it says on the tin  :p
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
     // fields
-    // public bc accessed by ingredient
+    // public bc accessed by Ingredient, Tray
     public bool dragging = false;
     private Vector3 initialMouse = Vector3.zero;
     public Rigidbody2D rigidbod;
@@ -95,8 +94,17 @@ public class DragAndDrop : MonoBehaviour
         //rigidbod.velocity = Vector2.zero;
         rigidbod.angularVelocity = 0f;
         if (togOn)
+        {
             rigidbod.constraints = RigidbodyConstraints2D.None;
-        else rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
-
+            if (gameObject.GetComponent<Ingredient>())
+                gameObject.layer = 3;   // change layer to 3 (ingredient)
+            else
+                gameObject.layer = 0;   // change layer to 0 (default)
+        }
+        else
+        {
+            rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameObject.layer = 7;   // change layer to 7 (held)
+        }
     }
 }

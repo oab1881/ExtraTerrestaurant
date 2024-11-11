@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4431532476199755897}
   - component: {fileID: 6879090268991256250}
   - component: {fileID: -8211959908704455596}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sheet_food
   m_TagString: food item
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 383
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295

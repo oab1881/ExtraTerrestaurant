@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 109144647864907259}
   - component: {fileID: 6389654488614239208}
   - component: {fileID: 479823825588479222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cyrstal_food
   m_TagString: food item
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 383
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
