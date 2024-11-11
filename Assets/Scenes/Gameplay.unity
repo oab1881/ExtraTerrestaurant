@@ -834,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storageScript: {fileID: 860619065}
   bouncyMaterial: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+  noBounce: {fileID: 6200000, guid: 38008c3fee079a4499d94727f9787b04, type: 2}
 --- !u!114 &860619065 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3548894145777989391, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
@@ -994,6 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storageScript: {fileID: 867862342}
   bouncyMaterial: {fileID: 0}
+  noBounce: {fileID: 0}
 --- !u!114 &867862346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,6 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storageScript: {fileID: 867862344}
   bouncyMaterial: {fileID: 0}
+  noBounce: {fileID: 6200000, guid: 38008c3fee079a4499d94727f9787b04, type: 2}
 --- !u!1 &890323386
 GameObject:
   m_ObjectHideFlags: 0

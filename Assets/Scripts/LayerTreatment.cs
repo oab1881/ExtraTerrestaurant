@@ -20,6 +20,7 @@ public class LayerTreatment : MonoBehaviour
     Color changeColor;      //Color that the ingredient will change to (Red, Blue, Green)
 
     public PhysicsMaterial2D bouncyMaterial;   //Used to make gooped objects bouncy
+    public PhysicsMaterial2D noBounce;   //Used to remove bounciness for frozen objects
 
     List<float> timers = new List<float>(); //List of timers used to keep track of timers on treated food
 
@@ -89,6 +90,16 @@ public class LayerTreatment : MonoBehaviour
                     if (ingredientRB != null)
                     {
                         ingredientRB.sharedMaterial = bouncyMaterial; //Apply the bouncy material
+                    }
+                }
+
+                //If the changeType is Frozen, remove the bouncy material
+                if (changeType == LayerState.Frozen && bouncyMaterial != null)
+                {
+                    Rigidbody2D ingredientRB = storageScript.StoredItem[i].GetComponent<Rigidbody2D>();
+                    if (ingredientRB != null)
+                    {
+                        ingredientRB.sharedMaterial = noBounce; //Remove bouncy script
                     }
                 }
 
