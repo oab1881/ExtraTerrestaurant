@@ -242,12 +242,15 @@ public class OrderingAlien : MonoBehaviour
             orderText2.text = capitalLetters;   //Display order on kitchen screen
 
             // Adds to the order list using the second line of the given text file
-            // Note: will only work with unprepared food items for now. Need to update
-            // it later to work with more than that. - Chris
             List<string> orderComponents = lines[1].Split(",").ToList();
-            foreach (string c in orderComponents)
+            foreach (string component in orderComponents)
             {
-                List<string> com = new List<string>() { c };
+                List<string> com = new List<string>();
+                foreach (string c in component.Split(" "))
+                {
+                    com.Add(c);
+                }
+                
                 order.Add(com);
             }
 
