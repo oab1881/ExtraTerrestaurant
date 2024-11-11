@@ -128,7 +128,7 @@ public class ScoreManager : MonoBehaviour
         {
             result += 1;
             // If this test is passed, do the same with the preparation method.
-            if (preparationMethods[used_ingredient.PrepName] == prepValue)
+            if (preparationMethods.ContainsKey(used_ingredient.PrepName) && preparationMethods[used_ingredient.PrepName] == prepValue)
             {
                 result += 1;
             }
@@ -139,7 +139,6 @@ public class ScoreManager : MonoBehaviour
 
     public void DisplayScore()
     {
-        
         string displayText = "";
         
         TextMeshProUGUI scoreText = kitchenMonitor.GetComponentInChildren<TextMeshProUGUI>();
@@ -156,27 +155,30 @@ public class ScoreManager : MonoBehaviour
                     string text1 = "";
                     foreach(string letter in alienOrder.order[i])
                     {
-                        text1 = $"<color=#FF0000>{letter.Replace(" ", "")}</color>";
+                        text1 = string.Concat(text1, letter.Replace(" ", ""));
                     }
-                    displayText = string.Concat(displayText, text1);
+                    string display1 = $"<color=#FF0000>{text1}</color>";
+                    displayText = string.Concat(displayText, display1);
                     break;
         
                 case 1:
                     string text2 = "";
                     foreach (string letter in alienOrder.order[i])
                     {
-                        text2 = $"<color=#FFEA00>{letter.Replace(" ", "")}</color>";
+                        text2 = string.Concat(text2, letter.Replace(" ", ""));
                     }
-                    displayText = string.Concat(displayText, text2);
+                    string display2 = $"<color=#FFEA00>{text2}</color>";
+                    displayText = string.Concat(displayText, display2);
                     break;
         
                 case 2:
                     string text3 = "";
                     foreach (string letter in alienOrder.order[i])
                     {
-                        text3 = $"<color=#00FF00>{letter.Replace(" ", "")}</color>";
+                        text3 = string.Concat(text3, letter.Replace(" ", ""));
                     }
-                    displayText = string.Concat(displayText, text3);
+                    string display3 = $"<color=#00FF00>{text3}</color>";
+                    displayText = string.Concat(displayText, display3);
                     break;
         
                 default:

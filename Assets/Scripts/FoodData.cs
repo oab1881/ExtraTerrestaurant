@@ -23,7 +23,7 @@ public class FoodData : MonoBehaviour
 {
     [SerializeField]
     string foodName;
-    string prepName;
+    string prepName = "";
 
     // If any of these are null that means this item
     // can't be transformed that way ie crushed food has no
@@ -57,7 +57,7 @@ public class FoodData : MonoBehaviour
     }
     public string PrepName
     {
-        get { return PrepName; }
+        get { return prepName; }
     }
 
     public LayerState CurrentState
