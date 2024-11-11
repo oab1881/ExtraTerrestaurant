@@ -69,7 +69,6 @@ public class ScoreManager : MonoBehaviour
         foreach(List<string> component in customer_order)
         {
             int preppedHighestRating = 0;
-            int preppedHighestIndex = 0;
 
             for (int i = 0; i < player_food.Count; i++)
             {
@@ -80,7 +79,6 @@ public class ScoreManager : MonoBehaviour
                     if (res > preppedHighestRating)
                     {
                         preppedHighestRating = res;
-                        continue;
                     }
                 }
                 // Evaluate a single prepared ingredient
@@ -90,13 +88,11 @@ public class ScoreManager : MonoBehaviour
                     if(res > preppedHighestRating)
                     {
                         preppedHighestRating = res;
-                        preppedHighestIndex = i;
                     }
                 }
             }
 
             results.Add(preppedHighestRating);
-            //ingredientsUsed.RemoveAt(preppedHighestIndex);
         }
         return results;
     }

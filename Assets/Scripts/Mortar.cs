@@ -72,11 +72,9 @@ public class Mortar : MonoBehaviour
                 storageScript.RemoveItem(0, true, false);
                 GameObject temp; 
                 temp = Instantiate(newType, transform);
+                temp.GetComponent<FoodData>().CrushFood();
                 storageScript.StoreItem(temp);
             } 
         }
-
-
-        
     }
 }

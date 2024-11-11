@@ -6,7 +6,10 @@ using System;
 using System.IO;
 using System.Linq;
 
-//Script by Owen Beck//
+// Script by Owen Beck//
+// In Order1.txt, the format for an order should be as follows:
+// X,X Y | Where X is a food item and Y is a prep method
+// There should be no spaces unless a food item has a prep method attached to it
 public class OrderingAlien : MonoBehaviour
 {
     //Testing Script that will spawn in an alien prefab and have it slowly move toward the camera
