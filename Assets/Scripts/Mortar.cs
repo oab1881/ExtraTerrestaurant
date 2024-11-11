@@ -6,6 +6,7 @@ Makes it so food can be crushed not fully implemented
 Changelog:
     -Created script: 10/17/24 : Jake
     -Fixing bugs from playtes; Making it switch to smashed version(Broken); Added particle system : 10/27/24 : Jake
+    -Added sound effects for mortar : 11/11/24 : Jake
     
 */
 using System.Collections;
@@ -57,6 +58,7 @@ public class Mortar : MonoBehaviour
             //Changes the color
             particles.startColor = storageScript.StoredItem[0].GetComponent<FoodData>().FoodColor;
             particles.Play();
+            GameObject.Find("AudioManager").GetComponent<AudioPlayer>().PlaySoundEffect("mortar");
 
             //If the count is equal to 5
             if (pestelCount == 5)

@@ -45,6 +45,7 @@ public class FoodData : MonoBehaviour
     {
         get { return crushed; }
     }
+
     public void CrushFood()
     {
         prepName = "grinded";
@@ -65,33 +66,48 @@ public class FoodData : MonoBehaviour
     {
         prepName = "gooped";
     }
+
+    //Gets food color
     public Color FoodColor 
     { 
         get { return foodColor; } 
     }
+
+    //gets the food name
     public string FoodName
     {
         get { return foodName; }
     }
+    
+    //Gets prep type
     public string PrepName
     {
         get { return prepName; }
     }
 
+    //Stores one of four types goop, cooked, frozen, or base
+    //Is related to the current item. Oven, freezer, and goop change
+    //this state.
     public LayerState CurrentState
     {
         get { return currentState; }
         set { currentState = value; }
     }
 
+    //On start all items are set to base.
     private void Start()
     {
         currentState= LayerState.Base;
     }
 
-
+    /// <summary>
+    /// Changes the state of an object sets name and new color
+    /// </summary>
+    /// <param name="newState">New state change</param>
+    /// <param name="newColor">New color to change to</param>
     public void ChangeState(LayerState newState, Color newColor)
     {
+        //Setting new state and color
         currentState= newState;
         gameObject.GetComponent<SpriteRenderer>().color= newColor;
     }

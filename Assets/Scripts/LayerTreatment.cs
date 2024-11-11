@@ -51,6 +51,9 @@ public class LayerTreatment : MonoBehaviour
         {
             currentCount++;     //Increase # of ingredients being stored
             CreateTimer();      //Create a timer for this ingredient
+
+            //Plays sound effect when something is added to the goop
+            GameObject.Find("AudioManager").GetComponent<AudioPlayer>().PlaySoundEffect("item_inserted_into_slime");
         }
         DecreaseTimer();        //Call Decrease timer every frame
         CheckTimer();           //Call CheckTimer to see if timer ended
