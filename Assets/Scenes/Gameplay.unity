@@ -704,9 +704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135a34e66adc9054e91ffef51b089243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienPrefab: {fileID: 3956127613196672547, guid: 7b7c197f6678e5549a5fa697ecb1547b, type: 3}
+  alienPrefab: {fileID: 4523235403769607777, guid: 16d3e4bdd5c39304cac5104d5163865b, type: 3}
   startSize: 0.1
-  endSize: 2
+  endSize: 0.5
   approachSpeed: 1.5
   startPoint: {x: -8, y: 2, z: 10}
   endPoint: {x: -6, y: 1.15, z: 1}
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storageScript: {fileID: 860619065}
-  bouncyMaterial: {fileID: 0}
+  bouncyMaterial: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
 --- !u!114 &860619065 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3548894145777989391, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
