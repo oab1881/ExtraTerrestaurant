@@ -8,6 +8,7 @@ Changelog:
     - Added values for a food item's name and booleans for if they are crushed, cooked, or cut
     - Added enum for the layerState; Function to change states : Jake/Owen : 11/8/24
     - Added functions to change the prep method of the food item : Chris
+    - Condensed prep method functions into a single function that takes a string : Chris
 */
 using System.Collections;
 using System.Collections.Generic;
@@ -46,25 +47,9 @@ public class FoodData : MonoBehaviour
         get { return crushed; }
     }
 
-    public void CrushFood()
+    public void PrepareFood(string prepMethod)
     {
-        prepName = "grinded";
-    }
-    public void CookFood()
-    {
-        prepName = "cooked";
-    }
-    public void FreezeFood()
-    {
-        prepName = "frozen";
-    }
-    public void ChopFood()
-    {
-        prepName = "chopped";
-    }
-    public void GoopFood()
-    {
-        prepName = "gooped";
+        prepName = prepMethod;
     }
 
     //Gets food color
