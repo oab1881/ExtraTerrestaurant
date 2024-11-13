@@ -10,6 +10,7 @@ Changelog:
     - Added functions to change the prep method of the food item : Chris
     - Condensed prep method functions into a single function that takes a string : Chris
 */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,10 @@ public class FoodData : MonoBehaviour
     public GameObject Crushed
     {
         get { return crushed; }
+    }
+    public GameObject Chopped
+    {
+        get { return cut; }
     }
 
     public void PrepareFood(string prepMethod)

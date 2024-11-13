@@ -39,9 +39,6 @@ public class ScoreManager : MonoBehaviour
         preparationMethods.Add("chopped", "M");
         preparationMethods.Add("grinded", "O");
         preparationMethods.Add("gooped", "J");
-
-        // Set Score to 0
-        score = 0;
     }
 
     /*
