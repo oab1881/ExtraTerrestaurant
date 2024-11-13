@@ -52,7 +52,7 @@ public class CuttingBoard : MonoBehaviour
                 storageScript.RemoveItem(0, true, false);
                 GameObject temp;
                 temp = Instantiate(newType, transform);
-                temp.GetComponent<FoodData>().PrepareFood("grinded");
+                temp.GetComponent<FoodData>().PrepareFood("chopped");
                 storageScript.StoreItem(temp);
             }
         }
