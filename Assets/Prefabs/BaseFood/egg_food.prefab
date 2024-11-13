@@ -193,8 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: egg
   crushed: {fileID: 8297354940826436125, guid: 340748ec438b1984cbd0cfc196649fc9, type: 3}
-  cut: {fileID: 0}
-  cooked: {fileID: 0}
+  cut: {fileID: 8153008286944092344, guid: da04b177240f015488c5ca34833e85b6, type: 3}
   foodColor: {r: 0.6666667, g: 0.87843144, b: 0.50980395, a: 1}
 --- !u!60 &-2591238644688280200
 PolygonCollider2D:

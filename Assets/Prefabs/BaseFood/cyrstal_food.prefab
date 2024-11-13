@@ -383,6 +383,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: crystal
   crushed: {fileID: 8297354940826436125, guid: d0745c4d377fc0c489f4c97dce8db6d6, type: 3}
-  cut: {fileID: 0}
-  cooked: {fileID: 0}
+  cut: {fileID: 3004212520674188885, guid: ee2bf4a168a8b5146bafea58c3823638, type: 3}
   foodColor: {r: 0.38823533, g: 0.07058824, b: 0.054901965, a: 1}

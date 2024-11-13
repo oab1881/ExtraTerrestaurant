@@ -234,6 +234,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: sheet
   crushed: {fileID: 8297354940826436125, guid: 8af8e357dc883664ab5909f7ff7a6245, type: 3}
-  cut: {fileID: 0}
-  cooked: {fileID: 0}
+  cut: {fileID: 8258352048928338297, guid: 55727792421014b4faf0ed5028589b57, type: 3}
   foodColor: {r: 0.23137257, g: 0.31764707, b: 0.67058825, a: 1}

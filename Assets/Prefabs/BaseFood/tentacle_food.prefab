@@ -284,6 +284,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: tentacle
   crushed: {fileID: 8297354940826436125, guid: aba9ed37d2f0e8b4ba07129d0df2f608, type: 3}
-  cut: {fileID: 0}
-  cooked: {fileID: 0}
+  cut: {fileID: 5172223132099338295, guid: dc87392d400ce1f489b7821bb0677272, type: 3}
   foodColor: {r: 0.5764706, g: 0.7137255, b: 0.70980394, a: 1}

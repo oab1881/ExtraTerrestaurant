@@ -315,6 +315,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: leaf
   crushed: {fileID: 8297354940826436125, guid: 7df30be1bd1f89b458f355bbc140a19d, type: 3}
-  cut: {fileID: 0}
-  cooked: {fileID: 0}
+  cut: {fileID: 8758500047902970383, guid: 42093c04e3a3fdf49be16547cedd5a65, type: 3}
   foodColor: {r: 0.7960785, g: 0.6666667, b: 0.61960787, a: 1}
