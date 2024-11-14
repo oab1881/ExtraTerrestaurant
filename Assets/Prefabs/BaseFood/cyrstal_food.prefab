@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2333201935791496569}
   - component: {fileID: 6389654488614239208}
   - component: {fileID: -5924188257960240127}
+  - component: {fileID: 8584951437757281634}
   m_Layer: 0
   m_Name: cyrstal_food
   m_TagString: food item
@@ -38,7 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1470620983731062403
 SpriteRenderer:
@@ -385,3 +386,22 @@ MonoBehaviour:
   crushed: {fileID: 8297354940826436125, guid: d0745c4d377fc0c489f4c97dce8db6d6, type: 3}
   cut: {fileID: 3004212520674188885, guid: ee2bf4a168a8b5146bafea58c3823638, type: 3}
   foodColor: {r: 0.38823533, g: 0.07058824, b: 0.054901965, a: 1}
+--- !u!114 &8584951437757281634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291992907242694315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457e6383353727b46a1aa5c4b22ef805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunkPrefabs:
+  - {fileID: 4831152850716129563, guid: 973516e745cc29c4b9ef0b74dd355967, type: 3}
+  - {fileID: 4831152850716129563, guid: 973516e745cc29c4b9ef0b74dd355967, type: 3}
+  - {fileID: 4831152850716129563, guid: 973516e745cc29c4b9ef0b74dd355967, type: 3}
+  - {fileID: 4831152850716129563, guid: 973516e745cc29c4b9ef0b74dd355967, type: 3}
+  shatterThreshold: 1
+  startTrackingHeight: 1

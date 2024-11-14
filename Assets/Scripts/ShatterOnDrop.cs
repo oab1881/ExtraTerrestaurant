@@ -5,26 +5,32 @@ using UnityEngine;
 public class ShatterOnDrop : MonoBehaviour
 {
     public GameObject[] chunkPrefabs; // Array to hold chunk prefabs
-    public float shatterHeight = 5f;  // Height threshold for shattering
-    private bool isFalling = false;   // Track if the ingredient is falling
-    private float fallStartHeight;    // Track height when the ingredient starts falling
+    public float shatterThreshold = 1f;  // Distance the object needs to fall to shatter
+    public float startTrackingHeight = 1f; // Height threshold to start tracking the fall
+    private bool isFalling = false;   // Track if the object is falling
+    private float fallStartHeight;    // Track height when the object starts falling
 
     void Update()
     {
-        // Check if the ingredient is above the shatter height and start tracking its fall
-        if (transform.position.y > shatterHeight && !isFalling)
+        // Check if the object is above the tracking height and hasn't started falling
+        if (transform.position.y > startTrackingHeight && !isFalling)
         {
             isFalling = true;
             fallStartHeight = transform.position.y;
         }
+        // If the object falls below the starting height, reset the falling state
+        else if (transform.position.y <= startTrackingHeight && isFalling)
+        {
+            isFalling = false;
+        }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the ingredient collided with the floor and if it was dropped from the shatter height
-        if (collision.gameObject.CompareTag("Floor") && isFalling)
+        // Check if the object collided with the floor and fell from a high enough distance
+        if (collision.gameObject.CompareTag("floor") && !isFalling)
         {
-            if (fallStartHeight - transform.position.y >= shatterHeight)
+            if (fallStartHeight - transform.position.y >= shatterThreshold)
             {
                 Shatter();
             }
@@ -34,21 +40,29 @@ public class ShatterOnDrop : MonoBehaviour
 
     void Shatter()
     {
-        // Destroy the original ingredient
+        // Destroy the original object
         Destroy(gameObject);
 
-        // Instantiate 3-4 chunks at the ingredient's position with random rotations
-        for (int i = 0; i < 3; i++)
+        // Instantiate 3-4 chunks at the object's position
+        for (int i = 0; i < 4; i++)
         {
-            int randomIndex = Random.Range(0, chunkPrefabs.Length);
-            GameObject chunk = Instantiate(chunkPrefabs[randomIndex], transform.position, Random.rotation);
+            Debug.Log("I should be spawning chunks");
+            GameObject chunk = Instantiate(chunkPrefabs[i], transform.position, Quaternion.identity);
 
             // Optionally add some force to scatter the chunks
-            Rigidbody rb = chunk.GetComponent<Rigidbody>();
+            Rigidbody2D rb = chunk.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.AddExplosionForce(100f, transform.position, 2f);
+                // Calculate a direction vector pointing away from the original object's position
+                Vector2 explosionDirection = ((Vector2)chunk.transform.position - (Vector2)transform.position);
+                explosionDirection += new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f)).normalized; // Add slight randomness
+
+                float explosionForce = Random.Range(50f, 300f); // Adjust force for noticeable explosion
+                rb.AddForce(explosionDirection * explosionForce);
             }
+
+            // Destroy each chunk after 3 seconds
+            Destroy(chunk, 3f);
         }
     }
 }
