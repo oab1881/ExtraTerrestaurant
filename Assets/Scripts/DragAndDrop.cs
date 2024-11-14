@@ -9,7 +9,7 @@ public class DragAndDrop : MonoBehaviour
     public bool dragging = false;
     private Vector3 initialMouse = Vector3.zero;
     public Rigidbody2D rigidbod;
-    private Collider2D coll;
+    public Collider2D coll;
 
     // start
     void Start()
@@ -32,20 +32,23 @@ public class DragAndDrop : MonoBehaviour
             // on release
             if (Input.GetMouseButtonUp(0))
             {
-                // stop dragging, resume physics
-                //Debug.Log("drag end");
+                // stop dragging
                 initialMouse = Vector3.zero;
                 dragging = false;
-                TogglePhysics(true);
+                //TogglePhysics(true);
+                // resume physics
+                rigidbod.angularVelocity = 0f;  // reset velocity
+                rigidbod.constraints = RigidbodyConstraints2D.None; // unfreeze transform
             }
         }
     }
 
     // follow mouse
-    public void FollowMouse()
+    private void FollowMouse()
     {
         // pause physics
-        TogglePhysics(false);
+        //TogglePhysics(false);
+        rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform
 
         // save mouse pos
         Vector3 beegMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);

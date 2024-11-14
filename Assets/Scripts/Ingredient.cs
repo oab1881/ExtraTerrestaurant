@@ -51,9 +51,21 @@ public class Ingredient : MonoBehaviour
                     //CollToAction();
                 }
             }
-            else
+            // stored in tray
+            else if (currentColl.isTray)        // ugly as sin, refactor
             {
-                dnd.FollowMouse();
+                // tray moving, 
+                if (/*currentColl.gameObject.GetComponent<DragAndDrop>().dragging   // stop simulation if tray is moving, prevents dragging
+                    || */currentColl.gameObject.GetComponent<DragAndDrop>().rigidbod.velocity != Vector2.zero)
+                {        
+                    //dnd.rigidbod.constraints = RigidbodyConstraints2D.None; // freeze transform ?
+                    dnd.rigidbod.simulated = false;   // works, but can't click/drag
+                }
+                else
+                {
+                    //dnd.rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform ?
+                    dnd.rigidbod.simulated = true;   // works, but can't click/drag
+                }
             }
         }
     }
@@ -64,9 +76,9 @@ public class Ingredient : MonoBehaviour
         stored = true;
         currentColl.currentCap++;
 
-        // turn off physics
-        dnd.TogglePhysics(false);
-        //dnd.rigidbod.simulated = false;
+        // pause physics
+        //dnd.TogglePhysics(false);
+        dnd.rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform
 
         // set storage parent
         //transform.SetParent(currentColl.gameObject.transform, false);
@@ -91,7 +103,9 @@ public class Ingredient : MonoBehaviour
         if (currentColl.isTray)
         {
             // transform with tray
-            //transform.SetParent(currentColl.gameObject.transform, false);
+            transform.SetParent(currentColl.gameObject.transform,true);
+            dnd.rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform ?
+            //dnd.rigidbod.simulated = false;   // works, but can't click/drag
             // draw on top of tray
             sprRend.sortingOrder = 6;
         }
@@ -150,11 +164,13 @@ public class Ingredient : MonoBehaviour
             {
                 stored = false;
                 currentColl.currentCap--;
-                dnd.TogglePhysics(false);
+                //dnd.TogglePhysics(false);
+                dnd.rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform
                 sprRend.sortingLayerName = "active";
                 sprRend.sortingOrder = 2;
                 transform.localScale /= 0.75f;
                 currentColl = null;
+                transform.SetParent(null, true);
             }
             else
             {

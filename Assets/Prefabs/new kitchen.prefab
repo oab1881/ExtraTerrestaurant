@@ -1091,9 +1091,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2115328847
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 1321627513
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: d7a92a1eaa74c8344a9cb350e76ce515, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1739,7 +1739,7 @@ Transform:
   - {fileID: 7236579539208509143}
   - {fileID: 1007013580834962295}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4327544511280649956
 GameObject:
@@ -1837,9 +1837,9 @@ GameObject:
   - component: {fileID: 2319477126801207375}
   - component: {fileID: 3143806959055937112}
   - component: {fileID: 1123860936283370928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: oven
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1899,7 +1899,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027212055
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6ae6a7f2a5c94d046afd917afd6cf571, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
   m_FlipX: 0
@@ -1927,7 +1927,11 @@ MonoBehaviour:
   currentCap: 0
   isTray: 0
   snapSprite: {fileID: 0}
-  positions: []
+  positions:
+  - {x: -7.88, y: 0.1, z: 0}
+  - {x: -5.84, y: 0.1, z: 0}
+  - {x: -7.88, y: -1.76, z: 0}
+  - {x: -5.84, y: -1.76, z: 0}
 --- !u!61 &1123860936283370928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1947,10 +1951,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 631
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2069,9 +2073,9 @@ GameObject:
   - component: {fileID: 5808440070083965108}
   - component: {fileID: 528381219020829305}
   - component: {fileID: 8129614528527336083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goop
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2155,11 +2159,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b448c812fd3fafa49b6e3c1e5374e567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCapacity: 4
+  maxCapacity: 3
   currentCap: 0
   isTray: 0
   snapSprite: {fileID: 0}
-  positions: []
+  positions:
+  - {x: -2.52, y: 4.54, z: 0}
+  - {x: -0.96, y: 3.42, z: 0}
+  - {x: -2.88, y: 2.38, z: 0}
+  - {x: -2.5, y: 1, z: 0}
 --- !u!60 &8129614528527336083
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2179,10 +2187,10 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2715,7 +2723,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027212055
   m_SortingLayer: 3
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5309f475c1e084744b0fd684e5412b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2798,7 +2806,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1522087713
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1065a221de4ce9a4cb82e44e0d0b3d03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3075,9 +3083,9 @@ GameObject:
   - component: {fileID: 2652909593314338949}
   - component: {fileID: 1371437292924044613}
   - component: {fileID: 1512519798579128966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: freezer
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3137,7 +3145,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027212055
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: d44e05e128d0b374d87f2e1134d8003d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5529412}
   m_FlipX: 0
@@ -3165,7 +3173,11 @@ MonoBehaviour:
   currentCap: 0
   isTray: 0
   snapSprite: {fileID: 0}
-  positions: []
+  positions:
+  - {x: -7.88, y: 4.12, z: 0}
+  - {x: -5.84, y: 4.12, z: 0}
+  - {x: -7.88, y: 2.4, z: 0}
+  - {x: -5.84, y: 2.4, z: 0}
 --- !u!61 &1512519798579128966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3185,10 +3197,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 631
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295

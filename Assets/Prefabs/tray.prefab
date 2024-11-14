@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2957144155675455592}
   - component: {fileID: 7644371535918866613}
   - component: {fileID: 4655442506656536633}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tray
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6127532923372566551
 SpriteRenderer:
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2027212055
+  m_SortingLayer: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1065a221de4ce9a4cb82e44e0d0b3d03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,9 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b448c812fd3fafa49b6e3c1e5374e567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCapacity: 4
+  maxCapacity: 2
   currentCap: 0
-  position: {x: 0, y: 0, z: 0}
+  isTray: 1
+  snapSprite: {fileID: 0}
+  positions: []
 --- !u!61 &7644371535918866613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,10 +138,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 127
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -160,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.83, y: 0.77}
   m_EdgeRadius: 0
 --- !u!50 &4655442506656536633
 Rigidbody2D:
