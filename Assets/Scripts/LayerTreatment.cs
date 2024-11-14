@@ -17,8 +17,9 @@ public class LayerTreatment : MonoBehaviour
     [SerializeField]
     int currentCount;   //Current count of ingredients being stored
 
-    LayerState changeType;  //Reference to FoodData - LayerState enum
-    Color changeColor;      //Color that the ingredient will change to (Red, Blue, Green)
+    LayerState changeType;  // Reference to FoodData - LayerState enum
+    Color changeColor;      // Color that the ingredient will change to (Red, Blue, Green)
+    string prepMethod;      // Name of the prepMethod being applied to the food
 
     public PhysicsMaterial2D bouncyMaterial;   //Used to make gooped objects bouncy
     public PhysicsMaterial2D noBounce;   //Used to remove bounciness for frozen objects
@@ -35,16 +36,19 @@ public class LayerTreatment : MonoBehaviour
         {
             changeType = LayerState.Cooked; //Change its state to cooked
             changeColor = new Color32(110, 38, 14, 255);         //Change color to red
+            prepMethod = "cooked";          // Change food prepMethod to cooked
         }
         else if(gameObject.name == "freezer blue")  //If ingredient goes in freezer
         {
             changeType = LayerState.Frozen; //Change its state to frozen
             changeColor = Color.blue;       //Change color to blue
+            prepMethod = "frozed";          // Change food prepMethod to frozen
         }
         else if(gameObject.name == "goop green")   //If ingredient goes in goop
         {
             changeType = LayerState.Gooped;     //Change state to gooped
             changeColor = Color.green;          //Change color to Green
+            prepMethod = "gooped";              // Change food prepMethod to gooped
         }
         currentCount = storageScript.currentCapacity;   //Get current count of ingredients being stored
     }
@@ -90,7 +94,7 @@ public class LayerTreatment : MonoBehaviour
                 if (fTimerTime < 0.0f)
                 {
                     storageScript.StoredItem[i].GetComponent<FoodData>().ChangeState(changeType, changeColor);  //Change food's type and color
-
+                    storageScript.StoredItem[i].GetComponent<FoodData>().PrepareFood(prepMethod);               // Change food prep method
                     //If the changeType is Gooped, add the bouncy material
                     if (changeType == LayerState.Gooped && bouncyMaterial != null)
                     {
