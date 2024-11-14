@@ -555,6 +555,10 @@ PrefabInstance:
       value: tray (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1925612710533241458, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925612710533241458, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
       propertyPath: m_TagString
       value: storage
       objectReference: {fileID: 0}
@@ -616,11 +620,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127532923372566551, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
       propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127532923372566551, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
+      propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6127532923372566551, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1522087713
+      value: 2027212055
       objectReference: {fileID: 0}
     - target: {fileID: 7644371535918866613, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
       propertyPath: m_Size.x
@@ -635,8 +643,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7644371535918866613, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 255
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644371535918866613, guid: a61ea0b79449c8847a16ffb49df7e224, type: 3}
       propertyPath: m_ForceReceiveLayers.m_Bits
-      value: 383
+      value: 127
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1149,7 +1161,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 992712277
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a85b2c4ef4a65484eb3c762be4a7741c, type: 3}
   m_Color: {r: 0.07058824, g: 0, b: 0, a: 0.7529412}
@@ -1229,6 +1241,18 @@ PrefabInstance:
       propertyPath: positions.Array.data[3].y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 748533667156860945, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 748533667156860945, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 748533667156860945, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1321627513
+      objectReference: {fileID: 0}
     - target: {fileID: 1123860936283370928, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1243,11 +1267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123860936283370928, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_ForceSendLayers.m_Bits
-      value: 1015
+      value: 631
       objectReference: {fileID: 0}
     - target: {fileID: 1123860936283370928, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_ForceReceiveLayers.m_Bits
-      value: 375
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 1371437292924044613, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: snapSprite
@@ -1295,11 +1319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1512519798579128966, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_ForceSendLayers.m_Bits
-      value: 1015
+      value: 631
       objectReference: {fileID: 0}
     - target: {fileID: 1512519798579128966, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_ForceReceiveLayers.m_Bits
-      value: 375
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 2319477126801207375, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_SortingOrder
@@ -1405,6 +1429,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: storage
       objectReference: {fileID: 0}
+    - target: {fileID: 4424996417740431977, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4704811398537458444, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1427,11 +1455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8129614528527336083, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_ForceSendLayers.m_Bits
-      value: 375
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 8129614528527336083, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_ForceReceiveLayers.m_Bits
-      value: 375
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 8393746885928687353, guid: a2ed6dcbda0dd5d49835e025c4cc65e4, type: 3}
       propertyPath: m_Layer

@@ -42,7 +42,7 @@ public class DragAndDrop : MonoBehaviour
     }
 
     // follow mouse
-    private void FollowMouse()
+    public void FollowMouse()
     {
         // pause physics
         TogglePhysics(false);
@@ -87,7 +87,6 @@ public class DragAndDrop : MonoBehaviour
         //FollowMouse(Vector3.zero);
         //FollowMouse();
         dragging = true;
-        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "active";
     }
 
     // on release
@@ -104,19 +103,25 @@ public class DragAndDrop : MonoBehaviour
         //coll.isTrigger = !togOn;
         //rigidbod.simulated = togOn;
         //rigidbod.velocity = Vector2.zero;
-        rigidbod.angularVelocity = 0f;
-        if (togOn)
+        rigidbod.angularVelocity = 0f;  // reset velocity
+        if (togOn)  // freeze transform, set sorting/layers
         {
             rigidbod.constraints = RigidbodyConstraints2D.None;
-            if (gameObject.GetComponent<Ingredient>())
+            if (gameObject.GetComponent<Ingredient>())  // ingredient or tray
                 gameObject.layer = 3;   // change layer to 3 (ingredient)
             else
-                gameObject.layer = 0;   // change layer to 0 (default)
+            {
+                gameObject.layer = 8;   // change layer to 8 (storage)
+                gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "storage";
+                gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
+            }
         }
         else
         {
             rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
             gameObject.layer = 7;   // change layer to 7 (held)
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "active";
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
     }
 }

@@ -25,11 +25,15 @@ public class Ingredient : MonoBehaviour
     [SerializeField]
     private bool stored = false;
 
+    private SpriteRenderer sprRend;
+
     void Start()
     {
         // ingredients drag on spawn
         dnd = GetComponent<DragAndDrop>();
         dnd.dragging = true;
+
+        sprRend = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -46,11 +50,10 @@ public class Ingredient : MonoBehaviour
                     Store();
                     //CollToAction();
                 }
-            } else
+            }
+            else
             {
-                currentColl.HighlightSprite(false);
-                currentColl = null;
-                nextColl = null;
+                dnd.FollowMouse();
             }
         }
     }
@@ -72,8 +75,8 @@ public class Ingredient : MonoBehaviour
         // change layer, stored layer == 9
         gameObject.layer = 9;
         // draw behind storage tint
-        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "storage";
-        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
+        sprRend.sortingLayerName = "storage";
+        sprRend.sortingOrder = 3;
 
         // set new position
         //transform.localPosition = currentColl.positions[currentColl.currentCap];
@@ -83,12 +86,24 @@ public class Ingredient : MonoBehaviour
         //transform.localScale = new Vector3(1,1,1);
         //transform.localPosition = currentColl.position;
         //transform.localPosition = new Vector3(0,.5f,0);
-        if (!currentColl.isTray)
-            transform.position = currentColl.positions[currentColl.currentCap - 1];
         
+        // tray bien        ...tray-specific stuff
+        if (currentColl.isTray)
+        {
+            // transform with tray
+            //transform.SetParent(currentColl.gameObject.transform, false);
+            // draw on top of tray
+            sprRend.sortingOrder = 6;
+        }
+        else
+        {
+            // set position
+            transform.position = currentColl.positions[currentColl.currentCap - 1];
+        }
+
         currentColl.HighlightSprite(false);
         // steps queue
-        currentColl = null;
+        //currentColl = null;   // current collider retained as reference to storage object
         nextColl = null;
     }
 
@@ -120,7 +135,7 @@ public class Ingredient : MonoBehaviour
             else
             {
                 currentColl = collision.gameObject.GetComponent<Storage>();
-                currentColl.HighlightSprite(gameObject.GetComponent<SpriteRenderer>());
+                currentColl.HighlightSprite(sprRend);
             }
         }
     }
@@ -130,22 +145,36 @@ public class Ingredient : MonoBehaviour
         // if dragging, clear collision reference
         if (dnd.dragging)
         {
-            //if (other.gameObject.GetComponent<Storage>().Equals(currentColl))
-            if (currentColl && collision.gameObject.Equals(currentColl.gameObject))
+            // dragging out of storage
+            if (stored)
             {
-                currentColl.HighlightSprite(false);
+                stored = false;
+                currentColl.currentCap--;
+                dnd.TogglePhysics(false);
+                sprRend.sortingLayerName = "active";
+                sprRend.sortingOrder = 2;
+                transform.localScale /= 0.75f;
                 currentColl = null;
-                if (nextColl)
+            }
+            else
+            {
+                //if (other.gameObject.GetComponent<Storage>().Equals(currentColl))
+                if (currentColl && collision.gameObject.Equals(currentColl.gameObject))
                 {
-                    currentColl = nextColl;
-                    currentColl.HighlightSprite(gameObject.GetComponent<SpriteRenderer>());
+                    currentColl.HighlightSprite(false);
+                    currentColl = null;
+                    if (nextColl)
+                    {
+                        currentColl = nextColl;
+                        currentColl.HighlightSprite(sprRend);
+                        nextColl = null;
+                    }
+                }
+                else if (nextColl && collision.gameObject.GetComponent<Storage>().Equals(nextColl))
+                {
+                    //nextColl.HighlightSprite(false);
                     nextColl = null;
                 }
-            }
-            else if (nextColl && collision.gameObject.GetComponent<Storage>().Equals(nextColl))
-            {
-                nextColl.HighlightSprite(false);
-                nextColl = null;
             }
         }
     }
@@ -167,7 +196,7 @@ public class Ingredient : MonoBehaviour
 //            else
 //            {
 //                currentColl = other.gameObject.GetComponent<Storage>();
-//                currentColl.HighlightSprite(gameObject.GetComponent<SpriteRenderer>());
+//                currentColl.HighlightSprite(sprRend);
 //            }
 //        }
 //    }
@@ -185,7 +214,7 @@ public class Ingredient : MonoBehaviour
 //                if (nextColl)
 //                {
 //                    currentColl = nextColl;
-//                    currentColl.HighlightSprite(gameObject.GetComponent<SpriteRenderer>());
+//                    currentColl.HighlightSprite(sprRend);
 //                    nextColl = null;
 //                }
 //            }

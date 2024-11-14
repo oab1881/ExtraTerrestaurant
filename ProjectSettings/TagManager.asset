@@ -57,9 +57,6 @@ TagManager:
   - name: cookware
     uniqueID: 2115328847
     locked: 0
-  - name: plates
-    uniqueID: 2772879583
-    locked: 0
   - name: active
     uniqueID: 992712277
     locked: 0

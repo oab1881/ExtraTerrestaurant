@@ -1,5 +1,6 @@
 /// === overhauled by jack 11/01 ===
 /// stores ingredients
+///   2 storage position arrays: filled and empty
 using UnityEngine;
 
 public class Storage : MonoBehaviour
@@ -75,7 +76,7 @@ public class Storage : MonoBehaviour
             // not tray: reveal, position snap ghost
             if (!isTray)
             {
-                Debug.Log(positions[currentCap]);
+                //Debug.Log(positions[currentCap]);
                 snapSprite.gameObject.transform.localPosition = positions[currentCap];
                 // get held item sprite
                 snapSprite.sprite = itemSprite.sprite;
