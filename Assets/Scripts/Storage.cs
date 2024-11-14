@@ -1,6 +1,6 @@
 /// === overhauled by jack 11/01 ===
 /// stores ingredients
-///   2 storage position arrays: filled and empty
+///  NOT TRUE 2 storage position arrays: filled and empty
 using UnityEngine;
 
 public class Storage : MonoBehaviour
