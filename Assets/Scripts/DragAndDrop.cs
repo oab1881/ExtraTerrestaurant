@@ -15,6 +15,7 @@ Changelog:
     -Added a hard code for mortar pos and scale : 10/17/24 : Jake
     -Changed line in storeItem to getComponent instead of rigbod : 10/30/24 : Jake
     -Made items removable in onTriggerExit function : 10/31/24 : Jake
+    -Attempted to optomize removale of item detection : Jake : 11/14/24
 */
 
 using System.Collections;
@@ -212,24 +213,41 @@ public class DragAndDrop : Hover
         //System for removing items from storage system
         if (stored && (other.gameObject.tag == "storage" || other.gameObject.name == "single plate"))
         {
+            //Gets a reference to other which in this case is some sort of storage gameobject then
+            //Gets the storage script
             Storage goStorage = other.gameObject.GetComponent<Storage>();
+
+            //Sets it to -1 by default stops errors if we can not find the index to remove
             int indexRemove = -1;
+
+            //Sets the object to dragging
             dragging = true;
+
+            //Trys finding the index to remove
             for(int i = 0; i < goStorage.currentCapacity; i++)
             {
+                //Checks with the list of stored items in that storage type
+                //ie goop stored items, freezer stored items, mortar stored items, ect
+                //Checks if that the current one in the list equals the gameobject
+                //If so index to remove equals i and we break
                 if (goStorage.StoredItem[i].Equals(gameObject))
                 {
                     indexRemove = i;
                     break;
                 }
             }
+
+            //If it doesn't equal -1 then we can remove indexRemove
             if (indexRemove != -1)
             {
+                //Calls the function from the storage item
                 goStorage.RemoveItem(indexRemove, false, true);
+
+                //Sets the rigidbody constraints to none
+                gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             }
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         }
-        stored = false;
+        //stored = false; Not sure what this line does commenting it out 11/14/2024
     }
     // enact property changes when stored
     //  pos, rot: freeze

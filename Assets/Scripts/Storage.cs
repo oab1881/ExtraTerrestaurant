@@ -11,8 +11,10 @@
 ///    10/27/24 : Jake : Added remove items function
 ///    10/30/24 : Jake : Made the remove items have destory
 ///    10/30/24 : Jake : Made the remove items have a resize
+///    11/14/24 : Jake : Made it so removing items reorganizes the list
 ///    
 
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -159,13 +161,8 @@ public class Storage : Hover
                 newList[i] = storedItems[i + 1];
             }
         }
-        
-        /*
-        for(int i =0; i < currentCapacity; i++)
-        {
-            newList[i].transform.position = positions[i];
-        }
-        */
+       
+
         //Destroys the old item if parameter says to
         //Resizes if the parameter says to
         //Sets the stored list to the new list
@@ -180,7 +177,16 @@ public class Storage : Hover
         }
         storedItems = newList;
         currentCapacity--;
-
+        
+        //For repotiosing
+        //Needs to happen after deleting and resize
+        for(int i = 0; i < currentCapacity; i++)
+        {
+            //Sets the current items in the food list to the correct positions
+            //Does this from position list by just matching idexes
+            storedItems[i].transform.localPosition = positions[i];
+        }
+        
     }
     // do nothing on mouse hover
     protected override void OnMouseEnter() { }

@@ -4,7 +4,8 @@
 Drag and drop variation for knife and pestel
 
 Changelog:
-    -Created script
+    -Created script : Jake : Unknown
+    -Made it so if object collides with anything then it applies gravity : Jake : 11/14/24
     
 */
 using System.Collections;
@@ -92,5 +93,10 @@ public class DragKitchenUtensial : MonoBehaviour
             //Sets intial mouse to newPos at the end
             initalMouse = newPos;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        rigidbod.gravityScale = 1;
     }
 }
