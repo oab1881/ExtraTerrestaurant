@@ -31,6 +31,7 @@ public class ConveyorButton : MonoBehaviour
     {
         ChangeSprite(pressedButton);
         scoring.DisplayScore();
+        scoring.CleanPlate();
     }
     private void OnMouseUp()
     {

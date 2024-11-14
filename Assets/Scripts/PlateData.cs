@@ -49,6 +49,7 @@ public class PlateData : MonoBehaviour
         {
             Destroy(ingredients[i]);
             ingredients.RemoveAt(i);
+            Debug.Log("Item destroyed");
         }
     }
     
