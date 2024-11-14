@@ -14,6 +14,7 @@ public class LayerTreatment : MonoBehaviour
     [SerializeField]
     Storage storageScript;  //Reference to Storage
 
+    [SerializeField]
     int currentCount;   //Current count of ingredients being stored
 
     LayerState changeType;  //Reference to FoodData - LayerState enum
@@ -22,11 +23,15 @@ public class LayerTreatment : MonoBehaviour
     public PhysicsMaterial2D bouncyMaterial;   //Used to make gooped objects bouncy
     public PhysicsMaterial2D noBounce;   //Used to remove bounciness for frozen objects
 
-    List<float> timers = new List<float>(); //List of timers used to keep track of timers on treated food
+    [SerializeField]
+    Dictionary<GameObject, float> timers; //List of timers used to keep track of timers on treated food
 
     private void Start()
     {
-        if(gameObject.name == "oven red")   //If ingredient goes in oven
+        timers = new Dictionary<GameObject, float>();
+
+
+        if (gameObject.name == "oven red")   //If ingredient goes in oven
         {
             changeType = LayerState.Cooked; //Change its state to cooked
             changeColor = new Color32(110, 38, 14, 255);         //Change color to red
@@ -46,14 +51,21 @@ public class LayerTreatment : MonoBehaviour
 
     private void Update()
     {
-        
-        if(currentCount < storageScript.currentCapacity)    //If the current # of ingredients being stored < current capacity of objects that can be stored
+        for (int i = 0; i < storageScript.currentCapacity; i++)
         {
-            currentCount++;     //Increase # of ingredients being stored
-            CreateTimer();      //Create a timer for this ingredient
+            if (storageScript.StoredItem[i].GetComponent<FoodData>().CurrentState == LayerState.Base &&
+                !timers.TryGetValue(storageScript.StoredItem[i].gameObject, out float f))    //If the current # of ingredients being stored < current capacity of objects that can be stored
+            {
+                CreateTimer(storageScript.StoredItem[i].gameObject);      //Create a timer for this ingredient
 
-            //Plays sound effect when something is added to the goop
-            GameObject.Find("AudioManager").GetComponent<AudioPlayer>().PlaySoundEffect("item_inserted_into_slime");
+                //Plays sound effect when something is added to the goop
+                
+                AudioPlayer audioPlayer = GameObject.Find("AudioManager").GetComponent<AudioPlayer>();
+                if(gameObject.name == "goop green")
+                {
+                    audioPlayer.PlaySoundEffect("item_inserted_into_slime");
+                }
+            }
         }
         DecreaseTimer();        //Call Decrease timer every frame
         CheckTimer();           //Call CheckTimer to see if timer ended
@@ -61,53 +73,46 @@ public class LayerTreatment : MonoBehaviour
     }
 
     //Create a timer for an instance of a treated food
-    private void CreateTimer()
+    private void CreateTimer(GameObject timerObject)
     {
-        //For # of ingredients stored
-        for(int i = 0; i < storageScript.currentCapacity; i++)
-        {
-            //If the stored ingredient is in it's base state (untreated)
-            if (storageScript.StoredItem[i].GetComponent<FoodData>().CurrentState == LayerState.Base)
-            {
-                timers.Add(5f); //Create 5 second timer
-            }
-        }
+        timers.Add(timerObject,5f); //Create 5 second timer
     }
 
     //Check to see if timer has completed
     private void CheckTimer()
     {
         //For # of timers
-        for(int i = 0; i < timers.Count; i++)
-        {   
-            //If timer ends
-            if (timers[i] < 0.0f)
+        for(int i = 0; i < storageScript.currentCapacity; i++)
+        {
+            if (timers.TryGetValue(storageScript.StoredItem[i].gameObject, out float fTimerTime))
             {
-                storageScript.StoredItem[i].GetComponent<FoodData>().ChangeState(changeType,changeColor);  //Change food's type and color
-
-                //If the changeType is Gooped, add the bouncy material
-                if (changeType == LayerState.Gooped && bouncyMaterial != null)
+                //If timer ends
+                if (fTimerTime < 0.0f)
                 {
-                    Rigidbody2D ingredientRB = storageScript.StoredItem[i].GetComponent<Rigidbody2D>();
-                    //Collider2D ingredientCollider = storageScript.StoredItem[i].GetComponent<Collider2D>();
-                    if (ingredientRB != null)
-                    {
-                        ingredientRB.sharedMaterial = bouncyMaterial; //Apply the bouncy material
-                    }
-                }
+                    storageScript.StoredItem[i].GetComponent<FoodData>().ChangeState(changeType, changeColor);  //Change food's type and color
 
-                //If the changeType is Frozen, remove the bouncy material
-                if (changeType == LayerState.Frozen && bouncyMaterial != null)
-                {
-                    Rigidbody2D ingredientRB = storageScript.StoredItem[i].GetComponent<Rigidbody2D>();
-                    if (ingredientRB != null)
+                    //If the changeType is Gooped, add the bouncy material
+                    if (changeType == LayerState.Gooped && bouncyMaterial != null)
                     {
-                        ingredientRB.sharedMaterial = noBounce; //Remove bouncy script
+                        Rigidbody2D ingredientRB = storageScript.StoredItem[i].GetComponent<Rigidbody2D>();
+                        //Collider2D ingredientCollider = storageScript.StoredItem[i].GetComponent<Collider2D>();
+                        if (ingredientRB != null)
+                        {
+                            ingredientRB.sharedMaterial = bouncyMaterial; //Apply the bouncy material
+                        }
                     }
-                }
 
-                timers.RemoveAt(i); //Remove timer from list
-                i--; // Adjust the index due to timer removal
+                    //If the changeType is Frozen, remove the bouncy material
+                    if (changeType == LayerState.Frozen && bouncyMaterial != null)
+                    {
+                        Rigidbody2D ingredientRB = storageScript.StoredItem[i].GetComponent<Rigidbody2D>();
+                        if (ingredientRB != null)
+                        {
+                            ingredientRB.sharedMaterial = noBounce; //Remove bouncy script
+                        }
+                    }
+                    //currentCount--;
+                }
             }
         }
     }
@@ -115,9 +120,12 @@ public class LayerTreatment : MonoBehaviour
     //Loop thru timer using delta time
     private void DecreaseTimer()
     {
-        for(int i = 0; i < timers.Count; i++)
+        for(int i = 0; i < storageScript.currentCapacity; i++)
         {
-            timers[i] -= Time.deltaTime;    //Subtract timer's length (5s) by Time.deltaTime
+            if (timers.TryGetValue(storageScript.StoredItem[i].gameObject,out float f))
+            {
+                timers[storageScript.StoredItem[i].gameObject] -= Time.deltaTime;    //Subtract timer's length (5s) by Time.deltaTime
+            }
         }
     }
 }
