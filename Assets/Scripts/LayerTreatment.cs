@@ -1,21 +1,37 @@
+///         == created by Jake Wardell & Owen Beck  ==
+/// Goal : Script handles treatments for Oven, Freezer and Goop
+/// Will use delta time to change the color slowly of the ingredient being treated
+/// 
+/// 
+/// Attached to:
+/// oven Red
+/// freezer blue
+/// goop green
+/// 
+///    
+///    Changes:
+///    11/08/24 : Jake & Owen : Created script
+///    11/13/24 : Jake : Switched from list to dictionary
+///    11/14/24 : Jake : Removed count for items
+///    
+///     Issues:
+///     -When I an item is removed it's timer will still be there removing a timer at 1 second left
+///     then reinsetting it will keep oringinal time
+///    
+///    
+
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-
-//Script handles treatments for Oven, Freezer and Goop
-//Will use delta time to change the color slowly of the ingredient being treated
-//Written by Jake + Owen
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class LayerTreatment : MonoBehaviour
 {
     //Stores the storage script
     [SerializeField]
     Storage storageScript;  //Reference to Storage
-
-    [SerializeField]
-    int currentCount;   //Current count of ingredients being stored
 
     LayerState changeType;  // Reference to FoodData - LayerState enum
     Color changeColor;      // Color that the ingredient will change to (Red, Blue, Green)
@@ -24,8 +40,10 @@ public class LayerTreatment : MonoBehaviour
     public PhysicsMaterial2D bouncyMaterial;   //Used to make gooped objects bouncy
     public PhysicsMaterial2D noBounce;   //Used to remove bounciness for frozen objects
 
+
+    //Dictionary gameobject/float used to keep track of timers on treated food
     [SerializeField]
-    Dictionary<GameObject, float> timers; //List of timers used to keep track of timers on treated food
+    Dictionary<GameObject, float> timers; 
 
     private void Start()
     {
@@ -50,23 +68,27 @@ public class LayerTreatment : MonoBehaviour
             changeColor = Color.green;          //Change color to Green
             prepMethod = "gooped";              // Change food prepMethod to gooped
         }
-        currentCount = storageScript.currentCapacity;   //Get current count of ingredients being stored
     }
 
     private void Update()
     {
         for (int i = 0; i < storageScript.currentCapacity; i++)
         {
-            if (storageScript.StoredItem[i].GetComponent<FoodData>().CurrentState == LayerState.Base &&
-                !timers.TryGetValue(storageScript.StoredItem[i].gameObject, out float f))    //If the current # of ingredients being stored < current capacity of objects that can be stored
-            {
+            //If the current # of ingredients being stored < current capacity of objects that can be stored
+            //Checks to make sure there isn't already a timer attached to the object
+                if (storageScript.StoredItem[i].GetComponent<FoodData>().CurrentState == LayerState.Base &&
+                !timers.TryGetValue(storageScript.StoredItem[i].gameObject, out float f)) { 
+                
                 CreateTimer(storageScript.StoredItem[i].gameObject);      //Create a timer for this ingredient
 
                 //Plays sound effect when something is added to the goop
-                
+                //Gets the audio manager
                 AudioPlayer audioPlayer = GameObject.Find("AudioManager").GetComponent<AudioPlayer>();
+
+                //Depending on type of storage plays a sound
                 if(gameObject.name == "goop green")
                 {
+                    //Plays the sound effect
                     audioPlayer.PlaySoundEffect("item_inserted_into_slime");
                 }
             }
@@ -79,6 +101,7 @@ public class LayerTreatment : MonoBehaviour
     //Create a timer for an instance of a treated food
     private void CreateTimer(GameObject timerObject)
     {
+        //Creates a key value for the current object
         timers.Add(timerObject,5f); //Create 5 second timer
     }
 
@@ -88,13 +111,17 @@ public class LayerTreatment : MonoBehaviour
         //For # of timers
         for(int i = 0; i < storageScript.currentCapacity; i++)
         {
+            //Trys to get a timer for the object
             if (timers.TryGetValue(storageScript.StoredItem[i].gameObject, out float fTimerTime))
             {
                 //If timer ends
                 if (fTimerTime < 0.0f)
                 {
+                    //Changes the state of the food and changes the prepname
                     storageScript.StoredItem[i].GetComponent<FoodData>().ChangeState(changeType, changeColor);  //Change food's type and color
                     storageScript.StoredItem[i].GetComponent<FoodData>().PrepareFood(prepMethod);               // Change food prep method
+
+
                     //If the changeType is Gooped, add the bouncy material
                     if (changeType == LayerState.Gooped && bouncyMaterial != null)
                     {
@@ -115,7 +142,6 @@ public class LayerTreatment : MonoBehaviour
                             ingredientRB.sharedMaterial = noBounce; //Remove bouncy script
                         }
                     }
-                    //currentCount--;
                 }
             }
         }
@@ -124,9 +150,10 @@ public class LayerTreatment : MonoBehaviour
     //Loop thru timer using delta time
     private void DecreaseTimer()
     {
+        //Goes through every object in storage and tr
         for(int i = 0; i < storageScript.currentCapacity; i++)
         {
-            if (timers.TryGetValue(storageScript.StoredItem[i].gameObject,out float f))
+            if (timers.TryGetValue(storageScript.StoredItem[i].gameObject,out float fTimer))
             {
                 timers[storageScript.StoredItem[i].gameObject] -= Time.deltaTime;    //Subtract timer's length (5s) by Time.deltaTime
             }

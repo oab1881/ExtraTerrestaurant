@@ -11,7 +11,7 @@
 ///    10/27/24 : Jake : Added remove items function
 ///    10/30/24 : Jake : Made the remove items have destory
 ///    10/30/24 : Jake : Made the remove items have a resize
-///    11/14/24 : Jake : Made it so removing items reorganizes the list
+///    11/14/24 : Jake : Made it so removing items reorganizes the list; Attempted to fix issue with mortar
 ///    
 
 using JetBrains.Annotations;
@@ -161,7 +161,10 @@ public class Storage : Hover
                 newList[i] = storedItems[i + 1];
             }
         }
-       
+        
+        //Putting this up here seems to fix the issue with the capacity
+        currentCapacity--;
+
 
         //Destroys the old item if parameter says to
         //Resizes if the parameter says to
@@ -176,7 +179,6 @@ public class Storage : Hover
             storedItems[index].transform.localScale *= 2;
         }
         storedItems = newList;
-        currentCapacity--;
         
         //For repotiosing
         //Needs to happen after deleting and resize
