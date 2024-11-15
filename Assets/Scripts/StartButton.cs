@@ -11,4 +11,11 @@ public class StartButton : MonoBehaviour
         //Load the Gameplay scene
         SceneManager.LoadScene("Gameplay");
     }
+
+    //Quit Game
+    public void QuitGame()
+    {
+        Debug.Log("QUIT GAME PRESSED");
+        Application.Quit();
+    }
 }
