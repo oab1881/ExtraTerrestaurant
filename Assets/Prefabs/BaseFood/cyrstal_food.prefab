@@ -39,7 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1470620983731062403
 SpriteRenderer:
@@ -398,6 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457e6383353727b46a1aa5c4b22ef805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystemCrystal: {fileID: 1787941063812567460, guid: 5c15e7998e87318478f9d146e20c8a69, type: 3}
   chunkPrefabs:
   - {fileID: 4831152850716129563, guid: 973516e745cc29c4b9ef0b74dd355967, type: 3}
   - {fileID: 4831152850716129563, guid: 973516e745cc29c4b9ef0b74dd355967, type: 3}

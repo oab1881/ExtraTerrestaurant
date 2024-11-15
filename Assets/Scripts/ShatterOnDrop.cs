@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShatterOnDrop : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem particleSystemCrystal;
+    GameObject particleSystemCrystal;
     public GameObject[] chunkPrefabs; // Array to hold chunk prefabs
     public float shatterThreshold = 1f;  // Distance the object needs to fall to shatter
     public float startTrackingHeight = 1f; // Height threshold to start tracking the fall
@@ -42,8 +42,8 @@ public class ShatterOnDrop : MonoBehaviour
 
     void Shatter()
     {
-        Instantiate(particleSystemCrystal);
-        particleSystemCrystal.transform.position = new Vector3(0,0,0);
+        GameObject particles = Instantiate(particleSystemCrystal);
+        particleSystemCrystal.transform.position = gameObject.transform.position;
         Destroy(gameObject);
 
         /*
@@ -70,8 +70,7 @@ public class ShatterOnDrop : MonoBehaviour
             Destroy(chunk, 3f);
         }
         */
-        particleSystemCrystal.Play();
-       
 
+        particles.GetComponent<ParticleSystem>().Play();
     }
 }
