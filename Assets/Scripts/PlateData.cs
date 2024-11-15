@@ -37,20 +37,4 @@ public class PlateData : MonoBehaviour
     {
         ingredients.Add(food.GetComponent<FoodData>());
     }
-
-    /*
-     * <summary>
-     * Public function to completely clear a plate once it is invoked
-     * </summary>
-     */
-    public void Clear()
-    {
-        for (int i = ingredients.Count - 1; i >= 0; i--)
-        {
-            Destroy(ingredients[i]);
-            ingredients.RemoveAt(i);
-            Debug.Log("Item destroyed");
-        }
-    }
-    
 }
