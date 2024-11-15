@@ -101,7 +101,8 @@ public class DragAndDrop : MonoBehaviour
         TogglePhysics(true);
     }*/
 
-    public void TogglePhysics(bool togOn)
+    // DO NOT USE
+    /*public void TogglePhysics(bool togOn)
     {
         //coll.isTrigger = !togOn;
         //rigidbod.simulated = togOn;
@@ -126,5 +127,5 @@ public class DragAndDrop : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "active";
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
-    }
+    }*/
 }
