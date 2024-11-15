@@ -46,14 +46,17 @@ public class ConveyorButton : MonoBehaviour
             if (time < 0.0f)
             {
                 trayMoving = false;
-                buttonActive = true;
 
                 rb2D.velocity = Vector3.zero;
                 scoring.DisplayScore();
                 Destroy(tray);
                 tray = Instantiate(newTray);
                 tray.transform.position = new Vector3(24.42f,1.14f, 0.0f);
+                scoring.CleanPlate(tray.GetComponent<PlateData>());
+                rb2D = tray.GetComponent<Rigidbody2D>();
                 ChangeSprite(unpressedButton);
+
+                buttonActive = true;
             }
         }
 

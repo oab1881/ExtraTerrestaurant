@@ -182,9 +182,9 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = displayText;
     }
 
-    // Clears the plate of all food items
-    public void CleanPlate()
+    // Sets the scoring method's plate data to the new plate instance
+    public void CleanPlate(PlateData newPlate)
     {
-        plateData.Clear();
+        plateData = newPlate;
     }
 }
