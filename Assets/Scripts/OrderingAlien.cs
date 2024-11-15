@@ -6,7 +6,10 @@ using System;
 using System.IO;
 using System.Linq;
 
-//Script by Owen Beck//
+// Script by Owen Beck//
+// In Order1.txt, the format for an order should be as follows:
+// X,X Y | Where X is a food item and Y is a prep method
+// There should be no spaces unless a food item has a prep method attached to it
 public class OrderingAlien : MonoBehaviour
 {
     //Testing Script that will spawn in an alien prefab and have it slowly move toward the camera
@@ -211,7 +214,7 @@ public class OrderingAlien : MonoBehaviour
     void NextLine()
     {
         //If there is text.. write it
-        if(index < lines.Count - 1)
+        if (index < lines.Count - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -242,12 +245,15 @@ public class OrderingAlien : MonoBehaviour
             orderText2.text = capitalLetters;   //Display order on kitchen screen
 
             // Adds to the order list using the second line of the given text file
-            // Note: will only work with unprepared food items for now. Need to update
-            // it later to work with more than that. - Chris
             List<string> orderComponents = lines[1].Split(",").ToList();
-            foreach (string c in orderComponents)
+            foreach (string component in orderComponents)
             {
-                List<string> com = new List<string>() { c };
+                List<string> com = new List<string>();
+                foreach (string c in component.Split(" "))
+                {
+                    com.Add(c);
+                }
+
                 order.Add(com);
             }
 
