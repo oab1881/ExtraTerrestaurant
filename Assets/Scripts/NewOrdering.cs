@@ -43,6 +43,10 @@ public class NewOrdering : MonoBehaviour
     public List<GameObject> alienPrefabs; // List of alien prefabs for random selection
     public List<string> orderFiles; // List of text files for random orders
 
+    // External References
+    [SerializeField]
+    ScoreManager scoreManager; // Reference to ScoreManager
+
     void Start()
     {
         // Start the spawning process with the first alien

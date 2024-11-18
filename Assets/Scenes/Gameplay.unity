@@ -1074,6 +1074,7 @@ MonoBehaviour:
   - Order2
   - Order3
   - Order4
+  scoreManager: {fileID: 0}
 --- !u!1 &694464405
 GameObject:
   m_ObjectHideFlags: 0
