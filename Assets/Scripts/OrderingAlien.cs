@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 using UnityEngine;
 using TMPro;
 using System;
@@ -13,6 +14,12 @@ using System.Linq;
 public class OrderingAlien : MonoBehaviour
 {
     //Testing Script that will spawn in an alien prefab and have it slowly move toward the camera
+
+    //Lists to store all aliens and orders
+    public List<GameObject> alienPrefabs; // List of alien prefabs
+    public List<string> orderFileNames;   // List of order text file names
+    private GameObject currentAlien;    //Currently spawned alien
+    //***********************************************************
 
     //Variables for LERP
     public GameObject alienPrefab;  // The alien prefab to spawn
@@ -36,14 +43,15 @@ public class OrderingAlien : MonoBehaviour
     public float textSpeed;     //Tracks speed of text
     private int index;
     private bool hasClicked = false; //Tracks if Mouse has been clicked
-    //************************************************************
+                                     //************************************************************
 
-    //Variables for Sticky Note
+    // Order Management
     public GameObject orderScreen;
     public GameObject kitchenScreen;
-
-    // The order to be made and scored
     public List<List<string>> order = new List<List<string>>();
+
+    // External References
+    public ScoreManager scoreManager; // Reference to ScoreManager
 
     void Start()
     {
@@ -121,6 +129,37 @@ public class OrderingAlien : MonoBehaviour
                 LerpAway();
             }
         }
+    }
+
+    //Method that handles all alien info
+    private void SpawnNewAlien()
+    {
+        // Reset State
+        hasApproached = false;
+        movedAway = true;
+        distanceCovered = 0.0f;
+
+        // Choose random alien and order file
+        int randomIndex = Random.Range(0, alienPrefabs.Count);
+        GameObject alienPrefab = alienPrefabs[randomIndex];
+        string orderFile = orderFileNames[randomIndex];
+
+        // Spawn alien
+        if (currentAlien != null)
+        {
+            Destroy(currentAlien);
+        }
+        currentAlien = Instantiate(alienPrefab, startPoint, Quaternion.identity);
+        currentAlien.transform.localScale = Vector3.one * startSize;
+
+        // Load order file
+        LoadTextFile(orderFile);
+
+        // Set up journey
+        journeyLength = Vector3.Distance(startPoint, endPoint);
+
+        // Delay dialogue to match alien's approach
+        Invoke(nameof(StartDialogue), 6.5f);
     }
 
     //Method to load in order files from the resources folder
