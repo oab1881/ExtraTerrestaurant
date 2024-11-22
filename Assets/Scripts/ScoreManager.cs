@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
     PlateData plateData;
 
     [SerializeField]
-    OrderingAlien alienOrder;
+    NewOrdering alienOrder;
 
     private void Start()
     {
@@ -104,6 +104,10 @@ public class ScoreManager : MonoBehaviour
         if (ingredients[used_ingredient.FoodName] == value)
         { 
             result += 2;
+            if(customer_order.Count > 1)
+            {
+                result -= 1;
+            }
         }
 
         return result;

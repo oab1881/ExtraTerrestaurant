@@ -64,8 +64,7 @@ public class PlateCollisions : MonoBehaviour
                 //At the end we set collidingObject to null to end the plate collision
                 //Also deactivates collisions
                 collidingObject.GetComponent<Collider2D>().enabled = false;
-                collidingObject = null;
-                
+                //collidingObject = null;
             }
         }
     }

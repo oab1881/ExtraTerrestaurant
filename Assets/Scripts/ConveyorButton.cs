@@ -51,7 +51,7 @@ public class ConveyorButton : MonoBehaviour
                 scoring.DisplayScore();
                 Destroy(tray);
                 tray = Instantiate(newTray);
-                tray.transform.position = new Vector3(24.42f,1.14f, 0.0f);
+                tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
                 scoring.CleanPlate(tray);
                 rb2D = tray.GetComponent<Rigidbody2D>();
                 ChangeSprite(unpressedButton);
