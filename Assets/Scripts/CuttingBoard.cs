@@ -12,7 +12,7 @@ using static UnityEngine.ParticleSystem;
  */
 public class CuttingBoard : MonoBehaviour
 {
-    //Stores how many times the knife has come into contact with the ingredient on the table
+    // Stores how many times the knife has come into contact with the ingredient on the table
     int cutCount = 0;
 
     //Stores the storage script
@@ -36,10 +36,10 @@ public class CuttingBoard : MonoBehaviour
             //Increases the cut count on every enter
             cutCount++;
 
-            GameObject.Find("AudioManager").GetComponent<AudioPlayer>().PlaySoundEffect("mortar");
+            // GameObject.Find("AudioManager").GetComponent<AudioPlayer>().PlaySoundEffect("mortar");
 
             // After the player cuts the object 3 times
-            if (cutCount == 5)
+            if (cutCount == 3)
             {
                 //Temp gameobject that is new type (Which is the cut GameObject)
                 GameObject newType = storageScript.StoredItem[0].GetComponent<FoodData>().Chopped;
@@ -47,7 +47,7 @@ public class CuttingBoard : MonoBehaviour
                 //Resets the count
                 cutCount = 0;
 
-                //Destorys current item in storage and instanitates new one in it's place
+                //Destroys current item in storage and instanitates new one in it's place
                 // *** Prefab now gets created but does not get stored ***
                 storageScript.RemoveItem(0, true, false);
                 GameObject temp;

@@ -183,8 +183,8 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Sets the scoring method's plate data to the new plate instance
-    public void CleanPlate(PlateData newPlate)
+    public void CleanPlate(GameObject newPlate)
     {
-        plateData = newPlate;
+        plateData = newPlate.GetComponent<PlateData>();
     }
 }
