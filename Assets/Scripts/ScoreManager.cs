@@ -15,6 +15,9 @@ public class ScoreManager : MonoBehaviour
     private Dictionary<string, string> ingredients = new Dictionary<string, string>();
     private Dictionary<string, string> preparationMethods = new Dictionary<string, string>();
 
+    //Reference to ordering script  (OWEN)
+    NewOrdering orderRef = new NewOrdering();
+
     [SerializeField]
     GameObject kitchenMonitor;
 
@@ -190,5 +193,9 @@ public class ScoreManager : MonoBehaviour
     public void CleanPlate(GameObject newPlate)
     {
         plateData = newPlate.GetComponent<PlateData>();
+
+        //Testing to find a way to loop alien spawning
+        orderRef.SpawnNewAlien();
+        orderRef.Update();
     }
 }

@@ -53,7 +53,7 @@ public class NewOrdering : MonoBehaviour
         SpawnNewAlien();
     }
 
-    void Update()
+    public void Update()
     {
         // Handle alien movement and interaction logic
         if (!hasApproached)
@@ -97,7 +97,7 @@ public class NewOrdering : MonoBehaviour
     }
 
     // Spawns a new alien and loads its dialogue and order
-    void SpawnNewAlien()
+    public void SpawnNewAlien()
     {
         // Randomly select an alien prefab and order file
         alienPrefab = alienPrefabs[UnityEngine.Random.Range(0, alienPrefabs.Count)];
