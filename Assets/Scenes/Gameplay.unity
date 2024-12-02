@@ -4156,6 +4156,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 327327704286431115, guid: 22672f8a4f633644da736b410041bd90, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 327327704286431115, guid: 22672f8a4f633644da736b410041bd90, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1483791375
+      objectReference: {fileID: 0}
     - target: {fileID: 1069370919173755085, guid: 22672f8a4f633644da736b410041bd90, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -8.8
@@ -4167,6 +4175,10 @@ PrefabInstance:
     - target: {fileID: 1579429588155001801, guid: 22672f8a4f633644da736b410041bd90, type: 3}
       propertyPath: m_Name
       value: OW_translator_screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041876684279021306, guid: 22672f8a4f633644da736b410041bd90, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1483791375
       objectReference: {fileID: 0}
     - target: {fileID: 4270024302215205895, guid: 22672f8a4f633644da736b410041bd90, type: 3}
       propertyPath: m_RootOrder
