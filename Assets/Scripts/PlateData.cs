@@ -37,4 +37,25 @@ public class PlateData : MonoBehaviour
     {
         ingredients.Add(food.GetComponent<FoodData>());
     }
+
+    
+    private void OnDestroy()
+    {
+        ClearIngredients();
+    }
+
+    /*
+     * <summary>
+     * Private function to remove every ingredient object on a plate, popping
+     * each ingredient off of the list and then deleting it.
+     * </summary>
+     */
+    private void ClearIngredients()
+    {
+        for (int i = (ingredients.Count - 1); i >= 0; --i)
+        {
+            Destroy(ingredients[i]);
+            ingredients.RemoveAt(i);
+        }
+    }
 }
