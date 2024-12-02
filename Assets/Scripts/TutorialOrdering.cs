@@ -70,7 +70,7 @@ public class TutorialOrdering : MonoBehaviour
         // Load dialogue lines from the text file
         LoadTextFile(textFileName);
 
-        Invoke("StartDialogue", 5.5f); //Invoke the StartDialogue coroutine (6.5 second delay)
+        Invoke("StartDialogue", 2.5f); //Invoke the StartDialogue coroutine (6.5 second delay)
         //StartDialogue();
     }
 
@@ -247,24 +247,28 @@ public class TutorialOrdering : MonoBehaviour
     //This method displays an order, taking the capital letters from the NPC's order and displaying them on the translator screen
     void CreateOrder()
     {
-        // Instantiate the sticky note at the given position and with no rotation
-        //GameObject stickyNoteInstance = Instantiate(stickyNote, position, Quaternion.identity);
+        // Retrieve the TextMeshProUGUI components from both screens
+        TextMeshProUGUI orderText = orderScreen?.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI orderText2 = kitchenScreen?.GetComponentInChildren<TextMeshProUGUI>();
 
-        // Get the TextMeshProUGUI component of the orderScreen and set its text to the capital letters from the first line
-        TextMeshProUGUI orderText = orderScreen.GetComponentInChildren<TextMeshProUGUI>();  //Displayed in order screen
-        TextMeshProUGUI orderText2 = kitchenScreen.GetComponentInChildren<TextMeshProUGUI>();   //Displayed on kitchen screen
+        if (orderText == null)
+        {
+            Debug.LogWarning("Order screen is missing a TextMeshProUGUI component or orderScreen is not assigned.");
+        }
+        if (orderText2 == null)
+        {
+            Debug.LogWarning("Kitchen screen is missing a TextMeshProUGUI component or kitchenScreen is not assigned.");
+        }
 
         if (orderText != null && orderText2 != null)
         {
-            string order = "A"; //COMPLETELY HARDCODED FOR TUTORIAL
+            string order = "A"; // Hardcoded order for tutorial purposes
 
-            // Display the order on both screens
-            orderText.text = order;    // Display on the order screen
-            orderText2.text = order;   // Display on the kitchen screen
-        }
-        else
-        {
-            Debug.LogWarning("Order screen does not have a TextMeshProUGUI component.");
+            // Display the hardcoded order on both screens
+            orderText.text = order;
+            orderText2.text = order;
+
+            Debug.Log("Order successfully displayed on both screens.");
         }
     }
 
