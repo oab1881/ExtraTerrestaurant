@@ -12,8 +12,8 @@ public class ConveyorButton : MonoBehaviour
     public Sprite unpressedButton;
     public SpriteRenderer spriteRenderer;
 
-    // Owen, this is for you.
-    public int number;
+    //tracks currentScore for player progression
+    private static int currentScore = 0;
 
     [SerializeField]
     public ScoreManager scoring;
@@ -30,6 +30,23 @@ public class ConveyorButton : MonoBehaviour
     private bool buttonActive = true;
     private float conveyorSpeed = 0.5f;
     private float time = 3.0f;
+
+    // Public property with getter and setter for score, can be used for progression and new customer spawning
+    public static int CurrentScore
+    {
+        get { return currentScore; }
+        set
+        {
+            if (value < 0)
+            {
+                Debug.LogWarning("Score cannot be negative!");
+                return;
+            }
+
+            currentScore = value;
+            Debug.Log("Score updated! Current Score: " + currentScore);
+        }
+    }
 
     private void Start()
     {
@@ -49,7 +66,10 @@ public class ConveyorButton : MonoBehaviour
 
                 rb2D.velocity = Vector3.zero;
                 bool isPerfect = scoring.DisplayScore();
-                if (isPerfect) { number++; }
+                if (isPerfect) 
+                { 
+                    IncreaseScore();    //if plate is correct, increase score ticker
+                }
                 Destroy(tray);
                 tray = Instantiate(newTray);
                 tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
@@ -80,5 +100,10 @@ public class ConveyorButton : MonoBehaviour
     {
         trayMoving = true;
         buttonActive = false;
+    }
+
+    public void IncreaseScore()
+    {
+        CurrentScore++; // Use the setter to increase the score
     }
 }

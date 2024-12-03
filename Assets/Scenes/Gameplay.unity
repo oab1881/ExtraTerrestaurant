@@ -991,7 +991,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693149414}
-  - component: {fileID: 693149413}
   - component: {fileID: 693149415}
   m_Layer: 0
   m_Name: Manager
@@ -1000,33 +999,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &693149413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693149412}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 135a34e66adc9054e91ffef51b089243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alienPrefabs: []
-  orderFileNames: []
-  alienPrefab: {fileID: 4523235403769607777, guid: 16d3e4bdd5c39304cac5104d5163865b, type: 3}
-  startSize: 0.1
-  endSize: 0.5
-  approachSpeed: 2
-  startPoint: {x: -8, y: 2, z: 10}
-  endPoint: {x: -6, y: 1.15, z: 1}
-  dialogueBox: {fileID: 468646337}
-  textComponent: {fileID: 267096293}
-  textFileName: Order1
-  textSpeed: 0.1
-  orderScreen: {fileID: 1549225334}
-  kitchenScreen: {fileID: 1937885517}
-  scoreManager: {fileID: 0}
 --- !u!4 &693149414
 Transform:
   m_ObjectHideFlags: 0
@@ -1074,7 +1046,6 @@ MonoBehaviour:
   - Order2
   - Order3
   - Order4
-  scoreManager: {fileID: 1420779237}
 --- !u!1 &694464405
 GameObject:
   m_ObjectHideFlags: 0

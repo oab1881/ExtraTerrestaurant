@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using System.IO;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 // Script by Owen Beck
 // Handles alien spawning, ordering, dialogue, and cleanup for infinite gameplay
@@ -42,10 +43,11 @@ public class NewOrdering : MonoBehaviour
     // Alien pool for infinite spawning
     public List<GameObject> alienPrefabs; // List of alien prefabs for random selection
     public List<string> orderFiles; // List of text files for random orders
+    private int lastOrderIndex = -1; // Tracks the last order to avoid repetition
 
     // External References
-    [SerializeField]
-    ScoreManager scoreManager; // Reference to ScoreManager
+    //[SerializeField]
+    //ConveyorButton scoring; // Reference to scoring in ConveyorButton
 
     void Start()
     {
@@ -99,49 +101,92 @@ public class NewOrdering : MonoBehaviour
     // Spawns a new alien and loads its dialogue and order
     public void SpawnNewAlien()
     {
-        // Randomly select an alien prefab and order file
-        alienPrefab = alienPrefabs[UnityEngine.Random.Range(0, alienPrefabs.Count)];
-        textFileName = orderFiles[UnityEngine.Random.Range(0, orderFiles.Count)];
-        Debug.Log(textFileName);
+        // Get the correct folder based on the player's score to access the appropriate rank of orders
+        string rankFolder = GetRankFolder(ConveyorButton.CurrentScore);
 
-        //^^DEV NOTE: Maybe we should rework this so that the previous order will not be chosen 2x in a row ^^
+        // Load all available order files from the specified folder, converting them to a list of filenames
+        List<string> availableOrders = Resources.LoadAll<TextAsset>($"{rankFolder}")
+                                          .Select(o => o.name)
+                                          .ToList();
 
-        // Instantiate the alien and initialize its position and size
-        alienInstance = Instantiate(alienPrefab, startPoint, Quaternion.identity);
-        alienInstance.transform.localScale = Vector3.one * startSize;
+        // Check if there are any available orders in the folder
+        if (availableOrders.Count > 0)
+        {
+            int orderIndex;
+            do
+            {
+                // Randomly select an order index from the available orders
+                orderIndex = Random.Range(0, availableOrders.Count);
+            }
+            while (orderIndex == lastOrderIndex); // Ensure the selected order is not the same as the last one
 
-        // Calculate the journey length for approach movement
-        journeyLength = Vector3.Distance(startPoint, endPoint);
+            // Update the last order index to avoid repetition in the next spawn
+            lastOrderIndex = orderIndex;
 
-        // Reset flags and variables
-        hasApproached = false;
-        movedAway = true;
-        distanceCovered = 0.0f;
+            // Set the selected order's file name for loading dialogue later
+            textFileName = availableOrders[orderIndex];
 
-        //Initialize textComponent
-        dialogueBox.gameObject.SetActive(false);
-        textComponent.gameObject.SetActive(false); //Set to false until alien has approached you
-        textComponent.text = string.Empty;
+            // Randomly select an alien prefab from the list of available prefabs
+            alienPrefab = alienPrefabs[Random.Range(0, alienPrefabs.Count)];
 
-        // Load dialogue lines from the selected text file
-        LoadTextFile(textFileName);
+            // Instantiate the selected alien at the starting point with an initial rotation
+            alienInstance = Instantiate(alienPrefab, startPoint, Quaternion.identity);
 
-        // Delay before starting the dialogue
-        Invoke("StartDialogue", 5.5f);
+            // Set the initial scale of the alien to the defined start size
+            alienInstance.transform.localScale = Vector3.one * startSize;
+
+            // Calculate the total distance the alien needs to travel to reach the player
+            journeyLength = Vector3.Distance(startPoint, endPoint);
+
+            // Reset flags and variables for alien movement and interaction
+            hasApproached = false;    // Alien hasn't reached the player yet
+            movedAway = true;         // Alien is ready to move offscreen after interaction
+            distanceCovered = 0.0f;   // Reset the distance traveled
+
+            // Load the dialogue file for the selected order from the specified folder
+            LoadTextFile($"{rankFolder}/{textFileName}");
+
+            // Start the dialogue interaction after a delay of 5.5 seconds
+            Invoke(nameof(StartDialogue), 5.5f);
+        }
+        else
+        {
+            // Log an error message if no orders are found in the specified rank folder
+            Debug.LogError($"No available orders found in rank folder: {rankFolder}");
+        }
+    }
+
+    //Method to grab the right Rank folder of orders based on player's currentScore
+    string GetRankFolder(int score)
+    {
+        if (score < 3) return "Rank1";
+        if (score >= 3 && score < 6) return "Rank2";
+        return "Rank3";
     }
 
     // Loads the content of a text file into the dialogue lines
     void LoadTextFile(string fileName)
     {
+        // Log the path being used to load the file for debugging purposes
+        Debug.Log($"Trying to load file from: Resources/{fileName}");
+
+        // Load the text file from the Resources folder using the specified path
         TextAsset textFile = Resources.Load<TextAsset>(fileName);
+
+        // Check if the file was successfully loaded
         if (textFile != null)
         {
-            lines = textFile.text.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList<string>();
+            Debug.Log($"Successfully loaded file: {fileName}");
+
+            // Split the text into lines and store them in the 'lines' list
+            lines = textFile.text.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList();
         }
         else
         {
-            Debug.LogError("Text file not found in Resources folder.");
+            // Log an error if the file was not found
+            Debug.LogError($"Text file not found at: Resources/{fileName}");
         }
+
     }
 
     // Moves the alien closer to the player
