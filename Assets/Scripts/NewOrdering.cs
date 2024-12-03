@@ -54,6 +54,10 @@ public class NewOrdering : MonoBehaviour
     {
         // Start the spawning process with the first alien
         SpawnNewAlien();
+
+        //Set dialogue box to inactive
+        dialogueBox.gameObject.SetActive(false);
+        textComponent.gameObject.SetActive(false);
     }
 
     public void Update()
@@ -61,7 +65,8 @@ public class NewOrdering : MonoBehaviour
         //Logic for spawning new alien for infinite looping
         if(ConveyorButton.CurrentScore > tempScore) //if score increases spawn new alien
         {
-            SpawnNewAlien();
+            //BUG: RESET ALL TEXT DISPLAYS
+            StartCoroutine(DelayedResetAndSpawn()); // Delay the reset and spawning, calls ResetUI
             tempScore++;    //increase temp score
         }
         // Handle alien movement and interaction logic
@@ -103,6 +108,33 @@ public class NewOrdering : MonoBehaviour
                 LerpAway();
             }
         }
+    }
+
+    //Method to clear all text from displays and dialogue box after an item is scored properly
+    private void ResetUI()
+    {
+        // Clear the dialogue text and hide the dialogue box
+        textComponent.text = string.Empty;
+        dialogueBox.gameObject.SetActive(false);
+        textComponent.gameObject.SetActive(false);
+
+        // Clear the order display on the order and kitchen screens
+        TextMeshProUGUI orderText = orderScreen.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI orderText2 = kitchenScreen.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (orderText != null) orderText.text = string.Empty; // Clear order text on screen
+        if (orderText2 != null) orderText2.text = string.Empty; // Clear order text in the kitchen
+
+        // Clear any existing order data
+        order.Clear();
+        lines = new List<string>(); // Reset dialogue lines
+        hasClicked = false; // Reset interaction flag
+    }
+    private IEnumerator DelayedResetAndSpawn()
+    {
+        yield return new WaitForSeconds(3f); // Delay by 3 seconds
+        ResetUI(); // Reset the UI after the delay
+        SpawnNewAlien(); // Spawn the new alien
     }
 
     // Spawns a new alien and loads its dialogue and order
