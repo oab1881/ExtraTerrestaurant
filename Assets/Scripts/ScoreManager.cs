@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -113,6 +114,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
 
+        score += result;
         return result;
     }
 
@@ -134,10 +136,16 @@ public class ScoreManager : MonoBehaviour
             }
         }
 
+        score += result;
         return result;
     }
 
-    public void DisplayScore()
+    /*
+     * Uses the monitor in the kitchen to display feedback to the player, using colors
+     * to indicate how the player did in comparison to the order received. This will also
+     * return a boolean stating whether or not the player's dish was perfect.
+     */
+    public bool DisplayScore()
     {
         string displayText = "";
         
@@ -187,6 +195,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
         scoreText.text = displayText;
+        return isPerfect(alienOrder.order.Count, score);
     }
 
     // Sets the scoring method's plate data to the new plate instance
@@ -197,5 +206,19 @@ public class ScoreManager : MonoBehaviour
         //Testing to find a way to loop alien spawning
         orderRef.SpawnNewAlien();
         orderRef.Update();
+        score = 0;
+    }
+
+    // Determines if a dish was perfect or not.
+    public bool isPerfect(int orderCount, int score)
+    {
+        if((2 * orderCount) == score)
+        {
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
     }
 }

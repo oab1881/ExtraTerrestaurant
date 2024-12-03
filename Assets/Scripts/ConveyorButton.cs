@@ -4,9 +4,6 @@ using UnityEngine;
 
 /*
  * Handles how the button acts when it is clicked.
- * 
- * FOR NOW: This function is the scoring function. In future sprints, the scoring will be
- * handled by a class that is not this.
  */
 
 public class ConveyorButton : MonoBehaviour
@@ -14,6 +11,9 @@ public class ConveyorButton : MonoBehaviour
     public Sprite pressedButton;
     public Sprite unpressedButton;
     public SpriteRenderer spriteRenderer;
+
+    // Owen, this is for you.
+    public int number;
 
     [SerializeField]
     public ScoreManager scoring;
@@ -48,7 +48,8 @@ public class ConveyorButton : MonoBehaviour
                 trayMoving = false;
 
                 rb2D.velocity = Vector3.zero;
-                scoring.DisplayScore();
+                bool isPerfect = scoring.DisplayScore();
+                if (isPerfect) { number++; }
                 Destroy(tray);
                 tray = Instantiate(newTray);
                 tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
