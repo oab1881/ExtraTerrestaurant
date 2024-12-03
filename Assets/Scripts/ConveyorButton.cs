@@ -44,7 +44,7 @@ public class ConveyorButton : MonoBehaviour
             }
 
             currentScore = value;
-            Debug.Log("Score updated! Current Score: " + currentScore);
+            //Debug.Log("Score updated! Current Score: " + currentScore);
         }
     }
 
@@ -105,5 +105,6 @@ public class ConveyorButton : MonoBehaviour
     public void IncreaseScore()
     {
         CurrentScore++; // Use the setter to increase the score
+        Debug.Log("Score updated! Current Score: " + currentScore);
     }
 }

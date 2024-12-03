@@ -44,6 +44,7 @@ public class NewOrdering : MonoBehaviour
     public List<GameObject> alienPrefabs; // List of alien prefabs for random selection
     public List<string> orderFiles; // List of text files for random orders
     private int lastOrderIndex = -1; // Tracks the last order to avoid repetition
+    private int tempScore = 0;
 
     // External References
     //[SerializeField]
@@ -57,6 +58,12 @@ public class NewOrdering : MonoBehaviour
 
     public void Update()
     {
+        //Logic for spawning new alien for infinite looping
+        if(ConveyorButton.CurrentScore > tempScore) //if score increases spawn new alien
+        {
+            SpawnNewAlien();
+            tempScore++;    //increase temp score
+        }
         // Handle alien movement and interaction logic
         if (!hasApproached)
         {

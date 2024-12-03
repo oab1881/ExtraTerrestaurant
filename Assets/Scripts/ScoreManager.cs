@@ -150,12 +150,19 @@ public class ScoreManager : MonoBehaviour
         string displayText = "";
         
         TextMeshProUGUI scoreText = kitchenMonitor.GetComponentInChildren<TextMeshProUGUI>();
+        //List<int> results = ScoreDish(alienOrder.order, plateData.ingredients);
+        //foreach (int i in results) 
+        //{
+        //    Debug.Log(i);
+        //}
         List<int> results = ScoreDish(alienOrder.order, plateData.ingredients);
-        foreach (int i in results) 
+        int testScore = 0;
+        foreach (int i in results)
         {
             Debug.Log(i);
+            testScore += i;
         }
-        for(int i = 0; i < alienOrder.order.Count; i++)
+        for (int i = 0; i < alienOrder.order.Count; i++)
         {
             switch (results[i]) 
             {
@@ -195,7 +202,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
         scoreText.text = displayText;
-        return isPerfect(alienOrder.order.Count, score);
+        return isPerfect(alienOrder.order.Count, testScore);
     }
 
     // Sets the scoring method's plate data to the new plate instance
