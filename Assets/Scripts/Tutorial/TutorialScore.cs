@@ -59,41 +59,34 @@ public class TutorialScore : MonoBehaviour
 
         Returns an int representing the score the player earned on the order
     */
+
+    //*** THIS IS A VERY SIMPLIFIED VERSION FOR TUTORIAL PURPOSES ONLY******
     private List<int> ScoreDish(List<List<string>> customer_order, List<FoodData> player_food)
     {
+
+        Debug.Log($"alienOrder is null: {alienOrder == null}");
+        Debug.Log($"alienOrder.order is null: {alienOrder?.order == null}");
+        Debug.Log($"plateData is null: {plateData == null}");
+        Debug.Log($"plateData.ingredients is null: {plateData?.ingredients == null}");
+
         List<int> results = new List<int>();
 
-        // Create modifiable list based off of the food on the plate
-        //List<List<string>> ingredientsUsed = player_food;
-
-        // Loop through each component of the customer's order
-        foreach(List<string> component in customer_order)
+        // Simplified check for tutorial mode with hardcoded "A"
+        foreach (List<string> component in customer_order)
         {
-            int preppedHighestRating = 0;
-
-            for (int i = 0; i < player_food.Count; i++)
+            int scoreValue = 0;
+            foreach (FoodData food in player_food)
             {
-                // Evaluate a single raw ingredient
-                if (component.Count == 1)
+                if (component[0] == "A" && ingredients[food.FoodName] == "A")
                 {
-                    int res = EvaluateRaw(component, player_food[i]);
-                    if (res > preppedHighestRating)
-                    {
-                        preppedHighestRating = res;
-                    }
+                    scoreValue = 2; // Correct ingredient
                 }
-                // Evaluate a single prepared ingredient
-                else if (component.Count == 2) 
+                else
                 {
-                    int res = EvaluatePrepped(component, player_food[i]);
-                    if(res > preppedHighestRating)
-                    {
-                        preppedHighestRating = res;
-                    }
+                    scoreValue = 0; // Incorrect
                 }
             }
-
-            results.Add(preppedHighestRating);
+            results.Add(scoreValue);
         }
         return results;
     }
@@ -185,17 +178,12 @@ public class TutorialScore : MonoBehaviour
                     string display2 = $"<color=#FFEA00>{text2}</color>";
                     displayText = string.Concat(displayText, display2);
                     break;
-        
-                case 2:
-                    string text3 = "";
-                    foreach (string letter in alienOrder.order[i])
-                    {
-                        text3 = string.Concat(text3, letter.Replace(" ", ""));
-                    }
-                    string display3 = $"<color=#00FF00>{text3}</color>";
+
+                case 2: // Perfect score for matching "A"
+                    string display3 = $"<color=#00FF00>{alienOrder.order[i][0]}</color>";
                     displayText = string.Concat(displayText, display3);
                     break;
-        
+
                 default:
                     Debug.Log("Something went wrong...");
                     break;
