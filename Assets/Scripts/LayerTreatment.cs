@@ -60,7 +60,7 @@ public class LayerTreatment : MonoBehaviour
         {
             changeType = LayerState.Frozen; //Change its state to frozen
             changeColor = Color.blue;       //Change color to blue
-            prepMethod = "frozed";          // Change food prepMethod to frozen
+            prepMethod = "frozen";          // Change food prepMethod to frozen
         }
         else if(gameObject.name == "goop green")   //If ingredient goes in goop
         {
