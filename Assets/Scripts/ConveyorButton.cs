@@ -18,18 +18,15 @@ public class ConveyorButton : MonoBehaviour
     [SerializeField]
     public ScoreManager scoring;
 
-    // Starting position: X:24.42, Y:1.14
     // Conveyor position: X:15.3, Y:-3.5
     [SerializeField]
     GameObject tray;
     [SerializeField]
     GameObject newTray;
 
-    private Rigidbody2D rb2D;
-    private bool trayMoving = false;
     private bool buttonActive = true;
-    private float conveyorSpeed = 0.5f;
-    private float time = 3.0f;
+    private float conveyorSpeed = 4f;
+    private float time = 4.0f;
 
     // Public property with getter and setter for score, can be used for progression and new customer spawning
     public static int CurrentScore
@@ -51,55 +48,66 @@ public class ConveyorButton : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rb2D = tray.GetComponent<Rigidbody2D>();
     }
-    private void Update()
+
+    // Accomplishes the same as the old "Update" function did while it was here, only as a coroutine.
+    private IEnumerator HandleAll()
     {
-        if (trayMoving)
+        //FlipButton();
+        Vector3 startingPos = tray.transform.position;
+        Vector3 finalPos = tray.transform.position + (-transform.up * conveyorSpeed);
+
+        float elapsedTime = 0;
+
+        while (elapsedTime < time)
         {
-            rb2D.AddForce(-transform.up * conveyorSpeed);
-            time -= Time.deltaTime;
-
-            if (time < 0.0f)
-            {
-                trayMoving = false;
-
-                rb2D.velocity = Vector3.zero;
-                bool isPerfect = scoring.DisplayScore();
-                if (isPerfect) 
-                { 
-                    IncreaseScore();    //if plate is correct, increase score ticker
-                }
-                Destroy(tray);
-                tray = Instantiate(newTray);
-                tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
-                rb2D = tray.GetComponent<Rigidbody2D>();
-                scoring.CleanPlate(tray);
-                ChangeSprite(unpressedButton);
-
-                buttonActive = true;
-            }
+            tray.transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
 
+        bool isPerfect = scoring.DisplayScore();
+        if (isPerfect)
+        {
+            IncreaseScore();    //if plate is correct, increase score ticker
+        }
+        CleanAll();
+        ChangeSprite(unpressedButton);
+        //FlipButton();
     }
+
     private void OnMouseDown()
     {
         if (buttonActive)
         {
             tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
             ChangeSprite(pressedButton);
-            MoveTray();
+            StartCoroutine(HandleAll());
+        } 
+        else
+        {
+            Debug.Log("Button still inactive! Wait a bit, will ya?");
         }
+    }
+
+    // Resets everything after the scoring button is pressed
+    private void CleanAll()
+    {
+        Debug.Log("Cleaning...");
+        Destroy(tray);
+        tray = Instantiate(newTray);
+        tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
+        scoring.CleanPlate(tray);
     }
 
     private void ChangeSprite(Sprite newSprite)
     {
         spriteRenderer.sprite = newSprite;
     }
-    private void MoveTray()
+
+    private void FlipButton()
     {
-        trayMoving = true;
-        buttonActive = false;
+        buttonActive = !buttonActive;
     }
 
     public void IncreaseScore()
