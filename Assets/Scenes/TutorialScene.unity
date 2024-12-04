@@ -1075,7 +1075,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693149414}
-  - component: {fileID: 693149413}
   - component: {fileID: 693149415}
   - component: {fileID: 693149416}
   m_Layer: 0
@@ -1085,33 +1084,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &693149413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693149412}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 135a34e66adc9054e91ffef51b089243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alienPrefabs: []
-  orderFileNames: []
-  alienPrefab: {fileID: 4523235403769607777, guid: 16d3e4bdd5c39304cac5104d5163865b, type: 3}
-  startSize: 0.1
-  endSize: 0.5
-  approachSpeed: 2
-  startPoint: {x: -8, y: 2, z: 10}
-  endPoint: {x: -6, y: 1.15, z: 1}
-  dialogueBox: {fileID: 468646337}
-  textComponent: {fileID: 267096293}
-  textFileName: Order1
-  textSpeed: 0.1
-  orderScreen: {fileID: 1549225334}
-  kitchenScreen: {fileID: 0}
-  scoreManager: {fileID: 0}
 --- !u!4 &693149414
 Transform:
   m_ObjectHideFlags: 0
@@ -1159,7 +1131,6 @@ MonoBehaviour:
   - Order2
   - Order3
   - Order4
-  scoreManager: {fileID: 0}
 --- !u!114 &693149416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,7 +1154,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 468646337}
   textComponent: {fileID: 267096293}
   textFileName: Tutorial
-  textSpeed: 0.08
+  textSpeed: 0.05
   orderScreen: {fileID: 160150687}
   kitchenScreen: {fileID: 1937885517}
   scoreManager: {fileID: 0}
@@ -1365,7 +1336,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1321627513
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 62500077e6d90db4eb11fb7dd1d42a17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1535,6 +1506,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 282783983535981747, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 795209709903310369, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.79291964
@@ -1641,7 +1616,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ab2f38049cb8076429384d6e2e34072d, type: 3}
     - target: {fileID: 4108508848685633657, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4830733065568293860, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Name
@@ -1662,6 +1637,14 @@ PrefabInstance:
     - target: {fileID: 8058858863107472337, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108794682822069702, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108794682822069702, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1321627513
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1900,7 +1883,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d9ec1d1bc22d16d4eaab7b9d0cf6dfcf, type: 3}
   - {fileID: 8300000, guid: a497eb035706ea34e946307417b9d05b, type: 3}
   - {fileID: 8300000, guid: 6015612835f50c64e836e1d84cb3a7b4, type: 3}
-  audioSource: {fileID: 1021025663}
+  audioSourceCount: 0
+  audioSources: []
 --- !u!4 &1021025665
 Transform:
   m_ObjectHideFlags: 0
@@ -2050,7 +2034,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1321627513
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4f21ee5f3b92c294888a4cb54e1d687f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2074,6 +2058,7 @@ GameObject:
   - component: {fileID: 1090500843}
   - component: {fileID: 1090500844}
   - component: {fileID: 1090500846}
+  - component: {fileID: 1090500847}
   - component: {fileID: 1090500845}
   m_Layer: 0
   m_Name: Button_up
@@ -2236,7 +2221,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090500841}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab7dde85a6ea66a448406dd97b229e5e, type: 3}
   m_Name: 
@@ -2245,6 +2230,24 @@ MonoBehaviour:
   unpressedButton: {fileID: 21300000, guid: 83307235cff463542bd61e5e7d4a8054, type: 3}
   spriteRenderer: {fileID: 0}
   scoring: {fileID: 1594358036}
+  tray: {fileID: 204454015}
+  newTray: {fileID: 7562888795353850008, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
+--- !u!114 &1090500847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090500841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d98b875429091548a6647aa33f02e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedButton: {fileID: 21300000, guid: f7cb4f4c2da46cd46a7c649d336850b5, type: 3}
+  unpressedButton: {fileID: 21300000, guid: 83307235cff463542bd61e5e7d4a8054, type: 3}
+  spriteRenderer: {fileID: 0}
+  scoring: {fileID: 0}
   tray: {fileID: 204454015}
   newTray: {fileID: 7562888795353850008, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
 --- !u!4 &1130159864 stripped
@@ -2625,6 +2628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1420779238}
   - component: {fileID: 1420779237}
+  - component: {fileID: 1420779239}
   m_Layer: 0
   m_Name: Food Manager
   m_TagString: Untagged
@@ -2639,7 +2643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420779236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20a395e09b0f9404cbf883f37b0985de, type: 3}
   m_Name: 
@@ -2662,10 +2666,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1420779239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420779236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93eb7606da88914aa30ea32b5a99cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kitchenMonitor: {fileID: 867862341}
+  plateData: {fileID: 513067981}
+  alienOrder: {fileID: 693149415}
 --- !u!1 &1549225334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1579429588155001801, guid: 22672f8a4f633644da736b410041bd90, type: 3}
   m_PrefabInstance: {fileID: 6717130302458513576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1552244722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2119022321143162373, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+  m_PrefabInstance: {fileID: 867862340}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574261619
 GameObject:
@@ -2766,6 +2790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1594358037}
   - component: {fileID: 1594358036}
+  - component: {fileID: 1594358038}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2780,12 +2805,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594358035}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20a395e09b0f9404cbf883f37b0985de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitchenMonitor: {fileID: 0}
+  kitchenMonitor: {fileID: 1552244722}
   plateData: {fileID: 513067981}
   alienOrder: {fileID: 0}
 --- !u!4 &1594358037
@@ -2803,6 +2828,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1594358038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594358035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93eb7606da88914aa30ea32b5a99cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kitchenMonitor: {fileID: 1552244722}
+  plateData: {fileID: 513067981}
+  alienOrder: {fileID: 0}
 --- !u!1 &1659787788
 GameObject:
   m_ObjectHideFlags: 0
