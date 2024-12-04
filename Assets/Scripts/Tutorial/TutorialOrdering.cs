@@ -260,6 +260,7 @@ public class TutorialOrdering : MonoBehaviour
             Debug.LogWarning("Kitchen screen is missing a TextMeshProUGUI component or kitchenScreen is not assigned.");
         }
 
+        //THIS IS CAUSING A BUG WITH SCORING FOR TUTORIAL
         if (orderText != null && orderText2 != null)
         {
             string order = "A"; // Hardcoded order for tutorial purposes
