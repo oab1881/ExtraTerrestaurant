@@ -12,7 +12,6 @@ using UnityEngine;
  */
 public class ScoreManager : MonoBehaviour
 {
-    private int score;
     private Dictionary<string, string> ingredients = new Dictionary<string, string>();
     private Dictionary<string, string> preparationMethods = new Dictionary<string, string>();
 
@@ -114,7 +113,6 @@ public class ScoreManager : MonoBehaviour
             }
         }
 
-        score += result;
         return result;
     }
 
@@ -136,7 +134,6 @@ public class ScoreManager : MonoBehaviour
             }
         }
 
-        score += result;
         return result;
     }
 
@@ -156,11 +153,11 @@ public class ScoreManager : MonoBehaviour
         //    Debug.Log(i);
         //}
         List<int> results = ScoreDish(alienOrder.order, plateData.ingredients);
-        int testScore = 0;
+        int score = 0;
         foreach (int i in results)
         {
             Debug.Log(i);
-            testScore += i;
+            score += i;
         }
         for (int i = 0; i < alienOrder.order.Count; i++)
         {
@@ -202,7 +199,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
         scoreText.text = displayText;
-        return isPerfect(alienOrder.order.Count, testScore);
+        return isPerfect(alienOrder.order.Count, score);
     }
 
     // Sets the scoring method's plate data to the new plate instance
@@ -213,7 +210,6 @@ public class ScoreManager : MonoBehaviour
         //Testing to find a way to loop alien spawning
         orderRef.SpawnNewAlien();
         orderRef.Update();
-        score = 0;
     }
 
     // Determines if a dish was perfect or not.
