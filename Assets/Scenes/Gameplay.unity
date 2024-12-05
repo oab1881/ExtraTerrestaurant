@@ -1048,7 +1048,7 @@ MonoBehaviour:
   - Order2
   - Order3
   - Order4
-  conveyorButton: {fileID: 0}
+  conveyorButton: {fileID: 1090500846}
 --- !u!1 &694464405
 GameObject:
   m_ObjectHideFlags: 0
