@@ -15,7 +15,8 @@ public class ScoreManager : MonoBehaviour
     private Dictionary<string, string> ingredients = new Dictionary<string, string>();
     private Dictionary<string, string> preparationMethods = new Dictionary<string, string>();
 
-    //Reference to ordering script  (OWEN)
+    [SerializeField]
+    NewOrdering alienOrder;
     NewOrdering orderRef = new NewOrdering();
 
     [SerializeField]
@@ -23,9 +24,6 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField]
     PlateData plateData;
-
-    [SerializeField]
-    NewOrdering alienOrder;
 
     private void Start()
     {

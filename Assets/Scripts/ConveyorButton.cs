@@ -24,7 +24,7 @@ public class ConveyorButton : MonoBehaviour
     [SerializeField]
     GameObject newTray;
 
-    private bool buttonActive = true;
+    private bool isScoring = false;
     private float conveyorSpeed = 4.0f;
     private float time = 4.0f;
 
@@ -53,12 +53,10 @@ public class ConveyorButton : MonoBehaviour
     // Accomplishes the same as the old "Update" function did while it was here, only as a coroutine.
     private IEnumerator HandleAll()
     {
-        //FlipButton();
         Vector3 startingPos = tray.transform.position;
         Vector3 finalPos = tray.transform.position + (-transform.up * conveyorSpeed);
 
         float elapsedTime = 0;
-
         while (elapsedTime < time)
         {
             tray.transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
@@ -71,22 +69,24 @@ public class ConveyorButton : MonoBehaviour
         {
             IncreaseScore();    //if plate is correct, increase score ticker
         }
+
         CleanAll();
         ChangeSprite(unpressedButton);
-        //FlipButton();
     }
 
     private void OnMouseDown()
     {
-        if (buttonActive)
+        if (isScoring)
         {
+            Debug.Log("Button still inactive! Wait a bit, will ya?");
+
+        }
+        else
+        {
+            isScoring = true;
             tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
             ChangeSprite(pressedButton);
             StartCoroutine(HandleAll());
-        } 
-        else
-        {
-            Debug.Log("Button still inactive! Wait a bit, will ya?");
         }
     }
 
@@ -103,14 +103,12 @@ public class ConveyorButton : MonoBehaviour
     private void ChangeSprite(Sprite newSprite)
     {
         spriteRenderer.sprite = newSprite;
-        FlipButton();
     }
 
-    private void FlipButton()
+    public void EnableSwitch()
     {
-        buttonActive = !buttonActive;
+        isScoring = false;
     }
-
     public void IncreaseScore()
     {
         CurrentScore++; // Use the setter to increase the score

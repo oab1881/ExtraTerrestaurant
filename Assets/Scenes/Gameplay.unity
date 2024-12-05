@@ -2561,9 +2561,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a395e09b0f9404cbf883f37b0985de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alienOrder: {fileID: 693149415}
   kitchenMonitor: {fileID: 649853074}
   plateData: {fileID: 513067981}
-  alienOrder: {fileID: 693149415}
+  conveyorButton: {fileID: 1090500846}
 --- !u!4 &1420779238
 Transform:
   m_ObjectHideFlags: 0

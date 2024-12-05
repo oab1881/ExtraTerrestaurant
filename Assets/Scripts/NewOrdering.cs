@@ -47,8 +47,8 @@ public class NewOrdering : MonoBehaviour
     private int tempScore = 0;
 
     // External References
-    //[SerializeField]
-    //ConveyorButton scoring; // Reference to scoring in ConveyorButton
+    [SerializeField]
+    ConveyorButton conveyorButton; // Reference to scoring in ConveyorButton
 
     void Start()
     {
@@ -187,6 +187,7 @@ public class NewOrdering : MonoBehaviour
 
             // Start the dialogue interaction after a delay of 5.5 seconds
             Invoke(nameof(StartDialogue), 5.5f);
+            conveyorButton.EnableSwitch();
         }
         else
         {
