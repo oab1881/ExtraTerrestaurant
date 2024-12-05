@@ -26,11 +26,9 @@ public class TutorialConveyor : MonoBehaviour
     [SerializeField]
     GameObject newTray;
 
-    private Rigidbody2D rb2D;
-    private bool trayMoving = false;
-    private bool buttonActive = true;
-    private float conveyorSpeed = 4.0f;
-    private float time = 4.0f;
+    private bool isScoring = false;
+    private float conveyorSpeed = 17.0f;
+    private float time = 5.0f;
 
     // Public property with getter and setter for score, can be used for progression and new customer spawning
     public static int CurrentScore
@@ -57,9 +55,8 @@ public class TutorialConveyor : MonoBehaviour
     // Accomplishes the same as the old "Update" function did while it was here, only as a coroutine.
     private IEnumerator HandleAll()
     {
-        //FlipButton();
         Vector3 startingPos = tray.transform.position;
-        Vector3 finalPos = tray.transform.position + (-transform.up * conveyorSpeed);
+        Vector3 finalPos = tray.transform.position + (-transform.right * conveyorSpeed);
 
         float elapsedTime = 0;
 
@@ -77,14 +74,14 @@ public class TutorialConveyor : MonoBehaviour
         }
         CleanAll();
         ChangeSprite(unpressedButton);
-        //FlipButton();
     }
 
     private void OnMouseDown()
     {
-        if (buttonActive)
+        if (!isScoring)
         {
-            tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
+            isScoring = true;
+            tray.transform.position = new Vector3(22.6676f, -4.2801f, 0.0f);
             ChangeSprite(pressedButton);
             StartCoroutine(HandleAll());
         }
@@ -100,19 +97,18 @@ public class TutorialConveyor : MonoBehaviour
         Debug.Log("Cleaning...");
         Destroy(tray);
         tray = Instantiate(newTray);
-        tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
+        tray.transform.position = new Vector3(22.6676f, -4.2801f, 0.0f);
         scoring.CleanPlate(tray);
     }
 
     private void ChangeSprite(Sprite newSprite)
     {
         spriteRenderer.sprite = newSprite;
-        FlipButton();
     }
 
-    private void FlipButton()
+    public void EnableButton()
     {
-        buttonActive = !buttonActive;
+        isScoring = false;
     }
 
     public void IncreaseScore()
