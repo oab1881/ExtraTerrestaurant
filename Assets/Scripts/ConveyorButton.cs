@@ -107,7 +107,7 @@ public class ConveyorButton : MonoBehaviour
 
     public void EnableSwitch()
     {
-        isScoring = false;
+        isScoring = true;
     }
     public void IncreaseScore()
     {

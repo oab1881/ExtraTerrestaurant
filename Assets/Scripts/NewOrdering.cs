@@ -56,8 +56,8 @@ public class NewOrdering : MonoBehaviour
         SpawnNewAlien();
 
         //Set dialogue box to inactive
-        dialogueBox.gameObject.SetActive(false);
         textComponent.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
     }
 
     public void Update()
