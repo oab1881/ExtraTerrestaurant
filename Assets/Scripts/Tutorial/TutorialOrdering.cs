@@ -119,6 +119,7 @@ public class TutorialOrdering : MonoBehaviour
                 else
                 {
                     // Finish the current line immediately
+                    StopAllCoroutines();
                     textComponent.text = lines[index];
                 }
             }

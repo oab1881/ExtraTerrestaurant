@@ -18,15 +18,15 @@ public class ConveyorButton : MonoBehaviour
     [SerializeField]
     public ScoreManager scoring;
 
-    // Conveyor position: X:15.3, Y:-3.5
+    // Conveyor position: X:22.6676f, Y:-4.2801f
     [SerializeField]
     GameObject tray;
     [SerializeField]
     GameObject newTray;
 
     private bool isScoring = false;
-    private float conveyorSpeed = 4.0f;
-    private float time = 4.0f;
+    private float conveyorSpeed = 17.0f;
+    private float time = 5.0f;
 
     // Public property with getter and setter for score, can be used for progression and new customer spawning
     public static int CurrentScore
@@ -54,7 +54,7 @@ public class ConveyorButton : MonoBehaviour
     private IEnumerator HandleAll()
     {
         Vector3 startingPos = tray.transform.position;
-        Vector3 finalPos = tray.transform.position + (-transform.up * conveyorSpeed);
+        Vector3 finalPos = tray.transform.position + (-transform.right * conveyorSpeed);
 
         float elapsedTime = 0;
         while (elapsedTime < time)
@@ -84,7 +84,7 @@ public class ConveyorButton : MonoBehaviour
         else
         {
             isScoring = true;
-            tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
+            tray.transform.position = new Vector3(22.6676f, -4.2801f, 0.0f);
             ChangeSprite(pressedButton);
             StartCoroutine(HandleAll());
         }
@@ -96,7 +96,7 @@ public class ConveyorButton : MonoBehaviour
         Debug.Log("Cleaning...");
         Destroy(tray);
         tray = Instantiate(newTray);
-        tray.transform.position = new Vector3(15.3f, -3.5f, 0.0f);
+        tray.transform.position = new Vector3(22.6676f, -4.2801f, 0.0f);
         scoring.CleanPlate(tray);
     }
 

@@ -105,7 +105,7 @@ public class ScoreManager : MonoBehaviour
         if (ingredients[used_ingredient.FoodName] == value)
         { 
             result += 2;
-            if(customer_order.Count > 1)
+            if(used_ingredient.PrepName != "")
             {
                 result -= 1;
             }
