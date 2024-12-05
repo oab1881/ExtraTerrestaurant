@@ -1219,7 +1219,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1804051654}
         m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: OnButtonClickTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
