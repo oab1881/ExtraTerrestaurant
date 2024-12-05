@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Handles how the button acts when it is clicked.
@@ -117,6 +118,13 @@ public class TutorialConveyor : MonoBehaviour
     public void IncreaseScore()
     {
         CurrentScore++; // Use the setter to increase the score
+        StartCoroutine(SwitchScene());
         Debug.Log("Score updated! Current Score: " + currentScore);
+    }
+    private IEnumerator SwitchScene()
+    {
+        yield return new WaitForSeconds(3f); // Delay by 3 seconds
+        //Load the Gameplay scene
+        SceneManager.LoadScene("Gameplay");
     }
 }

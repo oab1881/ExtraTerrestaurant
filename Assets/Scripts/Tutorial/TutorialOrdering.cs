@@ -7,6 +7,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
+using UnityEngine.SceneManagement;
 
 // Script by Owen Beck//
 // In Order1.txt, the format for an order should be as follows:
@@ -44,15 +45,22 @@ public class TutorialOrdering : MonoBehaviour
     public float textSpeed;     //Tracks speed of text
     private int index;
     private bool hasClicked = false; //Tracks if Mouse has been clicked
-                                     //************************************************************
+
+    public RectTransform dialogueBox2;    //Reference to Dialogue box
+    public TextMeshProUGUI textComponent2;   //Reference to TMPro component
+    public GameObject orderArrow;
+                                            //************************************************************
 
     // Order Management
     public GameObject orderScreen;
     public GameObject kitchenScreen;
     public List<List<string>> order;
+    private int tempScore = 0;
 
     // External References
-    public ScoreManager scoreManager; // Reference to ScoreManager
+    public TutorialScore scoring; // Reference to ScoreManager
+    [SerializeField]
+    TutorialConveyor conveyorButton;
 
     void Start()
     {
@@ -67,6 +75,7 @@ public class TutorialOrdering : MonoBehaviour
         dialogueBox.gameObject.SetActive(false);
         textComponent.gameObject.SetActive(false); //Set to false until alien has approached you
         textComponent.text = string.Empty;
+        orderArrow.gameObject.SetActive(false);
 
         // Load dialogue lines from the text file
         LoadTextFile(textFileName);
@@ -75,8 +84,16 @@ public class TutorialOrdering : MonoBehaviour
         //StartDialogue();
     }
 
-    void Update()
+    public void Update()
     {
+        //Logic for spawning new alien for infinite looping
+        if (TutorialConveyor.CurrentScore > tempScore) //if score increases spawn new alien
+        {
+            Debug.Log("THIS IS BEING CALLED");
+            // Swicth scenes with a delay
+            tempScore++;    //increase temp score
+            StartCoroutine(SwitchScene());
+        }
         if (!hasApproached) // If alien hasn't finished approaching player
         {
             Lerp(); // Keep calling LERP
@@ -86,10 +103,12 @@ public class TutorialOrdering : MonoBehaviour
             // Show text box and dialogue
             textComponent.gameObject.SetActive(true);
             dialogueBox.gameObject.SetActive(true);
+            dialogueBox2.gameObject.SetActive(true);
+            textComponent2.gameObject.SetActive(true);
 
             if (Input.GetMouseButtonDown(0)) // If left mouse click is pressed
             {
-                Debug.Log("Mouse Clicked");
+                //Debug.Log("Mouse Clicked");
                 hasClicked = true;
 
                 if (textComponent.text == lines[index])
@@ -105,9 +124,15 @@ public class TutorialOrdering : MonoBehaviour
             }
         }
     }
+    private IEnumerator SwitchScene()
+    {
+        yield return new WaitForSeconds(3f); // Delay by 3 seconds
+        //Load the Gameplay scene
+        SceneManager.LoadScene("Gameplay");
+    }
 
     //Method that handles all alien info
-    private void SpawnNewAlien()
+    public void SpawnNewAlien()
     {
         // Reset State
         hasApproached = false;
@@ -277,6 +302,8 @@ public class TutorialOrdering : MonoBehaviour
             order = orderComp;
 
             Debug.Log("Order successfully displayed on both screens.");
+            orderArrow.gameObject.SetActive(true);
+            
         }
     }
 

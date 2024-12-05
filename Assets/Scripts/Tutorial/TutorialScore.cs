@@ -17,7 +17,7 @@ public class TutorialScore : MonoBehaviour
     private Dictionary<string, string> preparationMethods = new Dictionary<string, string>();
 
     //Reference to ordering script  (OWEN)
-    NewOrdering orderRef = new NewOrdering();
+    TutorialOrdering orderRef = new TutorialOrdering();
 
     [SerializeField]
     GameObject kitchenMonitor;
@@ -27,6 +27,7 @@ public class TutorialScore : MonoBehaviour
 
     [SerializeField]
     TutorialOrdering alienOrder;
+
 
     private void Start()
     {
@@ -134,11 +135,13 @@ public class TutorialScore : MonoBehaviour
     public void CleanPlate(GameObject newPlate)
     {
         plateData = newPlate.GetComponent<PlateData>();
-        
+        //orderRef.Display2();
+
         //Testing to find a way to loop alien spawning
         orderRef.SpawnNewAlien();
         orderRef.Update();
         score = 0;
+        
     }
 
     // Determines if a dish was perfect or not.
