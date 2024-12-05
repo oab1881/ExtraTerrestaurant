@@ -8,6 +8,7 @@ Attached: Will be attached to the AudioPlayer Gameobject
 Changelog:
     -Created script: 11/11/24 : Jake
     -Total revamp of the system : 12/03/24 : Jake
+    -Made it so audioPlayer persists between scenes; Made music player version : 12/04/24
     
     
 */
@@ -32,11 +33,12 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField]
     List<AudioSource> audioSources;
 
-    private void Start()
+    private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         //Creates the list then adds all the objects to it depending on how many should be added
         //Also adds each audio source as a compenent of the gameobject
-        audioSources= new List<AudioSource>();
+        audioSources = new List<AudioSource>();
         for(int i =0; i < audioSourceCount; i++)
         {
             AudioSource temp = gameObject.AddComponent<AudioSource>();
@@ -89,17 +91,10 @@ public class AudioPlayer : MonoBehaviour
         audioSources[index].Stop();
     }
 
-    public void PlayMusic(string name, bool loop)
+    public void PlayMusic(string name, int index)
     {
-        /*
-        for(int i = 0; i < musicClips.Count; i++)
-        {
-            if(name == musicClips[i].name)
-            {
-                audioSource.Play();
-            }
-        }
-        */
+        audioSources[index].loop = true;
+        playLongSound(name, index);
     }
 
     /// <summary>
@@ -122,5 +117,10 @@ public class AudioPlayer : MonoBehaviour
         //If temp doesn't get set to anything ie the name was inncorrect doesn't exist
         throw new System.Exception("No vairable found " + name);
        
+    }
+
+    public void SetVolume(int index, float volume)
+    {
+        audioSources[index].volume = volume;
     }
 }

@@ -16,6 +16,7 @@ Changelog:
     -Changed line in storeItem to getComponent instead of rigbod : 10/30/24 : Jake
     -Made items removable in onTriggerExit function : 10/31/24 : Jake
     -Attempted to optomize removale of item detection : Jake : 11/14/24
+    -Added in sounds when click and release : Jake : 12/04/24
 */
 
 using System.Collections;
@@ -50,15 +51,23 @@ public class DragAndDrop : Hover
     private GameObject firstCollidingObject = null;
     private GameObject nextCollidingObject = null;
 
+    //Used to store isDragging state specifically for sound effect playing
+    bool tempIsDragging;
 
-
+    AudioPlayer quickAudioPlayer;
 
     new void Start()
     {
+        //At starts sets isDragging to be opposite of dragging
+        //This makes it so when the food item is created from bin the first click noise
+        //Plays 
+        tempIsDragging = !dragging;
         base.Start();
         rigidbod = gameObject.GetComponent<Rigidbody2D>();
         coll = gameObject.GetComponent<Collider2D>();
         gameObject.tag = "food item";
+
+        quickAudioPlayer = GameObject.Find("AudioManager(Quick)").GetComponent<AudioPlayer>();
     }
 
     public bool CanDragAndDrop
@@ -76,6 +85,7 @@ public class DragAndDrop : Hover
     private void OnMouseDown()
     {
         dragging = true;
+        quickAudioPlayer.PlaySoundEffect("Click", 0);
     }
     private void Update()
     {
@@ -85,6 +95,7 @@ public class DragAndDrop : Hover
         }
         if (dragging)
         {
+            
             FollowMouse();
             rigidbod.velocity = Vector2.zero;
             rigidbod.angularVelocity = 0f;
@@ -100,6 +111,10 @@ public class DragAndDrop : Hover
             rigidbod.simulated = true;
             rigidbod.gravityScale = 1;
             gameObject.layer = 0; // default layer
+
+            //Plays sound on drop
+            quickAudioPlayer.PlaySoundEffect("release_item", 0);
+
             // end drop
             // placed in storage?
             if (firstCollidingObject)
@@ -119,6 +134,18 @@ public class DragAndDrop : Hover
         {
             Destroy(gameObject);
         }
+
+        //Checks if is dragging and tempIsdragging are diff; this indicates a state change
+        //in clicking.
+        //Then check if is dragging is true we only want click to play when the play is clicking down
+        //If check isn't in then when they let go sound plays
+        if (tempIsDragging != dragging && dragging == true)
+        {
+            GameObject.Find("AudioManager(Quick)").GetComponent<AudioPlayer>().PlaySoundEffect("Click", 0);
+        }
+
+        //Sets tempIsDragging to match dragging at the end.
+        tempIsDragging= dragging;
     }
     private void FollowMouse()
     {
@@ -242,6 +269,12 @@ public class DragAndDrop : Hover
             {
                 //Calls the function from the storage item
                 goStorage.RemoveItem(indexRemove, false, true);
+                if (other.gameObject.name == "oven red")
+                    quickAudioPlayer.PlaySoundEffect("oven_close", 0);
+                if (other.gameObject.name == "freezer blue")
+                    quickAudioPlayer.PlaySoundEffect("Freezer close", 0);
+                if (other.gameObject.name == "goop green")
+                    quickAudioPlayer.PlaySoundEffect("remove_from_slime", 0);
 
                 //Sets the rigidbody constraints to none
                 gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
@@ -288,5 +321,10 @@ public class DragAndDrop : Hover
         rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.transform.localScale = Vector3.one / 4;
         canDragandDrop = false;*/
+    }
+
+    private void OnMouseUp()
+    {
+        
     }
 }
