@@ -1,2 +1,2 @@
-i'll take a B and an A
-B,A
+i'll take a E and an A
+E,A

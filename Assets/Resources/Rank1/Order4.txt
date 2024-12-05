@@ -1,2 +1,2 @@
-gimme some DDD boss
-D,D,D
+gimme some D with a C boss
+D,C

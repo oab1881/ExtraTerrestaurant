@@ -1,2 +1,2 @@
-sup bossman, just gimme a few AAA
-A,A,A
+sup bossman, just gimme a B and a C
+B,C
