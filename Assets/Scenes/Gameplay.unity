@@ -1046,6 +1046,7 @@ MonoBehaviour:
   - Order2
   - Order3
   - Order4
+  conveyorButton: {fileID: 0}
 --- !u!1 &694464405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1430,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ee9937df4981f194e9e65d5ef60bc78e, type: 3}
+    - target: {fileID: 163326004116407099, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 177034039783416861, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1447,7 +1452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795209709903310369, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4584
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 795209709903310369, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.86
       objectReference: {fileID: 0}
     - target: {fileID: 1568528575061270932, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1456,6 +1465,10 @@ PrefabInstance:
     - target: {fileID: 1568528575061270932, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587544207295670699, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1657270811692882113, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite
@@ -1530,9 +1543,29 @@ PrefabInstance:
       value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 2699603557582335462, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_Size.x
+      value: 6.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699603557582335462, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_Size.y
+      value: 2.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699603557582335462, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 453427abd86a04f429778e762c93d3b0, type: 3}
+    - target: {fileID: 2699603557582335462, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699603557582335462, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699603557582335462, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2027212055
+      objectReference: {fileID: 0}
     - target: {fileID: 2939843601563900970, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_text
       value: 
@@ -1561,6 +1594,10 @@ PrefabInstance:
       propertyPath: m_isRightToLeft
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3019076968919356001, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: maxCapacity
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3078141485539975598, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1568,6 +1605,10 @@ PrefabInstance:
     - target: {fileID: 3247914715667506551, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Name
       value: kitchen background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548894145777989391, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: maxCapacity
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3603373251209194240, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite
@@ -1645,6 +1686,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -2.09
       objectReference: {fileID: 0}
+    - target: {fileID: 8381849188515034907, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_TagString
+      value: storage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789801433493712061, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: maxCapacity
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9108794682822069702, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -1679,6 +1728,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8381849188515034907, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1247388915}
+    - targetCorrespondingSourceObject: {fileID: 8381849188515034907, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1247388920}
   m_SourcePrefab: {fileID: 100100000, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
 --- !u!1 &867862341 stripped
 GameObject:
@@ -2395,7 +2447,88 @@ MonoBehaviour:
   currentCapacity: 0
   snapZone: {fileID: 1247388913}
   positions:
-  - {x: 7.9, y: -4}
+  - {x: 0, y: -4}
+--- !u!60 &1247388920
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247388914}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.54, y: 2.67}
+    newSize: {x: 6.54, y: 2.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.24, y: -1.305}
+      - {x: 3.27, y: -1.275}
+      - {x: 3.27, y: -1.095}
+      - {x: 3.1999998, y: -0.905}
+      - {x: 3.1799998, y: -0.835}
+      - {x: 3.1499999, y: -0.745}
+      - {x: 3.1299999, y: -0.695}
+      - {x: 3, y: -0.305}
+      - {x: 2.9399998, y: -0.13499999}
+      - {x: 2.8899999, y: 0.055}
+      - {x: 2.84, y: 0.16499999}
+      - {x: 2.74, y: 0.465}
+      - {x: 2.6499999, y: 0.715}
+      - {x: 2.6299999, y: 0.79499996}
+      - {x: 2.61, y: 0.85499996}
+      - {x: 2.55, y: 1.015}
+      - {x: 2.45, y: 1.3149999}
+      - {x: 2.4299998, y: 1.3349999}
+      - {x: -2.9099998, y: 1.3349999}
+      - {x: -2.9399998, y: 1.305}
+      - {x: -2.95, y: 1.265}
+      - {x: -3, y: 0.92499995}
+      - {x: -3.03, y: 0.715}
+      - {x: -3.04, y: 0.635}
+      - {x: -3.06, y: 0.465}
+      - {x: -3.1799998, y: -0.375}
+      - {x: -3.1899998, y: -0.465}
+      - {x: -3.21, y: -0.625}
+      - {x: -3.25, y: -0.905}
+      - {x: -3.27, y: -1.035}
+      - {x: -3.27, y: -1.305}
+      - {x: -3.25, y: -1.3249999}
+      - {x: -2.77, y: -1.3249999}
+      - {x: -2.76, y: -1.3149999}
+      - {x: 0.5, y: -1.3149999}
+      - {x: 0.51, y: -1.305}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1320768144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2697,6 @@ MonoBehaviour:
   alienOrder: {fileID: 693149415}
   kitchenMonitor: {fileID: 649853074}
   plateData: {fileID: 513067981}
-  conveyorButton: {fileID: 1090500846}
 --- !u!4 &1420779238
 Transform:
   m_ObjectHideFlags: 0
