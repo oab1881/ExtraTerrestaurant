@@ -25,7 +25,7 @@ public class ConveyorButton : MonoBehaviour
     GameObject newTray;
 
     private bool buttonActive = true;
-    private float conveyorSpeed = 4f;
+    private float conveyorSpeed = 4.0f;
     private float time = 4.0f;
 
     // Public property with getter and setter for score, can be used for progression and new customer spawning
@@ -103,6 +103,7 @@ public class ConveyorButton : MonoBehaviour
     private void ChangeSprite(Sprite newSprite)
     {
         spriteRenderer.sprite = newSprite;
+        FlipButton();
     }
 
     private void FlipButton()

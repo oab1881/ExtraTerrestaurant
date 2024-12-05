@@ -26,7 +26,7 @@ public class TutorialScore : MonoBehaviour
     PlateData plateData;
 
     [SerializeField]
-    NewOrdering alienOrder;
+    TutorialOrdering alienOrder;
 
     private void Start()
     {
@@ -63,12 +63,6 @@ public class TutorialScore : MonoBehaviour
     //*** THIS IS A VERY SIMPLIFIED VERSION FOR TUTORIAL PURPOSES ONLY******
     private List<int> ScoreDish(List<List<string>> customer_order, List<FoodData> player_food)
     {
-
-        Debug.Log($"alienOrder is null: {alienOrder == null}");
-        Debug.Log($"alienOrder.order is null: {alienOrder?.order == null}");
-        Debug.Log($"plateData is null: {plateData == null}");
-        Debug.Log($"plateData.ingredients is null: {plateData?.ingredients == null}");
-
         List<int> results = new List<int>();
 
         // Simplified check for tutorial mode with hardcoded "A"
@@ -77,7 +71,7 @@ public class TutorialScore : MonoBehaviour
             int scoreValue = 0;
             foreach (FoodData food in player_food)
             {
-                if (component[0] == "A" && ingredients[food.FoodName] == "A")
+                if (ingredients[food.FoodName] == component[0])
                 {
                     scoreValue = 2; // Correct ingredient
                 }
@@ -91,48 +85,6 @@ public class TutorialScore : MonoBehaviour
         return results;
     }
 
-    // Used to evaluate an ingredient that has no preparation methods used on it
-    private int EvaluateRaw(List<string> customer_order, FoodData used_ingredient)
-    {
-        int result = 0;
-        string value = customer_order[0].Trim();
-
-        // Use the ingredient the player used as the key to the ingredients dictionary and see if the item the customer ordered matches the value
-        if (ingredients[used_ingredient.FoodName] == value)
-        { 
-            result += 2;
-            if(customer_order.Count > 1)
-            {
-                result -= 1;
-            }
-        }
-
-        score += result;
-        return result;
-    }
-
-    // Used to evaluate an ingredient that has a single preparation method used on it.
-    private int EvaluatePrepped(List<string> customer_order, FoodData used_ingredient)
-    {
-        int result = 0;
-        string ingredientValue = customer_order[0].Trim();
-        string prepValue = customer_order[1].Trim();
-
-        // Use the ingredient the player used as the key to the ingredients dictionary and see if the item the customer ordered matches the value
-        if (ingredients[used_ingredient.FoodName] == ingredientValue)
-        {
-            result += 1;
-            // If this test is passed, do the same with the preparation method.
-            if (preparationMethods.ContainsKey(used_ingredient.PrepName) && preparationMethods[used_ingredient.PrepName] == prepValue)
-            {
-                result += 1;
-            }
-        }
-
-        score += result;
-        return result;
-    }
-
     /*
      * Uses the monitor in the kitchen to display feedback to the player, using colors
      * to indicate how the player did in comparison to the order received. This will also
@@ -143,12 +95,8 @@ public class TutorialScore : MonoBehaviour
         string displayText = "";
         
         TextMeshProUGUI scoreText = kitchenMonitor.GetComponentInChildren<TextMeshProUGUI>();
-        //List<int> results = ScoreDish(alienOrder.order, plateData.ingredients);
-        //foreach (int i in results) 
-        //{
-        //    Debug.Log(i);
-        //}
         List<int> results = ScoreDish(alienOrder.order, plateData.ingredients);
+
         int testScore = 0;
         foreach (int i in results)
         {
@@ -160,27 +108,16 @@ public class TutorialScore : MonoBehaviour
             switch (results[i]) 
             {
                 case 0:
-                    string text1 = "";
-                    foreach(string letter in alienOrder.order[i])
-                    {
-                        text1 = string.Concat(text1, letter.Replace(" ", ""));
-                    }
-                    string display1 = $"<color=#FF0000>{text1}</color>";
+                    string display1 = $"<color=#FF0000>A</color>";
                     displayText = string.Concat(displayText, display1);
                     break;
-        
+
                 case 1:
-                    string text2 = "";
-                    foreach (string letter in alienOrder.order[i])
-                    {
-                        text2 = string.Concat(text2, letter.Replace(" ", ""));
-                    }
-                    string display2 = $"<color=#FFEA00>{text2}</color>";
-                    displayText = string.Concat(displayText, display2);
+                    Debug.Log("How?");
                     break;
 
                 case 2: // Perfect score for matching "A"
-                    string display3 = $"<color=#00FF00>{alienOrder.order[i][0]}</color>";
+                    string display3 = $"<color=#00FF00>A</color>";
                     displayText = string.Concat(displayText, display3);
                     break;
 

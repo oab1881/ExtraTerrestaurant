@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 
 // Script by Owen Beck//
 // In Order1.txt, the format for an order should be as follows:
@@ -48,7 +49,7 @@ public class TutorialOrdering : MonoBehaviour
     // Order Management
     public GameObject orderScreen;
     public GameObject kitchenScreen;
-    public List<List<string>> order = new List<List<string>>();
+    public List<List<string>> order;
 
     // External References
     public ScoreManager scoreManager; // Reference to ScoreManager
@@ -263,11 +264,17 @@ public class TutorialOrdering : MonoBehaviour
         //THIS IS CAUSING A BUG WITH SCORING FOR TUTORIAL
         if (orderText != null && orderText2 != null)
         {
-            string order = "A"; // Hardcoded order for tutorial purposes
+            string order2 = "A"; // Hardcoded order for tutorial purposes
+            List<List<string>> orderComp = new List<List<string>>();
+            List<string> com = new List<string>();
+
+            com.Add(order2);
+            orderComp.Add(com);
 
             // Display the hardcoded order on both screens
-            orderText.text = order;
-            orderText2.text = order;
+            orderText.text = order2;
+            orderText2.text = order2;
+            order = orderComp;
 
             Debug.Log("Order successfully displayed on both screens.");
         }

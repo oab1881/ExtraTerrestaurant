@@ -1508,7 +1508,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 282783983535981747, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 795209709903310369, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_LocalScale.x
@@ -1638,9 +1638,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.34
       objectReference: {fileID: 0}
+    - target: {fileID: 8193625431196838942, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9108794682822069702, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9108794682822069702, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_SortingLayerID
@@ -2247,7 +2251,7 @@ MonoBehaviour:
   pressedButton: {fileID: 21300000, guid: f7cb4f4c2da46cd46a7c649d336850b5, type: 3}
   unpressedButton: {fileID: 21300000, guid: 83307235cff463542bd61e5e7d4a8054, type: 3}
   spriteRenderer: {fileID: 0}
-  scoring: {fileID: 0}
+  scoring: {fileID: 1420779239}
   tray: {fileID: 204454015}
   newTray: {fileID: 7562888795353850008, guid: 30d5b1d7bbcce334889f73264807fb04, type: 3}
 --- !u!4 &1130159864 stripped
@@ -2680,7 +2684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kitchenMonitor: {fileID: 867862341}
   plateData: {fileID: 513067981}
-  alienOrder: {fileID: 693149415}
+  alienOrder: {fileID: 693149416}
 --- !u!1 &1549225334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1579429588155001801, guid: 22672f8a4f633644da736b410041bd90, type: 3}
