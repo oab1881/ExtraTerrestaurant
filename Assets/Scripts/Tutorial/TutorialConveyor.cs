@@ -68,10 +68,7 @@ public class TutorialConveyor : MonoBehaviour
         }
 
         bool isPerfect = scoring.DisplayScore();
-        if (isPerfect)
-        {
-            IncreaseScore();    //if plate is correct, increase score ticker
-        }
+        NextScene();
         CleanAll();
         ChangeSprite(unpressedButton);
     }
@@ -111,9 +108,8 @@ public class TutorialConveyor : MonoBehaviour
         isScoring = false;
     }
 
-    public void IncreaseScore()
+    public void NextScene()
     {
-        CurrentScore++; // Use the setter to increase the score
         StartCoroutine(SwitchScene());
         Debug.Log("Score updated! Current Score: " + currentScore);
     }

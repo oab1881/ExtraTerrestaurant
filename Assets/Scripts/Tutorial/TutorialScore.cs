@@ -136,12 +136,6 @@ public class TutorialScore : MonoBehaviour
     {
         plateData = newPlate.GetComponent<PlateData>();
         //orderRef.Display2();
-
-        //Testing to find a way to loop alien spawning
-        orderRef.SpawnNewAlien();
-        orderRef.Update();
-        score = 0;
-        
     }
 
     // Determines if a dish was perfect or not.
