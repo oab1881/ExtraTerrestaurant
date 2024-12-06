@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4245082900709541092}
   - component: {fileID: 6765793632034582510}
   - component: {fileID: 4130368508489723484}
-  - component: {fileID: 5756428243654078875}
-  - component: {fileID: -6235215649513243321}
-  - component: {fileID: 3323012342824336015}
+  - component: {fileID: -8668086335607270391}
+  - component: {fileID: 2771373333940546271}
   - component: {fileID: 6825458188127815068}
-  m_Layer: 0
+  - component: {fileID: 3323012342824336015}
+  - component: {fileID: -6235215649513243321}
+  m_Layer: 9
   m_Name: tentacle_food
   m_TagString: food item
   m_Icon: {fileID: 0}
@@ -101,84 +102,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c41fee416e00542914f09b0415e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: c5b9dd4d6ee9de640ab2d112482b664c, type: 3}
-  initalMouse: {x: 0, y: 0, z: 0}
-  canDragandDrop: 1
-  isPlate: 0
   dragging: 1
-  firstCollidingObject: {fileID: 0}
---- !u!61 &5756428243654078875
-BoxCollider2D:
+  rigidbod: {fileID: 0}
+  coll: {fileID: 0}
+--- !u!114 &-8668086335607270391
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4281459659418726516}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.35, y: 1.66}
-    newSize: {x: 2.35, y: 1.66}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.4318469, y: 1.7013605}
-  m_EdgeRadius: 0
---- !u!50 &-6235215649513243321
-Rigidbody2D:
-  serializedVersion: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 0}
+  hoveredSprite: {fileID: 21300000, guid: c5b9dd4d6ee9de640ab2d112482b664c, type: 3}
+--- !u!114 &2771373333940546271
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4281459659418726516}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: ec128eb2bb1d1b343935087cb39d4dc9, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e1cf099388a9844b9a2c038a1044c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentColl: {fileID: 0}
+  stored: 0
+  powderSprite: {fileID: 21300000, guid: 54ff3bd9d27fe4b499dabcf84229db9f, type: 3}
+  powderHoverSprite: {fileID: 21300000, guid: 9fc1d3746601aad4ba80f8242f9ba2a7, type: 3}
+--- !u!114 &6825458188127815068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281459659418726516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodName: tentacle
+  foodColor: {r: 0.5764706, g: 0.7137255, b: 0.70980394, a: 1}
 --- !u!60 &3323012342824336015
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -191,17 +161,17 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -270,19 +240,30 @@ PolygonCollider2D:
       - {x: 1.0749999, y: -0.41}
       - {x: 1.155, y: -0.22999999}
   m_UseDelaunayMesh: 0
---- !u!114 &6825458188127815068
-MonoBehaviour:
+--- !u!50 &-6235215649513243321
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4281459659418726516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodName: tentacle
-  crushed: {fileID: 8297354940826436125, guid: aba9ed37d2f0e8b4ba07129d0df2f608, type: 3}
-  cut: {fileID: 5172223132099338295, guid: dc87392d400ce1f489b7821bb0677272, type: 3}
-  foodColor: {r: 0.5764706, g: 0.7137255, b: 0.70980394, a: 1}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: ec128eb2bb1d1b343935087cb39d4dc9, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

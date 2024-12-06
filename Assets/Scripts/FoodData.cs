@@ -30,10 +30,10 @@ public class FoodData : MonoBehaviour
     // If any of these are null that means this item
     // can't be transformed that way ie crushed food has no
     // crushed gameobject it is already crushed
-    [SerializeField]
+    /*[SerializeField]
     GameObject crushed;
     [SerializeField]
-    GameObject cut;
+    GameObject cut;*/
 
     LayerState currentState;
 
@@ -43,14 +43,14 @@ public class FoodData : MonoBehaviour
     /// <summary>
     /// Gets the crushed prefab that replaces it
     /// </summary>
-    public GameObject Crushed
+    /*public GameObject Crushed
     {
         get { return crushed; }
     }
     public GameObject Chopped
     {
         get { return cut; }
-    }
+    }*/
 
     public void PrepareFood(string prepMethod)
     {

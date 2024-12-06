@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 5998635098908830834}
   - component: {fileID: 5128741936716209196}
   - component: {fileID: 6575779008971730262}
-  - component: {fileID: -6942545737338809984}
-  - component: {fileID: 8888346746106426489}
+  - component: {fileID: -3352667336111026487}
+  - component: {fileID: 5106343505949856416}
   - component: {fileID: -7287063832135636201}
   - component: {fileID: -2591238644688280200}
-  m_Layer: 0
+  - component: {fileID: -6942545737338809984}
+  m_Layer: 9
   m_Name: egg_food
   m_TagString: food item
   m_Icon: {fileID: 0}
@@ -101,84 +102,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c41fee416e00542914f09b0415e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: f34bab22c27546c4fbebaa69fff4b6e1, type: 3}
-  initalMouse: {x: 0, y: 0, z: 0}
-  canDragandDrop: 1
-  isPlate: 0
   dragging: 1
-  firstCollidingObject: {fileID: 0}
---- !u!50 &-6942545737338809984
-Rigidbody2D:
-  serializedVersion: 4
+  rigidbod: {fileID: 0}
+  coll: {fileID: 0}
+--- !u!114 &-3352667336111026487
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580618499572302972}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &8888346746106426489
-BoxCollider2D:
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 0}
+  hoveredSprite: {fileID: 21300000, guid: f34bab22c27546c4fbebaa69fff4b6e1, type: 3}
+--- !u!114 &5106343505949856416
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580618499572302972}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.89, y: 0.95}
-    newSize: {x: 0.89, y: 0.95}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.92485714, y: 1.0913296}
-  m_EdgeRadius: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e1cf099388a9844b9a2c038a1044c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentColl: {fileID: 0}
+  stored: 0
+  powderSprite: {fileID: 21300000, guid: 644f21522a5bbe34e8977ace85af0728, type: 3}
+  powderHoverSprite: {fileID: 21300000, guid: 9bfaa09b4ed539d4aa9cd4c2535ff3d7, type: 3}
 --- !u!114 &-7287063832135636201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodName: egg
-  crushed: {fileID: 8297354940826436125, guid: 340748ec438b1984cbd0cfc196649fc9, type: 3}
-  cut: {fileID: 8153008286944092344, guid: da04b177240f015488c5ca34833e85b6, type: 3}
   foodColor: {r: 0.6666667, g: 0.87843144, b: 0.50980395, a: 1}
 --- !u!60 &-2591238644688280200
 PolygonCollider2D:
@@ -207,17 +161,17 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -257,3 +211,30 @@ PolygonCollider2D:
       - {x: 0.39499998, y: -0.295}
       - {x: 0.435, y: -0.205}
   m_UseDelaunayMesh: 0
+--- !u!50 &-6942545737338809984
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580618499572302972}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 7d8d3e7a6b8f8c949a1c7de747671078, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -28,7 +28,7 @@ public class CuttingBoard : MonoBehaviour
          * the game verifies that the player is holding a knife.
          */
         if (storageScript.StoredItem[0] != null &&
-            storageScript.StoredItem[0].GetComponent<FoodData>().Chopped != null &&
+            //storageScript.StoredItem[0].GetComponent<FoodData>().Chopped != null &&
             collision.name == "knife")
         {
 
@@ -39,7 +39,7 @@ public class CuttingBoard : MonoBehaviour
             // GameObject.Find("AudioManager").GetComponent<AudioPlayer>().PlaySoundEffect("mortar");
 
             // After the player cuts the object 3 times
-            if (cutCount == 3)
+            /*if (cutCount == 3)
             {
                 //Temp gameobject that is new type (Which is the cut GameObject)
                 GameObject newType = storageScript.StoredItem[0].GetComponent<FoodData>().Chopped;
@@ -49,12 +49,12 @@ public class CuttingBoard : MonoBehaviour
 
                 //Destroys current item in storage and instanitates new one in it's place
                 // *** Prefab now gets created but does not get stored ***
-                storageScript.RemoveItem(0, true, false);
+                //storageScript.RemoveItem(0, true, false);
                 GameObject temp;
                 temp = Instantiate(newType, transform);
                 temp.GetComponent<FoodData>().PrepareFood("chopped");
-                storageScript.StoreItem(temp);
-            }
+                //storageScript.StoreItem(temp);
+            }*/
         }
     }
 }

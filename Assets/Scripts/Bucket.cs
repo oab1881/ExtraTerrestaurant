@@ -1,4 +1,4 @@
-///         == created by jack carter 10/07 ==
+/*///         == created by jack carter 10/07 ==
 /// attached to food buckets, inherits Hover
 /// nothing yet
 /// Jake note using this on knife and pestel to add highlight 
@@ -20,3 +20,4 @@ public class Bucket : Hover
         base.Start();
     }
 }
+*/

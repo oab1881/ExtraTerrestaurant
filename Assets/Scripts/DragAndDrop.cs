@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*
  ==== Created by Jake Wardell 09/30/24 ====
 
@@ -23,19 +24,22 @@ Changelog:
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+=======
+/// === overhauled by jack 11/01 ===
+/// does what it says on the tin  :p
+>>>>>>> Stashed changes
 using UnityEngine;
-using UnityEngine.UIElements;
-//          should DragAndDrop inherit Hover???????????????????????
-public class DragAndDrop : Hover
-{
-    //Useing this to get the original point on start of click and drag
-    [SerializeField]
-    Vector3 initalMouse = Vector3.zero;
-    Rigidbody2D rigidbod;
-    bool stored = false;
-    Collider2D coll;
-    //public GameObject originBucket; // for trashing items in original buckets (doesn't work)
 
+public class DragAndDrop : MonoBehaviour
+{
+    // fields
+    // public bc accessed by Ingredient, Tray
+    public bool dragging = false;
+    private Vector3 initialMouse = Vector3.zero;
+    public Rigidbody2D rigidbod;
+    public Collider2D coll;
+
+<<<<<<< Updated upstream
     [SerializeField]
     bool canDragandDrop = true;
 
@@ -88,16 +92,28 @@ public class DragAndDrop : Hover
         dragging = true;
         quickAudioPlayer.PlaySoundEffect("Click", 0);
     }
+=======
+    // start
+    void Start()
+    {
+        rigidbod = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
+    }
+
+    // update
+>>>>>>> Stashed changes
     private void Update()
     {
-        if(isPlate && Input.GetMouseButtonDown(0))
-        {
-            canDragandDrop = true;
-        }
+        //FollowMouse();
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    FollowMouse();
+        //}
         if (dragging)
         {
             
             FollowMouse();
+<<<<<<< Updated upstream
             rigidbod.velocity = Vector2.zero;
             rigidbod.angularVelocity = 0f;
             rigidbod.gravityScale = 0;
@@ -119,18 +135,32 @@ public class DragAndDrop : Hover
             // end drop
             // placed in storage?
             if (firstCollidingObject)
+=======
+            // on release
+            if (Input.GetMouseButtonUp(0))
+>>>>>>> Stashed changes
             {
-                if (firstCollidingObject.tag.Equals("storage"))
+                // stop dragging
+                initialMouse = Vector3.zero;
+                dragging = false;
+                gameObject.layer = 8; // tool layer
+                //TogglePhysics(true);
+                // ingredient?
+                if (gameObject.GetComponent<Ingredient>())
                 {
-                    Debug.Log("ITEM store attempt");
-                    firstCollidingObject.GetComponent<Storage>().StoreItem(gameObject);
+                    // ingredient layer
+                    gameObject.layer = 9; //ingredient layer
+                    // dont resume physics if currently stored
+                    if (gameObject.GetComponent<Ingredient>().stored)
+                        return;
                 }
+                // resume physics
+                rigidbod.angularVelocity = 0f;  // reset velocity
+                rigidbod.constraints = RigidbodyConstraints2D.None; // unfreeze transform
 
-                EndCollToAction();
-                firstCollidingObject = null;
-                nextCollidingObject = null;
             }
         }
+<<<<<<< Updated upstream
         if (transform.position.y < -8)
         {
             Destroy(gameObject);
@@ -147,90 +177,95 @@ public class DragAndDrop : Hover
 
         //Sets tempIsDragging to match dragging at the end.
         tempIsDragging= dragging;
+=======
+>>>>>>> Stashed changes
     }
+
+    // follow mouse
     private void FollowMouse()
     {
-        if (canDragandDrop)
-        {
-            //Checks if the inital is 0 this indicates start of mouse drag
-            //Then the intial point gets set to current mouse pos
-            if (initalMouse == Vector3.zero) initalMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            initalMouse.z = 0;
+        // pause physics
+        //TogglePhysics(false);
+        rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform
 
-            //New pos is grabbed for the duration of mouse down
-            Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            newPos.z = 0;
+        // save mouse pos
+        Vector3 beegMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            //Takes the current pos of the object and adds newPos - inital this difference
-            //Will move the object in relation to itself 
-            transform.position += newPos - initalMouse;
+        // if start of drag, set initMouse to current mouse
+        if (initialMouse == Vector3.zero)
+            initialMouse = beegMouse;
+        // z-zeroing
+        initialMouse.z = 0;
+        beegMouse.z = 0;
 
-            //Sets intial mouse to newPos at the end
-            initalMouse = newPos;
-        }
+        // move in relation to self
+        transform.position += beegMouse - initialMouse;
+
+        // set initMouse for next drag frame
+        initialMouse = beegMouse;
     }
 
-    // handles collision action
-    private void CollToAction()
+    /*private void FollowMouse(Vector3 initialMouse)
     {
-        // highlights [storage] on collide
-        if (firstCollidingObject.tag.Equals("storage"))
-        //            || firstCollidingObject.Equals(originBucket)) // for trashing items in original buckets (doesn't work)
+        Vector3 newPos = initialMouse;
+        // set position to mouse pos
+        if (initialMouse == Vector3.zero)
         {
-            firstCollidingObject.GetComponent<Storage>().HighlightSprite(sprRend);
+            newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-    }
-    // handles end of first collision action
-    //  may be refactored into above method??
-    private void EndCollToAction()
+        newPos.z = 0;
+        transform.position = newPos;
+        // mouse still clicking, call again
+        if (Input.GetMouseButtonDown(0))
+        {
+            FollowMouse(newPos);
+        }
+    }*/
+
+    // check new mouse click
+    private void OnMouseDown()
     {
-        // catches missing objects      can be made redundant, see Update --> MouseUp
-        // unhighlights [storage] after collide
-        if (firstCollidingObject && firstCollidingObject.tag.Equals("storage"))
-        {
-            firstCollidingObject.GetComponent<Storage>().HighlightSprite(false);
-        }
-        /* // for trashing items in original buckets (doesn't work)
-        else if (firstCollidingObject.Equals(originBucket))
-        {
-            firstCollidingObject.GetComponent<Hover>().HighlightSprite(false);
-            Destroy(gameObject);
-        }*/
+        //FollowMouse(Vector3.zero);
+        //FollowMouse();
+        dragging = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    // on release
+    /*private void OnMouseUpAsButton()
     {
-        if (dragging && other.gameObject.tag != "food bucket")
+        // stop dragging, resume physics
+        initialMouse = Vector3.zero;
+        dragging = false;
+        TogglePhysics(true);
+    }*/
+
+    // DO NOT USE
+    /*public void TogglePhysics(bool togOn)
+    {
+        //coll.isTrigger = !togOn;
+        //rigidbod.simulated = togOn;
+        //rigidbod.velocity = Vector2.zero;
+        rigidbod.angularVelocity = 0f;  // reset velocity
+        if (togOn)  // freeze transform, set sorting/layers
         {
-            // no current collision: store collision object, call action method
-            if (!firstCollidingObject)
+            rigidbod.constraints = RigidbodyConstraints2D.None;
+            if (gameObject.GetComponent<Ingredient>())  // ingredient or tray
+                gameObject.layer = 3;   // change layer to 3 (ingredient)
+            else
             {
-                firstCollidingObject = other.gameObject;
-                CollToAction();
-            }
-            // queue next collision
-            else if (!nextCollidingObject)
-            {
-                nextCollidingObject = other.gameObject;
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        //  exit current collision
-        if (other.gameObject.Equals(firstCollidingObject))
-        {
-            EndCollToAction();
-            firstCollidingObject = null;
-            // next collision moves up
-            if (nextCollidingObject != null)
-            {
-                firstCollidingObject = nextCollidingObject;
-                nextCollidingObject = null;
-                CollToAction();
+                gameObject.layer = 8;   // change layer to 8 (storage)
+                gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "storage";
+                gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
             }
         }
+        else
+        {
+            rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameObject.layer = 7;   // change layer to 7 (held)
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "active";
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        }
+<<<<<<< Updated upstream
         // exit next collision
         else if (other.gameObject.Equals(nextCollidingObject))
         {
@@ -329,3 +364,7 @@ public class DragAndDrop : Hover
         
     }
 }
+=======
+    }*/
+}
+>>>>>>> Stashed changes

@@ -11,10 +11,12 @@ GameObject:
   - component: {fileID: 7328869825394656848}
   - component: {fileID: 3525741330097541702}
   - component: {fileID: 7330042575336150700}
-  - component: {fileID: -8211959908704455596}
-  - component: {fileID: 6879090268991256250}
+  - component: {fileID: -7110084864992686647}
+  - component: {fileID: 5175029551068256483}
   - component: {fileID: 5778548249425939243}
-  m_Layer: 0
+  - component: {fileID: 6879090268991256250}
+  - component: {fileID: -8211959908704455596}
+  m_Layer: 9
   m_Name: sheet_food
   m_TagString: food item
   m_Icon: {fileID: 0}
@@ -100,39 +102,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c41fee416e00542914f09b0415e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoveredSprite: {fileID: 21300000, guid: 8099f9ed02dac9b40b7317dc71ec927f, type: 3}
-  initalMouse: {x: 0, y: 0, z: 0}
-  canDragandDrop: 1
-  isPlate: 0
   dragging: 1
-  firstCollidingObject: {fileID: 0}
---- !u!50 &-8211959908704455596
-Rigidbody2D:
-  serializedVersion: 4
+  rigidbod: {fileID: 0}
+  coll: {fileID: 0}
+--- !u!114 &-7110084864992686647
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026397797376136479}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91d2f45c5810fc40be77acbe8a5e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 0}
+  hoveredSprite: {fileID: 21300000, guid: 8099f9ed02dac9b40b7317dc71ec927f, type: 3}
+--- !u!114 &5175029551068256483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026397797376136479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e1cf099388a9844b9a2c038a1044c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentColl: {fileID: 0}
+  stored: 0
+  powderSprite: {fileID: 21300000, guid: acc812b234479ab48944136ea7c40613, type: 3}
+  powderHoverSprite: {fileID: 21300000, guid: 6845019880cda6147825f1434ec710cb, type: 3}
+--- !u!114 &5778548249425939243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026397797376136479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodName: sheet
+  foodColor: {r: 0.23137257, g: 0.31764707, b: 0.67058825, a: 1}
 --- !u!60 &6879090268991256250
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -145,17 +161,17 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -220,19 +236,30 @@ PolygonCollider2D:
       - {x: 0.825, y: -1.225}
       - {x: 0.825, y: -0.865}
   m_UseDelaunayMesh: 0
---- !u!114 &5778548249425939243
-MonoBehaviour:
+--- !u!50 &-8211959908704455596
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026397797376136479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d23a041d9ebc5419fee6d2e4ae2009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodName: sheet
-  crushed: {fileID: 8297354940826436125, guid: 8af8e357dc883664ab5909f7ff7a6245, type: 3}
-  cut: {fileID: 8258352048928338297, guid: 55727792421014b4faf0ed5028589b57, type: 3}
-  foodColor: {r: 0.23137257, g: 0.31764707, b: 0.67058825, a: 1}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

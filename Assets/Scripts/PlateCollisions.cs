@@ -54,7 +54,7 @@ public class PlateCollisions : MonoBehaviour
                 //collidingObject.transform.localPosition = new Vector3(2, 2, 0);
                 collidingObject.transform.localPosition = Vector3.zero;
                 */
-                collidingObject.GetComponent<DragAndDrop>().Stored(gameObject, Vector2.zero);
+                //collidingObject.GetComponent<DragAndDrop>().Stored(gameObject, Vector2.zero);
 
                 // ==== Then for each food item we can test it's name ====
                 // And send it's data to the list of food items on the plate

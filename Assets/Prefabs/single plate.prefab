@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 8235843741946119367}
   - component: {fileID: 6508207412814666463}
   - component: {fileID: 3290247497696316660}
-  - component: {fileID: 8798768127255640863}
   - component: {fileID: -1773473158342186948}
+  - component: {fileID: 4978884330159213658}
   m_Layer: 0
   m_Name: single plate
-  m_TagString: Untagged
+  m_TagString: storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1522087713
-  m_SortingLayer: 5
+  m_SortingLayerID: 2027212055
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1065a221de4ce9a4cb82e44e0d0b3d03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,17 +107,17 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.011471748, y: -0.057357788}
@@ -141,7 +141,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7562888795353850008}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -160,19 +160,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8798768127255640863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7562888795353850008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f28546126c5c7f4e93c372c80fc9227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plateData: {fileID: -1773473158342186948}
 --- !u!114 &-1773473158342186948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +173,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
+--- !u!114 &4978884330159213658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562888795353850008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b448c812fd3fafa49b6e3c1e5374e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedItems: []
+  maxCapacity: 3
+  currentCap: 0
+  isTray: 1
+  snapZone: {fileID: 0}
+  positions: []

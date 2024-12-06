@@ -1,51 +1,32 @@
-///         == created by jack carter 10/07 ==
-/// abstract, inherited by: DragAndDrop, Bucket, Storage
-/// contains default and highlighted sprite versions
-/// HighlightSprite: swaps highlighted sprite
-/// virtual MouseEnter/Exit call HiSp()
-/// assumes collider
-
+/// The New Hover
+/// only for mouse hovering
+/// two sprites: default and hovered
+///     default is default
+///     hovered is set in the inspector
+///     hovered is typically a simple white outline
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Hover : MonoBehaviour
+public class Hover : MonoBehaviour
 {
-    //[SerializeField]
-    protected Sprite defaultSprite;
+    public Sprite defaultSprite;
     [SerializeField]
-    protected Sprite hoveredSprite;
-    protected SpriteRenderer sprRend;
+    public Sprite hoveredSprite;
+    private SpriteRenderer sprRend;
 
-    // Start is called before the first frame update
-    protected void Start()
+    void Start()
     {
         sprRend = gameObject.GetComponent<SpriteRenderer>();
-        //defaultSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-        if (!defaultSprite)
-            defaultSprite = sprRend.sprite;
-        if (!hoveredSprite)
-            hoveredSprite = defaultSprite;
+        defaultSprite = sprRend.sprite;
     }
 
-    // swaps sprite: default <-> highlighted
-    //   bool param for highlight or not
-    public virtual void HighlightSprite(bool highlight)
+    private void OnMouseEnter()
     {
-        // sprite to highlighted sprite
-        if (highlight)
-            gameObject.GetComponent<SpriteRenderer>().sprite = hoveredSprite;
-        else
-            gameObject.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        sprRend.sprite = hoveredSprite;
     }
-
-    protected virtual void OnMouseEnter()
+    public void OnMouseExit()
     {
-        HighlightSprite(true);
-    }
-    protected virtual void OnMouseExit()
-    {
-        // sprite to unhovered sprite
-        HighlightSprite(false);
+        sprRend.sprite = defaultSprite;
     }
 }

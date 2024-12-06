@@ -72,7 +72,7 @@ public class LayerTreatment : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < storageScript.currentCapacity; i++)
+        for (int i = 0; i < storageScript.currentCap; i++)
         {
             //If the current # of ingredients being stored < current capacity of objects that can be stored
             //Checks to make sure there isn't already a timer attached to the object
@@ -117,7 +117,7 @@ public class LayerTreatment : MonoBehaviour
     private void CheckTimer()
     {
         //For # of timers
-        for(int i = 0; i < storageScript.currentCapacity; i++)
+        for(int i = 0; i < storageScript.currentCap; i++)
         {
             //Trys to get a timer for the object
             if (timers.TryGetValue(storageScript.StoredItem[i].gameObject, out float fTimerTime))
@@ -184,7 +184,7 @@ public class LayerTreatment : MonoBehaviour
     private void DecreaseTimer()
     {
         //Goes through every object in storage
-        for(int i = 0; i < storageScript.currentCapacity; i++)
+        for(int i = 0; i < storageScript.currentCap; i++)
         {
             //Attempts to get each timer then checks if that timer is greater then 0 no point subtracting from
             //timers at 0
