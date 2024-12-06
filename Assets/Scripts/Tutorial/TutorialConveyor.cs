@@ -56,7 +56,7 @@ public class TutorialConveyor : MonoBehaviour
     private IEnumerator HandleAll()
     {
         Vector3 startingPos = tray.transform.position;
-        Vector3 finalPos = tray.transform.position + (-transform.right * conveyorSpeed);
+        Vector3 finalPos = tray.transform.position + (-transform.right * conveyorSpeed * 1.1f);
 
         float elapsedTime = 0;
 

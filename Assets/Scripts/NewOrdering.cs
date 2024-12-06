@@ -274,7 +274,7 @@ public class NewOrdering : MonoBehaviour
         // Once offscreen, destroy the alien 
         if (fractionOfJourney >= 1.0f)
         {
-            movedAway = true;
+            //movedAway = true;
             Destroy(alienInstance);
             //SpawnNewAlien();  (could spawn an alien after destroying it)
         }
