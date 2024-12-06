@@ -774,7 +774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mortarStorage: {fileID: 112874288}
   particles: {fileID: 112874286}
-  smashCount: 3
+  smashCount: 0
 --- !u!1 &468646336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   alienPrefab: {fileID: 4523235403769607777, guid: 16d3e4bdd5c39304cac5104d5163865b, type: 3}
   startSize: 0.1
   endSize: 0.4
-  approachSpeed: 2
+  approachSpeed: 6
   startPoint: {x: -8, y: 2, z: 10}
   endPoint: {x: -6, y: 1.15, z: 1}
   dialogueBox: {fileID: 468646337}
@@ -1495,6 +1495,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 920d201eb29dee1488f4de19b9cbb3d8, type: 3}
+    - target: {fileID: 568953252217570142, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 568953252217570142, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2115328847
+      objectReference: {fileID: 0}
     - target: {fileID: 795209709903310369, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.79291964
@@ -1725,7 +1733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5551180968751323068, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 5950773395050398794, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1758,6 +1766,10 @@ PrefabInstance:
     - target: {fileID: 7600544978075395796, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600544978075395796, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8037809029575585752, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite

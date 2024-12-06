@@ -32,7 +32,9 @@ public class Pestle : MonoBehaviour
     {
         //GameObject itemToCrush = mortarStorage.StoredItem[0];
         // when pestle collides with item in mortar
-        if (itemToCrush && itemToCrush.Equals(collision.gameObject))
+        if (itemToCrush && itemToCrush.Equals(collision.gameObject) && 
+            //Added an extra check to make sure you can't grinding something that is already grinded
+            itemToCrush.GetComponent<FoodData>().PrepName != "grinded")
         {
             smashCount++; //increment smashCount
             // particle effects
@@ -43,7 +45,7 @@ public class Pestle : MonoBehaviour
             GameObject.Find("AudioManager(Quick)").GetComponent<AudioPlayer>().PlaySoundEffect("mortar", 0);
 
             // when fully ground
-            if (smashCount > 20)
+            if (smashCount > 3)
             {
                 itemToCrush.GetComponent<Ingredient>().Crush();
                 smashCount = 0; //reset smashCount
