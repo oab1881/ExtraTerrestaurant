@@ -68,7 +68,10 @@ public class TutorialConveyor : MonoBehaviour
         }
 
         bool isPerfect = scoring.DisplayScore();
-        NextScene();
+        if (isPerfect)
+        {
+            NextScene();
+        }
         CleanAll();
         ChangeSprite(unpressedButton);
     }
@@ -96,6 +99,7 @@ public class TutorialConveyor : MonoBehaviour
         tray = Instantiate(newTray);
         tray.transform.position = new Vector3(22.6676f, -4.2801f, 0.0f);
         scoring.CleanPlate(tray);
+        EnableButton();
     }
 
     private void ChangeSprite(Sprite newSprite)
@@ -103,7 +107,7 @@ public class TutorialConveyor : MonoBehaviour
         spriteRenderer.sprite = newSprite;
     }
 
-    public void EnableButton()
+    private void EnableButton()
     {
         isScoring = false;
     }

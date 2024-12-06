@@ -161,7 +161,6 @@ public class TutorialOrdering : MonoBehaviour
 
         // Delay dialogue to match alien's approach
         Invoke(nameof(StartDialogue), 6.5f);
-        conveyorButton.EnableButton();
     }
 
     //Method to load in order files from the resources folder

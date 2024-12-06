@@ -132,7 +132,7 @@ public class NewOrdering : MonoBehaviour
     }
     private IEnumerator DelayedResetAndSpawn()
     {
-        yield return new WaitForSeconds(3f); // Delay by 3 seconds
+        yield return new WaitForSeconds(2f); // Delay by 3 seconds
         ResetUI(); // Reset the UI after the delay
         SpawnNewAlien(); // Spawn the new alien
     }
@@ -187,7 +187,6 @@ public class NewOrdering : MonoBehaviour
 
             // Start the dialogue interaction after a delay of 5.5 seconds
             Invoke(nameof(StartDialogue), 5.5f);
-            conveyorButton.EnableSwitch();
         }
         else
         {

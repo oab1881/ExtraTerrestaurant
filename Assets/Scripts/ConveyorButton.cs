@@ -98,6 +98,7 @@ public class ConveyorButton : MonoBehaviour
         tray = Instantiate(newTray);
         tray.transform.position = new Vector3(22.6676f, -4.2801f, 0.0f);
         scoring.CleanPlate(tray);
+        EnableSwitch();
     }
 
     private void ChangeSprite(Sprite newSprite)
@@ -105,7 +106,7 @@ public class ConveyorButton : MonoBehaviour
         spriteRenderer.sprite = newSprite;
     }
 
-    public void EnableSwitch()
+    private void EnableSwitch()
     {
         isScoring = false;
     }
