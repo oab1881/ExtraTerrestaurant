@@ -186,7 +186,7 @@ public class NewOrdering : MonoBehaviour
             LoadTextFile($"{rankFolder}/{textFileName}");
 
             // Start the dialogue interaction after a delay of 5.5 seconds
-            Invoke(nameof(StartDialogue), 5.5f);
+            Invoke(nameof(StartDialogue), 2.0f);
         }
         else
         {
