@@ -206,7 +206,6 @@ public class ScoreManager : MonoBehaviour
         plateData = newPlate.GetComponent<PlateData>();
         
         //Testing to find a way to loop alien spawning
-        alienOrder.SpawnNewAlien();
         alienOrder.Update();
     }
 
