@@ -11,24 +11,45 @@ public class SceneSwitcher : MonoBehaviour
 
     //Reference to the camera
     private Camera mainCamera;
+    // Store the initial camera position
+    private Vector3 initialPosition;
+
+    // Track whether the camera is toggled
+    private bool isToggled = false;
 
     void Start()
     {
-        //Get reference to main camera
+        // Get reference to the main camera
         mainCamera = Camera.main;
         if (mainCamera == null)
         {
             Debug.LogError("Main camera not found!");
         }
+        else
+        {
+            // Store the initial position of the camera
+            initialPosition = mainCamera.transform.position;
+        }
     }
 
-    //Detect if player clicked
+    // Detect mouse click on the object
     void OnMouseDown()
     {
         if (mainCamera != null)
         {
-            // Move the camera to the right by the shift amount
-            mainCamera.transform.position += new Vector3(shiftAmount, 0, 0);
+            if (isToggled)
+            {
+                // Move the camera back to the initial position
+                mainCamera.transform.position = initialPosition;
+            }
+            else
+            {
+                // Shift the camera to the new position
+                mainCamera.transform.position += new Vector3(shiftAmount, 0, 0);
+            }
+
+            // Toggle the state
+            isToggled = !isToggled;
         }
     }
 }
