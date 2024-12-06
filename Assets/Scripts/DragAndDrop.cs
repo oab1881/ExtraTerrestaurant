@@ -17,6 +17,7 @@ Changelog:
     -Made items removable in onTriggerExit function : 10/31/24 : Jake
     -Attempted to optomize removale of item detection : Jake : 11/14/24
     -Added in sounds when click and release : Jake : 12/04/24
+
 */
 
 using System.Collections;
