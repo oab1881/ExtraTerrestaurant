@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField]
     NewOrdering alienOrder;
-    NewOrdering orderRef = new NewOrdering();
+    //NewOrdering orderRef = new NewOrdering();
 
     [SerializeField]
     GameObject kitchenMonitor;
@@ -206,8 +206,8 @@ public class ScoreManager : MonoBehaviour
         plateData = newPlate.GetComponent<PlateData>();
         
         //Testing to find a way to loop alien spawning
-        orderRef.SpawnNewAlien();
-        orderRef.Update();
+        alienOrder.SpawnNewAlien();
+        alienOrder.Update();
     }
 
     // Determines if a dish was perfect or not.
