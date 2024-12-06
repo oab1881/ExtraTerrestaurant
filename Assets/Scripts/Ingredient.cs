@@ -194,6 +194,12 @@ public class Ingredient : MonoBehaviour
                 stored = false;
                 currentColl.RemoveItem(RemoveFromStorage());
                 currentColl.currentCap--;
+                if (currentColl.gameObject.name == "oven red")
+                    dnd.quickAudioPlayer.PlaySoundEffect("oven_close", 0);
+                if (currentColl.gameObject.name == "freezer blue")
+                    dnd.quickAudioPlayer.PlaySoundEffect("Freezer close", 0);
+                if (currentColl.gameObject.name == "goop green")
+                    dnd.quickAudioPlayer.PlaySoundEffect("remove_from_slime", 0);
                 //dnd.TogglePhysics(false);
                 dnd.rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform
                 gameObject.layer = 9; //ingredient layer

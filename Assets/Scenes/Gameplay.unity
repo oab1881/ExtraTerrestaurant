@@ -1828,13 +1828,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f33d79227cd96884fa5bb6d0264c244f, type: 3}
     - target: {fileID: 7600544978075395796, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
-<<<<<<< Updated upstream
       propertyPath: m_Constraints
       value: 4
-=======
       propertyPath: m_GravityScale
       value: 1
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8037809029575585752, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite

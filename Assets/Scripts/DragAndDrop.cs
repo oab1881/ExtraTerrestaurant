@@ -1,33 +1,6 @@
-<<<<<<< Updated upstream
-/*
- ==== Created by Jake Wardell 09/30/24 ====
-
-Makes it so items can be dragged and dropped around Screen
-They need a boxCollider2d and this script for functionality to work
-
-Changelog:
-    -Created script : 09/30/24 : Jake
-    -Made mouse follow a function for supplementing when food is created : 10/01/24 : Jake
-    -newly spawned items are now dragged by default without needing an extra click : 10/02 : jack
-    -when items are not being dragged, gravity is applied using a 2D rigidbody : 10/06 : jack
-    -items that fall off screen are deleted : 10/06 : jack
-    -now inherits hover; added one-at-a-time collisions, CollToAction methods : 10/07 : jack
-    -removed old commented code: 10/07 : jack
-    -Added a hard code for mortar pos and scale : 10/17/24 : Jake
-    -Changed line in storeItem to getComponent instead of rigbod : 10/30/24 : Jake
-    -Made items removable in onTriggerExit function : 10/31/24 : Jake
-    -Attempted to optomize removale of item detection : Jake : 11/14/24
-    -Added in sounds when click and release : Jake : 12/04/24
-
-*/
-
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-=======
 /// === overhauled by jack 11/01 ===
 /// does what it says on the tin  :p
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
@@ -39,107 +12,35 @@ public class DragAndDrop : MonoBehaviour
     public Rigidbody2D rigidbod;
     public Collider2D coll;
 
-<<<<<<< Updated upstream
-    [SerializeField]
-    bool canDragandDrop = true;
-
-    [SerializeField]
-    bool isPlate = false;
-    // item being dragged?    -OnMouseDrag alternative, doesn't require object be clicked first
-    public bool dragging = true;
-
-    /// stores first applicable object collided with
-    ///  applicable: storage, ?
-    /// ensures item only interacts with one colliding object at a time
-    ///  other than physically
-    [SerializeField]
-    private GameObject firstCollidingObject = null;
-    private GameObject nextCollidingObject = null;
-
     //Used to store isDragging state specifically for sound effect playing
     bool tempIsDragging;
-
-    AudioPlayer quickAudioPlayer;
-
-    new void Start()
+    public AudioPlayer quickAudioPlayer;
+    // start
+    void Start()
     {
         //At starts sets isDragging to be opposite of dragging
         //This makes it so when the food item is created from bin the first click noise
         //Plays 
         tempIsDragging = !dragging;
-        base.Start();
-        rigidbod = gameObject.GetComponent<Rigidbody2D>();
-        coll = gameObject.GetComponent<Collider2D>();
-        gameObject.tag = "food item";
-
         quickAudioPlayer = GameObject.Find("AudioManager(Quick)").GetComponent<AudioPlayer>();
-    }
 
-    public bool CanDragAndDrop
-    {
-        set { canDragandDrop = value; }
-    }
-
-    // do nothing on mouse hover
-    //protected override void OnMouseEnter() {}
-    protected override void OnMouseExit()
-    {
-        HighlightSprite(dragging);
-    }
-
-    private void OnMouseDown()
-    {
-        dragging = true;
-        quickAudioPlayer.PlaySoundEffect("Click", 0);
-    }
-=======
-    // start
-    void Start()
-    {
         rigidbod = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+
+        //gameObject.tag = "food item";
     }
 
     // update
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     private void Update()
     {
-        //FollowMouse();
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    FollowMouse();
-        //}
         if (dragging)
         {
-            
             FollowMouse();
-<<<<<<< Updated upstream
-            rigidbod.velocity = Vector2.zero;
-            rigidbod.angularVelocity = 0f;
-            rigidbod.gravityScale = 0;
-            gameObject.layer = 7; // held layer
-        }
-        // OnMouseUp alternative for dragging solution
-        if (Input.GetMouseButtonUp(0))
-        {
-            // drop
-            dragging = false;
-            initalMouse = Vector3.zero;
-            rigidbod.simulated = true;
-            rigidbod.gravityScale = 1;
-            gameObject.layer = 0; // default layer
-
-            //Plays sound on drop
-            quickAudioPlayer.PlaySoundEffect("release_item", 0);
-
-            // end drop
-            // placed in storage?
-            if (firstCollidingObject)
-=======
             // on release
             if (Input.GetMouseButtonUp(0))
->>>>>>> Stashed changes
             {
+                quickAudioPlayer.PlaySoundEffect("release_item", 0);
                 // stop dragging
                 initialMouse = Vector3.zero;
                 dragging = false;
@@ -160,7 +61,6 @@ public class DragAndDrop : MonoBehaviour
 
             }
         }
-<<<<<<< Updated upstream
         if (transform.position.y < -8)
         {
             Destroy(gameObject);
@@ -176,9 +76,7 @@ public class DragAndDrop : MonoBehaviour
         }
 
         //Sets tempIsDragging to match dragging at the end.
-        tempIsDragging= dragging;
-=======
->>>>>>> Stashed changes
+        tempIsDragging = dragging;
     }
 
     // follow mouse
@@ -228,6 +126,7 @@ public class DragAndDrop : MonoBehaviour
         //FollowMouse(Vector3.zero);
         //FollowMouse();
         dragging = true;
+        quickAudioPlayer.PlaySoundEffect("Click", 0);
     }
 
     // on release
@@ -265,7 +164,7 @@ public class DragAndDrop : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "active";
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
         // exit next collision
         else if (other.gameObject.Equals(nextCollidingObject))
         {
@@ -356,7 +255,7 @@ public class DragAndDrop : MonoBehaviour
         /* og jack code
         rigidbod.constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.transform.localScale = Vector3.one / 4;
-        canDragandDrop = false;*/
+        canDragandDrop = false;/*
     }
 
     private void OnMouseUp()
@@ -367,4 +266,4 @@ public class DragAndDrop : MonoBehaviour
 =======
     }*/
 }
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
