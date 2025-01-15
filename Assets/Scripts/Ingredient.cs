@@ -118,7 +118,8 @@ public class Ingredient : MonoBehaviour
             dnd.rigidbod.constraints = RigidbodyConstraints2D.FreezeAll; // freeze transform ?
             //dnd.rigidbod.simulated = false;   // works, but can't click/drag
             // draw on top of tray
-            //sprRend.sortingOrder = 6;
+            sprRend.sortingLayerName = "plates";
+            sprRend.sortingOrder = 2;
             // add self to tray ingredient list -nonremovable?
             currentColl.gameObject.GetComponent<PlateData>().AddIngredient(gameObject);
         }

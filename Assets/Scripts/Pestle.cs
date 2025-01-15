@@ -15,9 +15,14 @@ public class Pestle : MonoBehaviour
     [SerializeField]
     private int smashCount = 0;
 
+    private Vector2 spawnPos;
+
     void Start()
     {
         dnd = gameObject.GetComponent<DragAndDrop>();
+
+        // set spawn pos value
+        spawnPos = transform.position;
     }
     void Update()
     {
@@ -26,6 +31,12 @@ public class Pestle : MonoBehaviour
         
         // maybe instead of every update frame, do this in Mortar script when object is stored
         itemToCrush = mortarStorage.StoredItem[0];
+
+        // respawn out-of-bounds pestle
+        if (transform.position.y < -7)
+        {
+            transform.position = spawnPos;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

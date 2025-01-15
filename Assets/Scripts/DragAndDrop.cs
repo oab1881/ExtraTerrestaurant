@@ -61,10 +61,6 @@ public class DragAndDrop : MonoBehaviour
 
             }
         }
-        if (transform.position.y < -8)
-        {
-            Destroy(gameObject);
-        }
 
         //Checks if is dragging and tempIsdragging are diff; this indicates a state change
         //in clicking.

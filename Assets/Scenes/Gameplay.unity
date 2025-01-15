@@ -598,7 +598,7 @@ Transform:
   m_GameObject: {fileID: 254713201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.457139, y: -5.175, z: -1.6166362}
-  m_LocalScale: {x: 19.023691, y: 1.125, z: 1}
+  m_LocalScale: {x: 20.926062, y: 1.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780231876}
@@ -1579,6 +1579,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2282103627294055458, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282103627294055458, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_ForceReceiveLayers.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 2289000775137882318, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1703,6 +1711,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -2.05
       objectReference: {fileID: 0}
+    - target: {fileID: 3981433497237822792, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981433497237822792, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_ForceReceiveLayers.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4032256978306739673, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1742,6 +1758,14 @@ PrefabInstance:
     - target: {fileID: 5950773395050398794, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041456592726587792, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041456592726587792, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
+      propertyPath: m_ForceReceiveLayers.m_Bits
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 7197573589716786123, guid: 4f1c89096e2c512499dfdc836580569e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2102,10 +2126,10 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2393,8 +2417,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234108936}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.34713936, y: 0.69, z: -1.6166362}
-  m_LocalScale: {x: 11.396601, y: 1.125, z: 1}
+  m_LocalPosition: {x: 0.97, y: 0.69, z: -1.6166362}
+  m_LocalScale: {x: 12.821176, y: 1.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780231876}
@@ -2880,8 +2904,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659787788}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 20.567139, y: 0.56, z: -1.6166362}
-  m_LocalScale: {x: 11.080829, y: 1.125, z: 1}
+  m_LocalPosition: {x: 19.976, y: 0.56, z: -1.6166362}
+  m_LocalScale: {x: 12.465932, y: 1.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780231876}
