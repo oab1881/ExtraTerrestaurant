@@ -29,6 +29,7 @@ public class Ingredient : MonoBehaviour
 
     private Hover hov;
     private SpriteRenderer sprRend;
+    private GameObject redX;
     [SerializeField]
     private Sprite powderSprite;
     [SerializeField]
@@ -43,14 +44,20 @@ public class Ingredient : MonoBehaviour
         foodData = GetComponent<FoodData>();
         sprRend = GetComponent<SpriteRenderer>();
         hov = GetComponent<Hover>();
+
+        redX = transform.GetChild(0).gameObject;
     }
 
     void Update()
     {
         // on release, when colliding with storage, and not stored
-        if (!dnd.dragging && currentColl)
+        if (!dnd.dragging)
         {
-            if (!stored)
+            if (redX.activeSelf)    // trash
+            {
+                Destroy(gameObject);
+            }
+            if (!stored && currentColl)
             {
                 // if room, store
                 //if (currentColl.tag.Equals("storage") && currentColl.GetComponent<Storage>())
@@ -154,22 +161,30 @@ public class Ingredient : MonoBehaviour
     // only continues when being dragged
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // if dragging, save reference to storage script
-        //   ref can be null, should work anyway
-        if (dnd.dragging && collision.gameObject.tag.Equals("storage"))
+        if (dnd.dragging)
         {
-            if (currentColl)    // if there is a current collision
+            // save reference to storage script
+            //   ref can be null, should work anyway
+            if (collision.gameObject.tag.Equals("storage"))
             {
-                if (!nextColl)  // if queue spot open
+                if (currentColl)    // if there is a current collision
                 {
-                    nextColl = collision.gameObject.GetComponent<Storage>();
+                    if (!nextColl)  // if queue spot open
+                    {
+                        nextColl = collision.gameObject.GetComponent<Storage>();
+                    }
                 }
+                else
+                {
+                    currentColl = collision.gameObject.GetComponent<Storage>();
+                }
+                currentColl.HighlightSprite(sprRend);
             }
-            else
+            else if (collision.gameObject.tag.Equals("trash"))  // trash
             {
-                currentColl = collision.gameObject.GetComponent<Storage>();
+                Debug.Log("trash coll");
+                redX.SetActive(true);
             }
-        currentColl.HighlightSprite(sprRend);
         }
     }
 
@@ -186,6 +201,10 @@ public class Ingredient : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        if (collision.gameObject.tag.Equals("trash"))   // clear trash X symbol
+        {
+            redX.SetActive(false);
+        }
         // if dragging, clear collision reference
         if (dnd.dragging)
         {

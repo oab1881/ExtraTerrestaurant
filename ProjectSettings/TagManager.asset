@@ -10,6 +10,7 @@ TagManager:
   - food item
   - floor
   - held
+  - trash
   layers:
   - Default
   - TransparentFX
